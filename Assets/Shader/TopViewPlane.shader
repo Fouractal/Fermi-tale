@@ -2,12 +2,24 @@ Shader "Unlit/TopViewPlane"
 {
     Properties
     {
-        _MainTex ("Texture", 2D) = "white" {}
+        _ViewPlaneNumber ("View Plane Number", Range(0, 4)) = 0 // 초기화 안된 경우 0 초기화 된 경우 1~3
     }
     SubShader
     {
         Tags { "RenderType"="Opaque" }
         LOD 100
+        
+        ColorMask 0
+        Zwrite off
+        
+        Stencil{
+            // 이 쉐이더는 마스크로 사용된다.
+            
+            //정수를 저장한다. 다른 함수에서 읽을 수 있다.
+            ref 2
+            comp always
+            pass replace
+        }
 
         Pass
         {
