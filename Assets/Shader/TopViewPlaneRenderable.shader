@@ -1,25 +1,21 @@
-Shader "Unlit/BottomViewPlane"
+Shader "Unlit/TopViewPlaneRenderable"
 {
     Properties
     {
-        _ViewPlaneNumber ("View Plane Number", Range(0, 4)) = 0 // 초기화 안된 경우 0 초기화 된 경우 1~3
+        _MainTex ("Texture", 2D) = "white" {}
     }
     SubShader
     {
         Tags { "RenderType"="Opaque" }
         LOD 100
         
-        ColorMask 0
-        Zwrite off
-        
         Stencil{
-            // 이 쉐이더는 마스크로 사용된다.
-            
-            //정수를 저장한다. 다른 함수에서 읽을 수 있다.
+            // 마스크의 공간 제한에 있을때만 렌더링 된다.
             ref 1
-            comp always
-            pass replace
-        }
+            
+            //comp는 비교, 객체 참조 값을 스텐실 버퍼에 기록된 값과 비교하는 것
+            comp lequal
+            }
 
         Pass
         {
