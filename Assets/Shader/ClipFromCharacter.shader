@@ -1,7 +1,7 @@
 Shader "Unlit/ClipFromCharacter" {
     Properties {
         _MainTex ("Texture", 2D) = "white" {}
-        _PivotPoint("Pivot Point", Vector) = (0, 0, 0, 0)
+        _PivotPoint("PivotPoint", Vector) = (0, 0, 0, 0)
         _CutoffDistance("Cutoff Distance", Range(0.0, 10.0)) = 5.0
     }
  
@@ -46,10 +46,13 @@ Shader "Unlit/ClipFromCharacter" {
                 float distance_x = abs(_PivotPoint.x - i.worldPos.x);
                 float distance_y = abs(_PivotPoint.y - i.worldPos.y);
                 float distance_z = abs(_PivotPoint.z - i.worldPos.z);
- 
-                clip(_CutoffDistance - distance_x);
+
+                clip(_CutoffDistance - (distance_x+distance_z));
                 clip(_CutoffDistance - distance_y);
-                clip(_CutoffDistance - distance_z);
+                
+                //clip(_CutoffDistance - distance_x);
+                //clip(_CutoffDistance - distance_y);
+                //clip(_CutoffDistance - distance_z);
  
                 fixed4 col = tex2D(_MainTex, i.uv);
                 return col;
