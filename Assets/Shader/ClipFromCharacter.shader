@@ -47,12 +47,12 @@ Shader "Unlit/ClipFromCharacter" {
                 float distance_y = abs(_PivotPoint.y - i.worldPos.y);
                 float distance_z = abs(_PivotPoint.z - i.worldPos.z);
 
-                clip(_CutoffDistance - (distance_x+distance_z));
-                clip(_CutoffDistance - distance_y);
-                
-                //clip(_CutoffDistance - distance_x);
+                //clip(_CutoffDistance - (distance_x+distance_z));
                 //clip(_CutoffDistance - distance_y);
-                //clip(_CutoffDistance - distance_z);
+                
+                clip(_CutoffDistance - distance_x);
+                //clip(_CutoffDistance - distance_y);
+                clip(_CutoffDistance - distance_z);
  
                 fixed4 col = tex2D(_MainTex, i.uv);
                 return col;
