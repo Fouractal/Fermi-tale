@@ -36,7 +36,7 @@ Shader "Unlit/ClipFromCharacter" {
                 o.uv = v.uv; // 한 줄 더있음
                 o.worldPos = mul(unity_ObjectToWorld, v.vertex).xyz;
                 return o;
-            }
+            }                                      
  
             fixed4 frag (v2f i) : SV_Target
             {
