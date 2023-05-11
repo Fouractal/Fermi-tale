@@ -11,6 +11,7 @@ public class Event1 : MonoBehaviour
     private void Start()
     {
         OnInteract += MoveCircle;
+        EventManager.Instance.AddTimeEvent(32f, MoveCircle);
     }
 
     public void MoveCircle()
