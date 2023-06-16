@@ -13,12 +13,6 @@ public class Event1Controller : MonoBehaviour
         interactableObject.OnMove += HandleMove;
     }
 
-    private IEnumerator HandleMove()
-    {
-        // 이동 로직
-        Debug.Log("move forward");
-        yield return StartCoroutine(move());
-    }
     private void MouseReaction()
     {
         // 코루틴으로 랜덤 위치, 일정 시간동안 이동
@@ -57,5 +51,11 @@ public class Event1Controller : MonoBehaviour
             transform.position = Vector3.Lerp(startPosition, endPosition, t);
             yield return null;
         }
+    }
+    private IEnumerator HandleMove()
+    {
+        // 이동 로직
+        Debug.Log("move forward");
+        yield return StartCoroutine(move());
     }
 }
