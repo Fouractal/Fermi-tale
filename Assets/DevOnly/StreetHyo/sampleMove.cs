@@ -18,21 +18,22 @@ public class sampleMove : MonoBehaviour
 
     void Move()
     {
+        // 45도 씩 돌려서 이동
         if (Input.GetKey(KeyCode.W))
         {
-            _rigidbody.position += Vector3.forward * speed * Time.fixedDeltaTime;
+            _rigidbody.position += (Vector3.forward * speed + Vector3.right * speed)* Time.fixedDeltaTime ;
         }
         if (Input.GetKey(KeyCode.A))
         {
-            _rigidbody.position += Vector3.left * speed * Time.fixedDeltaTime;
+            _rigidbody.position +=(Vector3.forward * speed + Vector3.left * speed)* Time.fixedDeltaTime ;
         }
         if (Input.GetKey(KeyCode.S))
         {
-            _rigidbody.position += Vector3.back * speed * Time.fixedDeltaTime;
+            _rigidbody.position += (Vector3.back * speed + Vector3.left * speed)* Time.fixedDeltaTime ;
         }
         if (Input.GetKey(KeyCode.D))
         {
-            _rigidbody.position += Vector3.right * speed * Time.fixedDeltaTime;
+            _rigidbody.position += (Vector3.back * speed + Vector3.right * speed)* Time.fixedDeltaTime ;
         }
     }
 }

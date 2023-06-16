@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/DevOnly/StreetHyo/NextScene.unity
     guid: e423f202271d3cd4ea3c42f7c0bbd5d0
+  - enabled: 1
+    path: Assets/DevOnly/StreetHyo/1stRoomSceneHyo.unity
+    guid: 912fb178474eea04d8a9a9567bbc20d3
   m_configObjects: {}
