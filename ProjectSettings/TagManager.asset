@@ -3,12 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Test
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Test
   - Water
   - UI
   - 
@@ -35,7 +36,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - testLayer
   - 
   m_SortingLayers:
   - name: Default
