@@ -1,14 +1,16 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class EventManager : Singleton<EventManager>
 {
+    #region Time Event
     private Coroutine timeEventRoutine;
     
-    public Queue<TimeEventData> eventQueue = new Queue<TimeEventData>();        // 추후 우선순위 큐로 수정
-
+    public Queue<TimeEventData> timeEventQueue = new Queue<TimeEventData>();        // 추후 우선순위 큐로 수정
+    
     public void StartTimeEventRoutine()
     {
         if(timeEventRoutine != null) StopCoroutine(timeEventRoutine);
@@ -21,30 +23,39 @@ public class EventManager : Singleton<EventManager>
         
         while (true)
         {
-            yield return new WaitForSeconds(1f);    // 이벤트를 1초마다 확인하여 실행시킨다.
+            yield return new WaitForSeconds(1f);    // 이벤트를 1초 단위로 확인하여 실행시킨다.
             curTime += Time.deltaTime;
 
-            while (eventQueue.Peek().eventTiming < curTime)
+            while (timeEventQueue.Peek().eventTiming < curTime)
             {
-                TimeEventData targetEvent = eventQueue.Dequeue();
+                TimeEventData targetEvent = timeEventQueue.Dequeue();
                 targetEvent.targetAction();
             }
         }
     }
     
-    public void AddTimeEvent(float timing, Action action)   // 이벤트 등록 1안 : 외부 스크립트에서 원하는 이벤트를 등록할 수 있게 처리한다.
+    public void AddTimeEvent(float timing, Action action)
     {
         TimeEventData newEventData = new TimeEventData();
         newEventData.eventTiming = timing;
         newEventData.targetAction = action;
         
-        eventQueue.Enqueue(newEventData);
+        timeEventQueue.Enqueue(newEventData);
+    }
+    #endregion
+
+    #region Area Event
+
+    public List<AreaEventData> areaEventList = new List<AreaEventData>();
+
+    public void AddAreaEvent(AreaEventData areaEventData)
+    {
+        GameObject eventAreaPrefab = Resources.Load<GameObject>("Prefabs/EventArea");
+        EventArea newEventArea = Instantiate(eventAreaPrefab).GetComponent<EventArea>();
+        newEventArea.InitAreaEventData(areaEventData);
+
+        areaEventList.Add(areaEventData);
     }
 
-    public void EventSetter()                               // 이벤트 등록 2안 : 모든 TimeEvent는 아래에서 미리 세팅하여 한눈에 볼 수 있게한다.
-    {
-        Event1 event1 = new Event1();
-        AddTimeEvent(32f, event1.MoveCircle);
-    }
-    
+    #endregion
 }
