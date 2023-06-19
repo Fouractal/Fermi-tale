@@ -1,5 +1,7 @@
 Shader "Unlit/ClipFromCharacterWithColor" {
     Properties {
+        _Color("Color", color) = (1, 1, 1, 1)
+        _Intensity("Range", Range(0, 1)) = 0.5
         _MainTex ("Texture", 2D) = "white" {}
         _PivotPoint("PivotPoint", Vector) = (0, 0, 0, 0)
         _CutoffDistance("Cutoff Distance", Range(0.0, 10.0)) = 5.0
@@ -29,7 +31,8 @@ Shader "Unlit/ClipFromCharacterWithColor" {
             sampler2D _MainTex;
             float4 _PivotPoint;
             float _CutoffDistance;
- 
+            half4 _Color;
+            float _Intensity;
             v2f vert (appdata v) {
                 v2f o;
                 o.vertex = UnityObjectToClipPos(v.vertex);
@@ -55,6 +58,7 @@ Shader "Unlit/ClipFromCharacterWithColor" {
                 clip(_CutoffDistance - distance_z);
  
                 fixed4 col = tex2D(_MainTex, i.uv);
+                col.rgb *= _Color * _Intensity;
                 return col;
             }
             ENDCG
