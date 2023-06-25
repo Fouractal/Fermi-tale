@@ -45,6 +45,7 @@ public class JoystickUICanvas : MonoBehaviour
         //Debug.Log($"CharacterMove");
         endPos = eventData.position;
         _playerController.direction = (endPos - startPos).normalized;
+        _playerController.playerAnimator.SetBool("IsWalking",true);
         Debug.Log(_playerController.direction);
     }
 
@@ -53,5 +54,6 @@ public class JoystickUICanvas : MonoBehaviour
         // 이동 종료시 direction 제거
         Debug.Log($"AfterInteraction");
         _playerController.direction = Vector2.zero;
+        _playerController.playerAnimator.SetBool("IsWalking",false);
     }
 }
