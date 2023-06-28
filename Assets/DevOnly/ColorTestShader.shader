@@ -2,7 +2,7 @@ Shader "Unlit/ClipFromCharacterWithColor"
 {
     Properties
     {
-        _TintColor("Test Color", color) = (1, 1, 1, 1)
+        _Color("Color", color) = (1, 1, 1, 1)
         _Intensity("Range Sample", Range(0, 1)) = 0.5
         _Alpha("Alpha", Range(0,1)) = 0.5
 
@@ -42,7 +42,7 @@ Shader "Unlit/ClipFromCharacterWithColor"
             sampler2D _MainTex;
             float4 _PivotPoint;
             float _CutoffDistance;
-            half4 _TintColor;
+            half4 _Color;
             float _Intensity;
             float _Alpha;
 
@@ -72,7 +72,7 @@ Shader "Unlit/ClipFromCharacterWithColor"
                 clip(_CutoffDistance - distance_z);
 
                 fixed4 col = tex2D(_MainTex, i.uv);
-                col.rgb *= _TintColor * _Intensity;
+                col.rgb *= _Color * _Intensity;
                 col.a = col.a * _Alpha;
                 return col;
             }

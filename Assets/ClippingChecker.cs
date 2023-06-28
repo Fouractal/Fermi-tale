@@ -29,7 +29,7 @@ public class ClippingChecker : Singleton<ClippingChecker>
         BoxCollider boxCollider = GetComponent<BoxCollider>();
         
         Gizmos.color = new Color(0,1,0,0.2f);
-        Gizmos.DrawCube(transform.position, boxCollider.size);
+        //Gizmos.DrawCube(transform.position, boxCollider.size);
     }
 #endif
     
