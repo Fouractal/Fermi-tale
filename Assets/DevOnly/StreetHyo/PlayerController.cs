@@ -37,31 +37,10 @@ public class PlayerController : MonoBehaviour
         // (x, y) direction Vector -> (45도 회전된) XZ 평면에서의 방향으로 변환
         _rigidbody.position += ConvertXYtoXZ() * speed * Time.fixedDeltaTime;
         transform.LookAt(transform.position + ConvertXYtoXZ());
-
-
+        
         // (1,0)  -> (Vector3.back + Vector3.right) * speed
         // (-1,0) -> (Vector3.forward + Vector3.left) * speed
         // (0,1)  -> (Vector3.forward + Vector3.right) * speed
         // (0,-1) -> (Vector3.back + Vector3.left) * speed
-        
-        /*
-        // 45도 씩 돌려서 이동
-        if (Input.GetKey(KeyCode.W))
-        {
-            _rigidbody.position += (Vector3.forward * speed + Vector3.right * speed)* Time.fixedDeltaTime ;
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            _rigidbody.position +=(Vector3.forward * speed + Vector3.left * speed)* Time.fixedDeltaTime ;
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            _rigidbody.position += (Vector3.back * speed + Vector3.left * speed)* Time.fixedDeltaTime ;
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            _rigidbody.position += (Vector3.back * speed + Vector3.right * speed)* Time.fixedDeltaTime ;
-        }
-        */
     }
 }
