@@ -1017,8 +1017,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 337798598}
-  m_LocalRotation: {x: 0.2843729, y: 0.3739855, z: -0.12163603, w: 0.87434065}
-  m_LocalPosition: {x: 6.7299995, y: 12.24, z: -13.59}
+  m_LocalRotation: {x: 0.28437287, y: 0.37398553, z: -0.12163607, w: 0.87434065}
+  m_LocalPosition: {x: 2.83, y: 12.24, z: -11.45}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2669,8 +2669,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 915059887}
-  m_LocalRotation: {x: 0.2843729, y: 0.3739855, z: -0.12163603, w: 0.87434065}
-  m_LocalPosition: {x: 6.7299995, y: 12.24, z: -13.59}
+  m_LocalRotation: {x: 0.28437287, y: 0.37398553, z: -0.12163607, w: 0.87434065}
+  m_LocalPosition: {x: 2.83, y: 12.24, z: -11.45}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3085,7 +3085,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1103249277}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.79, y: 0.5, z: -10.7}
+  m_LocalPosition: {x: 14.87, y: 0.5, z: -10.41}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3136,7 +3136,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   delay: 0.24
-  duration: 20
+  duration: 5
   easeType: 6
   easeCurve:
     serializedVersion: 2
@@ -3164,7 +3164,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   loops: 4
   id: 
-  loopType: 0
+  loopType: 1
   orientType: 0
   lookAtTransform: {fileID: 0}
   lookAtPosition: {x: 0, y: 0, z: 0}
@@ -3183,7 +3183,7 @@ MonoBehaviour:
   tweenRigidbody: 0
   wps:
   - {x: 16.27, y: 0.5, z: -11.3}
-  - {x: 22.015686, y: 0.5, z: -11.3}
+  - {x: 22.015686, y: 0.5, z: -11.268943}
   - {x: 31.52, y: 0.5, z: -11.9}
   - {x: 24.123848, y: 0.5, z: -11.3}
   - {x: 12.841497, y: 0.5, z: -11.3}
@@ -3191,15 +3191,15 @@ MonoBehaviour:
   path:
     wpLengths:
     - 0
-    - 1.6420705
-    - 5.7472825
-    - 9.523461
-    - 7.423893
+    - 1.7432072
+    - 5.7488284
+    - 9.52552
+    - 7.423517
     - 11.282911
     wps:
-    - {x: 14.79, y: 0.5, z: -10.7}
+    - {x: 14.87, y: 0.5, z: -10.41}
     - {x: 16.27, y: 0.5, z: -11.3}
-    - {x: 22.015686, y: 0.5, z: -11.3}
+    - {x: 22.015686, y: 0.5, z: -11.268943}
     - {x: 31.52, y: 0.5, z: -11.9}
     - {x: 24.123848, y: 0.5, z: -11.3}
     - {x: 12.841497, y: 0.5, z: -11.3}
@@ -3211,7 +3211,7 @@ MonoBehaviour:
       b: {x: 0, y: 0, z: 0}
     - a: {x: 1.5591469, y: 0.5, z: -11.3}
       b: {x: 0, y: 0, z: 0}
-    length: 35.621143
+    length: 35.72544
     isFinalized: 1
     timesTable:
     - 0.016666668
@@ -3275,76 +3275,76 @@ MonoBehaviour:
     - 0.9833334
     - 1
     lengthsTable:
-    - 0.011636612
-    - 0.045652766
-    - 0.10104655
-    - 0.17729756
-    - 0.2743954
-    - 0.3928572
-    - 0.5337213
-    - 0.6985196
-    - 0.8892353
-    - 1.1082442
-    - 1.3582588
-    - 1.6422634
-    - 1.9603326
-    - 2.3102005
-    - 2.6913424
-    - 3.1030307
-    - 3.5444145
-    - 4.014582
-    - 4.5126057
-    - 5.0375566
-    - 5.588545
-    - 6.1647224
-    - 6.7653027
-    - 7.3895783
-    - 8.104553
-    - 8.953745
-    - 9.901204
-    - 10.910965
-    - 11.947042
-    - 12.973444
-    - 13.954182
-    - 14.853255
-    - 15.634666
-    - 16.262424
-    - 16.700537
-    - 16.913042
-    - 16.9288
-    - 17.128134
-    - 17.490564
-    - 17.993357
-    - 18.61375
-    - 19.32897
-    - 20.116257
-    - 20.952858
-    - 21.816044
-    - 22.6831
-    - 23.531363
-    - 24.33823
-    - 25.142637
-    - 25.99411
-    - 26.885983
-    - 27.811565
-    - 28.764132
-    - 29.73695
-    - 30.723272
-    - 31.716354
-    - 32.709435
-    - 33.69576
-    - 34.66858
-    - 35.621143
+    - 0.015538961
+    - 0.05981404
+    - 0.12966229
+    - 0.2224623
+    - 0.3362583
+    - 0.4698896
+    - 0.623106
+    - 0.79665613
+    - 0.9923093
+    - 1.2128178
+    - 1.4617965
+    - 1.7435706
+    - 2.0594697
+    - 2.40764
+    - 2.7877874
+    - 3.1992123
+    - 3.6409757
+    - 4.1120086
+    - 4.611196
+    - 5.1374197
+    - 5.689608
+    - 6.26676
+    - 6.8679695
+    - 7.4924564
+    - 8.207456
+    - 9.056726
+    - 10.004319
+    - 11.01426
+    - 12.050554
+    - 13.077196
+    - 14.058186
+    - 14.957509
+    - 15.739155
+    - 16.367117
+    - 16.805387
+    - 17.017979
+    - 17.033077
+    - 17.232313
+    - 17.594698
+    - 18.097477
+    - 18.71788
+    - 19.433125
+    - 20.220444
+    - 21.05708
+    - 21.920298
+    - 22.787378
+    - 23.635654
+    - 24.442526
+    - 25.246933
+    - 26.098406
+    - 26.990278
+    - 27.915861
+    - 28.868427
+    - 29.841246
+    - 30.827568
+    - 31.82065
+    - 32.813732
+    - 33.800056
+    - 34.772877
+    - 35.72544
   inspectorMode: 0
   pathType: 1
-  handlesType: 0
+  handlesType: 1
   livePreview: 1
   handlesDrawMode: 0
   perspectiveHandleSize: 0.5
   showIndexes: 1
   showWpLength: 0
   pathColor: {r: 0.6698113, g: 0.009478444, b: 0.03733101, a: 0.5}
-  lastSrcPosition: {x: 14.79, y: 0.5, z: -10.7}
+  lastSrcPosition: {x: 14.87, y: 0.5, z: -10.41}
   lastSrcRotation: {x: 0, y: 0, z: 0, w: 1}
   wpsDropdown: 1
   dropToFloorOffset: 0
@@ -3385,9 +3385,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distance: 6
-  angle: 20
+  angle: 360
   height: 5
-  meshColor: {r: 0.9811321, g: 0.7849711, b: 0.71733713, a: 1}
+  meshColor: {r: 1, g: 1, b: 1, a: 0.21960784}
   scanFrequency: 30
   layers:
     serializedVersion: 2
@@ -3395,8 +3395,9 @@ MonoBehaviour:
   occulusionLayers:
     serializedVersion: 2
     m_Bits: 1
-  Objects:
-  - {fileID: 4009612286262306614}
+  Objects: []
+  _scanInterval: 0.033333335
+  _scanTimer: -15.71962
 --- !u!1 &1129191480
 GameObject:
   m_ObjectHideFlags: 0
@@ -7530,7 +7531,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4009612286262306614}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.19, y: 0.23, z: -5.51}
+  m_LocalPosition: {x: 11.29, y: 0.23, z: -3.37}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 1
   m_Children:

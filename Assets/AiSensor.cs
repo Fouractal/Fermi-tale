@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
+using DG.Tweening.Plugins.Core.PathCore;
 using UnityEngine;
 
 [ExecuteInEditMode] // 편집 모드에서 테스트하기 위해 편집 모드에서 실행 추가
@@ -18,10 +20,13 @@ public class AiSensor : MonoBehaviour
     private Collider[] _colliders = new Collider[50];
     private Mesh _mesh;
     private int _count;
-    private float _scanInterval;
-    private float _scanTimer;
+    public float _scanInterval = 1f;
+    public float _scanTimer = 0.5f;
+
+    private DOTweenPath _doTweenPath;
     void Start()
     {
+        _doTweenPath = GetComponent<DOTweenPath>();
         _scanInterval = 1.0f / scanFrequency;
     }
 
@@ -41,16 +46,23 @@ public class AiSensor : MonoBehaviour
         _count = Physics.OverlapSphereNonAlloc(transform.position, distance, _colliders, layers,
             QueryTriggerInteraction.Collide);
         Objects.Clear();
+        transform.DOPause();
         for (int i = 0; i < _count; i++)
         {
             GameObject obj = _colliders[i].gameObject;
             if (IsInSight(obj))
             {
                 Objects.Add(obj);
+                ChasePlayer(obj);
             }
         }
     }
 
+    private void ChasePlayer(GameObject playerObj)
+    {
+        _doTweenPath.DOPause();
+        transform.DOMove(playerObj.transform.position, 5f);
+    }
     public bool IsInSight(GameObject obj)
     {
         Vector3 origin = transform.position;
