@@ -8,9 +8,9 @@ public class MN_Scene : MonoBehaviour
 {
     private void Awake()
     {
-        //MN Room 생성
-        GameObject MNPrefab = Resources.Load<GameObject>("Prefabs/MN/MN_Prefab");
-        Instantiate(MNPrefab);
+        // //MN Room 생성
+        // GameObject MNPrefab = Resources.Load<GameObject>("Prefabs/MN/MN_Prefab");
+        // Instantiate(MNPrefab);
         
         //캐릭터 생성
         GameObject mainCharacterPrefab = Resources.Load<GameObject>("Prefabs/MainCharacter/MainCharacter_Prefab");
@@ -21,9 +21,9 @@ public class MN_Scene : MonoBehaviour
         CinemachineVirtualCamManager.Instance.virtualCamera = GameObject.Find("followCam").GetComponent<CinemachineVirtualCamera>();
         CinemachineVirtualCamManager.Instance.virtualCamera.LookAt = playerObject.transform;
         CinemachineVirtualCamManager.Instance.virtualCamera.Follow = playerObject.transform;
-            
+        
         //조이스틱 생성
-        GameObject joystickUICanvasPrefab = Resources.Load<GameObject>("Prefabs/UI/JoystickUICanvas");
+        GameObject joystickUICanvasPrefab = UIManager.Instance.ShowSceneUI("Prefabs/UI/JoystickUICanvas");
         Instantiate(joystickUICanvasPrefab);
         
         
