@@ -6,11 +6,12 @@ using UnityEngine.Serialization;
 
 public class EventArea : MonoBehaviour
 {
-    [SerializeField] private AreaEventData areaEventData;
+    public AreaEventData areaEventData;
     private BoxCollider _boxCollider;
     
     private void Awake()
     {
+        areaEventData.eventArea = this;
         _boxCollider = GetComponent<BoxCollider>();
     }
     
@@ -30,8 +31,11 @@ public class EventArea : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Trigger");
+        Debug.Log("Trigger Step 1");
         if (areaEventData.maxExecuteCount <= areaEventData.curExecuteCount && areaEventData.maxExecuteCount != -1 ) return;
+        Debug.Log("Trigger Step 2");
+        if (!other.CompareTag("Player")) return;
+        Debug.Log("Trigger Step 3");
         areaEventData.func();
         areaEventData.curExecuteCount++;
     }
