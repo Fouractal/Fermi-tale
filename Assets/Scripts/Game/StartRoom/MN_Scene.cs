@@ -24,7 +24,7 @@ public class MN_Scene : MonoBehaviour
         
         //조이스틱 생성
         GameObject joystickUICanvasPrefab = UIManager.Instance.ShowSceneUI("Prefabs/UI/JoystickUICanvas");
-        Instantiate(joystickUICanvasPrefab);
+        //Instantiate(joystickUICanvasPrefab);
         
         
     }
