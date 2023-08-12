@@ -34,6 +34,7 @@ public class ClipObject : MonoBehaviour
     private void Start()
     {
         material = GetComponent<MeshRenderer>().material;
+        SetPivotPoint();
     }
     void Update()
     {
