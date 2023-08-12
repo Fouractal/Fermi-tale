@@ -23,6 +23,14 @@ public class ClippingChecker : Singleton<ClippingChecker>
         clipObject.IsInside = false;
     }
 
+    private void Update()
+    {
+        
+        // Quternion -> Euler로 바꿔서 * (-1) -> Quternion
+        transform.localRotation = 
+            Quaternion.Euler(0, -PlayerCharacterManager.Instance.playerController.transform.rotation.eulerAngles.y, 0);
+    }
+
 #if UNITY_EDITOR
     private void OnDrawGizmosSelected()
     {
