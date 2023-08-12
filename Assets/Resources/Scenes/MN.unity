@@ -2809,6 +2809,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1373794270987585946, guid: 92bc00a8826ae354fb8ae5228cfe77a2, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1373794270987585946, guid: 92bc00a8826ae354fb8ae5228cfe77a2, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1373794270987585946, guid: 92bc00a8826ae354fb8ae5228cfe77a2, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1373794270987585946, guid: 92bc00a8826ae354fb8ae5228cfe77a2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -2847,6 +2859,10 @@ PrefabInstance:
     - target: {fileID: 1373794270987585946, guid: 92bc00a8826ae354fb8ae5228cfe77a2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1373794270987585946, guid: 92bc00a8826ae354fb8ae5228cfe77a2, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1755104441412801312, guid: 92bc00a8826ae354fb8ae5228cfe77a2, type: 3}
       propertyPath: m_Name
@@ -3668,7 +3684,7 @@ MonoBehaviour:
     m_Bits: 1
   Objects: []
   _scanInterval: 0.033333335
-  _scanTimer: -1360.0526
+  _scanTimer: -1364.6823
 --- !u!1 &1127302010
 GameObject:
   m_ObjectHideFlags: 0
