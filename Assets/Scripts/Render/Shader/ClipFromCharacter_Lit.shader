@@ -6,11 +6,13 @@ Shader "Custom/Lit/ClipFromCharacter"
         _Intensity("Range Sample", Range(0, 1)) = 0.5
 
         _MainTex ("Albedo (RGB)", 2D) = "white" {}
+        _NormalMap ("Normal Map", 2D) = "bump" {}
         _Glossiness ("Smoothness", Range(0,1)) = 0.5
         _Metallic ("Metallic", Range(0,1)) = 0.0
         _PivotPoint ("Pivot Point", Vector) = (0, 0, 0, 0)
         _CutoffDistance ("Cutoff Distance", Range(0.0, 10.0)) = 5.0
 
+        [MaterialToggle] _IsStartGame ("Is Start game", Float) = 0
     }
     SubShader
     {
@@ -41,6 +43,7 @@ Shader "Custom/Lit/ClipFromCharacter"
         float4 _PivotPoint;
         float _CutoffDistance;
         float _Intensity;
+        float _IsStartGame;
 
         // Add instancing support for this shader. You need to check 'Enable Instancing' on materials that use the shader.
         // See https://docs.unity3d.com/Manual/GPUInstancing.html for more information about instancing.
@@ -54,9 +57,12 @@ Shader "Custom/Lit/ClipFromCharacter"
             float distance_x = abs(_PivotPoint.x - IN.worldPos.x);
             float distance_z = abs(_PivotPoint.z - IN.worldPos.z);
 
-            clip(_CutoffDistance - distance_x);
-            clip(_CutoffDistance - distance_z);
-
+            if(_IsStartGame > 0.5f)
+            {
+                clip(_CutoffDistance - distance_x);
+                clip(_CutoffDistance - distance_z);    
+            }
+            
             // Albedo comes from a texture tinted by color
             fixed4 c = tex2D(_MainTex, IN.uv_MainTex) * _Color;
             o.Albedo = c.rgb * _Intensity;

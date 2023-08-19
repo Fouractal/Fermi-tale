@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ClipObject : MonoBehaviour
 {
-    private Material material;
+    private Material[] _materials;
     private bool _isInside = false;
     public bool IsInside
     {
@@ -31,9 +31,18 @@ public class ClipObject : MonoBehaviour
         }
     }
 
+    private void Awake()
+    {
+        _materials = GetComponent<MeshRenderer>().materials;
+        
+        foreach (var material in _materials)
+        {
+            material.SetFloat("_IsStartGame", 1f);    
+        }
+    }
+
     private void Start()
     {
-        material = GetComponent<MeshRenderer>().material;
         SetPivotPoint();
     }
     void Update()
@@ -47,6 +56,10 @@ public class ClipObject : MonoBehaviour
     private void SetPivotPoint()
     {
         Vector3 pivot = ClippingChecker.Instance.transform.position;
-        material.SetVector("_PivotPoint", pivot);
+        
+        foreach (var material in _materials)
+        {
+            material.SetVector("_PivotPoint", pivot);    
+        }
     }
 }
