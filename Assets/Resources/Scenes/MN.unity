@@ -2805,6 +2805,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 108548609}
     m_Modifications:
+    - target: {fileID: 1507005711, guid: 92bc00a8826ae354fb8ae5228cfe77a2, type: 3}
+      propertyPath: m_Size.x
+      value: 0.307071
+      objectReference: {fileID: 0}
+    - target: {fileID: 1507005711, guid: 92bc00a8826ae354fb8ae5228cfe77a2, type: 3}
+      propertyPath: m_Size.y
+      value: 0.307071
+      objectReference: {fileID: 0}
     - target: {fileID: 1373794270987585946, guid: 92bc00a8826ae354fb8ae5228cfe77a2, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -3685,7 +3693,7 @@ MonoBehaviour:
     m_Bits: 1
   Objects: []
   _scanInterval: 0.033333335
-  _scanTimer: -1913.3619
+  _scanTimer: -1948.125
 --- !u!1 &1127302010
 GameObject:
   m_ObjectHideFlags: 0

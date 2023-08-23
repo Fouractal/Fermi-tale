@@ -51,7 +51,8 @@ public class JoystickUICanvas : MonoBehaviour
         _playerController.direction = (endPos - startPos).normalized;
         _moveBlendValue = (Mathf.Abs(Mathf.Pow(endPos.x - startPos.x, 2)
                                      + Mathf.Pow(endPos.y - startPos.y, 2))) / 100000f;
-        
+        if (_moveBlendValue > 0.5) _playerController.speed = 1.2f;
+        else _playerController.speed = 0.7f;
         _playerController.playerAnimator.SetFloat("MoveBlend", _moveBlendValue);
         //_playerController.playerAnimator.SetBool("IsWalking",true);
         //Debug.Log(_playerController.direction);
@@ -62,6 +63,8 @@ public class JoystickUICanvas : MonoBehaviour
         // 이동 종료시 direction 제거
         Debug.Log($"AfterInteraction");
         _playerController.direction = Vector2.zero;
+        _moveBlendValue = 0f;
+        _playerController.playerAnimator.SetFloat("MoveBlend", _moveBlendValue);
         //_playerController.playerAnimator.SetBool("IsWalking",false);
     }
 }
