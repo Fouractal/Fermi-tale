@@ -4,5 +4,6 @@ using UnityEngine;
 
 public class PlayerCharacterManager : Singleton<PlayerCharacterManager>
 {
+    public Player player;
     public PlayerController playerController;
 }
