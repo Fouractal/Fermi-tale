@@ -5,4 +5,9 @@ public class Define
         Sphere,
         Cube
     }
+
+    public enum Direction
+    {
+        
+    }
 }

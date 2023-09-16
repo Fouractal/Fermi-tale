@@ -1,46 +1,65 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
+
 public class PlayerController : MonoBehaviour
 {
-    public float speed;
-    private Rigidbody _rigidbody;
+    [SerializeField]
+    private Player player;
+    [SerializeField]
+    private TouchPad touchPad;
 
-    public Animator playerAnimator;
-    public Vector2 direction;
-    private float _angle = -45f; //회전할 각도 (단위: 도)
-    private float _radians = 0f; // 각도를 라디안으로 변환
-    void Start()
+    private Vector2 startPos;       // 시작점 위치
+    private Vector2 endPos;         // 끝점 위치
+    private Vector2 direction;      // 계산한 방향
+    private float _moveBlendValue;
+    
+    private void Start()
     {
-        _radians = _angle * Mathf.Deg2Rad;
-        _rigidbody = GetComponent<Rigidbody>();
-        playerAnimator = GetComponent<Animator>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        Move();
-    }
-    public Vector3 ConvertXYtoXZ()
-    {
-        float x = direction.x;
-        float y = direction.y;
-
-        float newX = x * Mathf.Cos(_radians) - y * Mathf.Sin(_radians);
-        float newZ = x * Mathf.Sin(_radians) + y * Mathf.Cos(_radians);
+        player = PlayerCharacterManager.Instance.player;
+        touchPad = TouchPad.Instance;
         
-        return new Vector3(newX, 0f, newZ);
+        touchPad.OnDragStart += PosMark;
+        touchPad.OnWhileDrag += CharacterMove;
+        touchPad.OnDragDone += AfterInteraction;
     }
-    void Move()
+    
+
+    private void PosMark(PointerEventData eventData)
     {
-        // (x, y) direction Vector -> (45도 회전된) XZ 평면에서의 방향으로 변환
-        _rigidbody.position += ConvertXYtoXZ() * speed * Time.fixedDeltaTime;
-        transform.LookAt(transform.position + ConvertXYtoXZ());
+        // 시작점 기억
+        Debug.Log($"PosMark");
+        startPos = eventData.position;
+    }
+
+    private void CharacterMove(PointerEventData eventData)
+    {
+        // 플레이어가 이동할 "방향" 업데이트
+        endPos = eventData.position;
+        // JoyStick 터치 길이에 따른 Move Blend Tree 값 변경, (Idle <-> Walk <-> Run)
+        //Debug.Log(Mathf.Abs(Mathf.Pow(endPos.x - startPos.x,2)
+        //                    + Mathf.Pow(endPos.y - startPos.y,2)));
+        //임의로 20만을 Blend Tree 최댓값으로 설정.
         
-        // (1,0)  -> (Vector3.back + Vector3.right) * speed
-        // (-1,0) -> (Vector3.forward + Vector3.left) * speed
-        // (0,1)  -> (Vector3.forward + Vector3.right) * speed
-        // (0,-1) -> (Vector3.back + Vector3.left) * speed
+        player.direction = (endPos - startPos).normalized;
+        _moveBlendValue = (Mathf.Abs(Mathf.Pow(endPos.x - startPos.x, 2)
+                                     + Mathf.Pow(endPos.y - startPos.y, 2))) / 100000f;
+        if (_moveBlendValue > 0.5) player.speed = 1.2f;
+        else player.speed = 0.7f;
+        player.playerAnimator.SetFloat("MoveBlend", _moveBlendValue);
+        //_playerController.playerAnimator.SetBool("IsWalking",true);
+        //Debug.Log(_playerController.direction);
+    }
+
+    private void AfterInteraction(PointerEventData eventData)
+    {
+        // 이동 종료시 direction 제거
+        Debug.Log($"AfterInteraction");
+        player.direction = Vector2.zero;
+        _moveBlendValue = 0f;
+        player.playerAnimator.SetFloat("MoveBlend", _moveBlendValue);
+        //_playerController.playerAnimator.SetBool("IsWalking",false);
     }
 }
