@@ -12,7 +12,8 @@ Shader "Custom/Lit/ClipFromCharacter"
         _PivotPoint ("Pivot Point", Vector) = (0, 0, 0, 0)
         _CutoffDistance ("Cutoff Distance", Range(0.0, 10.0)) = 5.0
 
-        [MaterialToggle] _IsStartGame ("Is Start game", Float) = 0
+        [MaterialToggle] _IsStartGame ("Is Start Game", Float) = 0
+        [MaterialToggle] _IsRenderDirection ("Is Render Direction", Float) = 0
     }
     SubShader
     {
@@ -44,6 +45,7 @@ Shader "Custom/Lit/ClipFromCharacter"
         float _CutoffDistance;
         float _Intensity;
         float _IsStartGame;
+        float _IsRenderDirection;
 
         // Add instancing support for this shader. You need to check 'Enable Instancing' on materials that use the shader.
         // See https://docs.unity3d.com/Manual/GPUInstancing.html for more information about instancing.
@@ -69,7 +71,15 @@ Shader "Custom/Lit/ClipFromCharacter"
             // Metallic and smoothness come from slider variables
             o.Metallic = _Metallic;
             o.Smoothness = _Glossiness;
-            o.Alpha = c.a;
+
+            if(_IsRenderDirection > 0.5f)
+            {
+                o.Alpha = c.a;
+            }
+            else
+            {
+                o.Alpha = 0;
+            }
         }
         ENDCG
     }
