@@ -15,15 +15,17 @@ public class CameraTurnController : MonoBehaviour
     private Canvas _canvas;
     private CanvasScaler _canvasScaler;
 
-    private Vector3[] directions = { new Vector3(-8, 12, -8), new Vector3(8, 12, -8),
-                                     new Vector3(8, 12, 8), new Vector3(-8, 12, 8)};
+    private Define.CameraDirection _cameraDirection = Define.CameraDirection.NE;
 
-    private int index = 0;
-
+    public delegate void DirectionHandler(Define.CameraDirection nextDirection);
+    public event DirectionHandler OnChangeDirection;
+    
     private void Start()
     {
         _touchPad = TouchPad.Instance;
         _touchPad.OnDoubleTap += CameraTurn;
+        
+        OnChangeDirection?.Invoke(_cameraDirection);
     }
 
     private void CameraTurn(PointerEventData eventData)
@@ -33,7 +35,6 @@ public class CameraTurnController : MonoBehaviour
         
         if (eventData.position.x <= 540)
         {
-            //orbitalTransposer.m_FollowTransform = target;
             CameraTurnLeft();
         }
         else
@@ -44,19 +45,17 @@ public class CameraTurnController : MonoBehaviour
     
     private void CameraTurnLeft()
     {
-        Debug.Log("TestLeft");
-        var sequence = DOTween.Sequence();
-        sequence
-            .AppendCallback(() => index += 1);
+        Debug.Log("TurnLeft");
+        _cameraDirection = (Define.CameraDirection)(((int)_cameraDirection -1 + 4) % 4);
+        OnChangeDirection?.Invoke(_cameraDirection);
+        _isTurning = false;
     }
 
     private void CameraTurnRight()
     {
-        Debug.Log("TestRight");
-        
-        var sequence = DOTween.Sequence();
-        sequence
-            .Append(Camera.main.transform.DOLocalRotate(Vector3.back, 2f, RotateMode.FastBeyond360).SetEase(Ease.InOutCubic))
-            .AppendCallback(()=> _isTurning = false);
+        Debug.Log("TurnRight");
+        _cameraDirection = (Define.CameraDirection)(((int)_cameraDirection + 1) % 4);
+        OnChangeDirection?.Invoke(_cameraDirection);
+        _isTurning = false;
     }
 }
