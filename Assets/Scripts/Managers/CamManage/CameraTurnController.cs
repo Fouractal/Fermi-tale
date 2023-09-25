@@ -11,6 +11,7 @@ public class CameraTurnController : MonoBehaviour
     private bool _isTurning = false;
 
     [SerializeField] private CinemachineOrbitalTransposer orbitalTransposer;
+
     private void Start()
     {
         _touchPad = TouchPad.Instance;
