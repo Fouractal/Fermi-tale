@@ -8,5 +8,12 @@ public class CinemachineVirtualCamManager : Singleton<CinemachineVirtualCamManag
 {
     public GameObject cameraRoot;
     public CinemachineVirtualCamera virtualCamera;
+    public CinemachineFreeLook cinemachineFreeLook;
     public CameraTurnController cameraTurnController;
+    public CinemachineOrbitalTransposer cinemachineOrbitalTransposer;
+
+    private void Awake()
+    {
+        cinemachineOrbitalTransposer = virtualCamera.GetCinemachineComponent<CinemachineOrbitalTransposer>();
+    }
 }

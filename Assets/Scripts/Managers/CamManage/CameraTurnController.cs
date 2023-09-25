@@ -1,29 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
-using DG.Tweening;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
+
 
 public class CameraTurnController : MonoBehaviour
 {
     private TouchPad _touchPad;
     private bool _isTurning = false;
 
-    private Canvas _canvas;
-    private CanvasScaler _canvasScaler;
-
-    private Vector3[] directions = { new Vector3(-8, 12, -8), new Vector3(8, 12, -8),
-                                     new Vector3(8, 12, 8), new Vector3(-8, 12, 8)};
-
-    private int index = 0;
-
+    [SerializeField] private CinemachineOrbitalTransposer orbitalTransposer;
     private void Start()
     {
         _touchPad = TouchPad.Instance;
         _touchPad.OnDoubleTap += CameraTurn;
+
+        orbitalTransposer = CinemachineVirtualCamManager.Instance.cinemachineOrbitalTransposer;
+        orbitalTransposer.m_RecenterToTargetHeading.m_enabled = true;
+        orbitalTransposer.m_Heading.m_Definition = CinemachineOrbitalTransposer.Heading.HeadingDefinition.WorldForward;
+        orbitalTransposer.m_Heading.m_Bias = 45;
+        orbitalTransposer.m_XAxis.Value = 0;
     }
 
     private void CameraTurn(PointerEventData eventData)
@@ -33,30 +30,25 @@ public class CameraTurnController : MonoBehaviour
         
         if (eventData.position.x <= 540)
         {
-            //orbitalTransposer.m_FollowTransform = target;
-            CameraTurnLeft();
+            CameraTurnClockwise();
         }
         else
         {
-            CameraTurnRight();
+            CameraTurnCounterClockwise();
         }
+
+        _isTurning = false;
     }
     
-    private void CameraTurnLeft()
+    private void CameraTurnClockwise()
     {
-        Debug.Log("TestLeft");
-        var sequence = DOTween.Sequence();
-        sequence
-            .AppendCallback(() => index += 1);
+        orbitalTransposer.m_Heading.m_Bias += 90;
+        orbitalTransposer.m_XAxis.Value -= 90;
     }
 
-    private void CameraTurnRight()
+    private void CameraTurnCounterClockwise()
     {
-        Debug.Log("TestRight");
-        
-        var sequence = DOTween.Sequence();
-        sequence
-            .Append(Camera.main.transform.DOLocalRotate(Vector3.back, 2f, RotateMode.FastBeyond360).SetEase(Ease.InOutCubic))
-            .AppendCallback(()=> _isTurning = false);
+        orbitalTransposer.m_Heading.m_Bias -= 90;
+        orbitalTransposer.m_XAxis.Value += 90;
     }
 }
