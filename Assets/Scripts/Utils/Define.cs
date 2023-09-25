@@ -6,8 +6,19 @@ public class Define
         Cube
     }
 
-    public enum Direction
+    public enum RenderDirection
     {
-        
+        N,
+        E,
+        W,
+        S
+    }
+
+    public enum CameraDirection
+    {
+        NE,
+        SE,
+        SW,
+        NW
     }
 }
