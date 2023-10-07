@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ClipObject : MonoBehaviour
+public class RenderByArea : MonoBehaviour
 {
     private Material[] _materials;
     private bool _isInside = false;
@@ -55,7 +55,7 @@ public class ClipObject : MonoBehaviour
 
     private void SetPivotPoint()
     {
-        Vector3 pivot = ClippingChecker.Instance.transform.position;
+        Vector3 pivot = RenderArea.Instance.transform.position;
         
         foreach (var material in _materials)
         {

@@ -5,22 +5,22 @@ using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
-public class ClippingChecker : Singleton<ClippingChecker>
+public class RenderArea : Singleton<RenderArea>
 {
     private void OnTriggerEnter(Collider other)
     {
-        ClipObject clipObject = other.transform.GetComponent<ClipObject>();
+        RenderByArea renderByArea = other.transform.GetComponent<RenderByArea>();
         
-        if (clipObject == null) return;
-        clipObject.IsInside = true;
+        if (renderByArea == null) return;
+        renderByArea.IsInside = true;
     }
 
     private void OnTriggerExit(Collider other)
     {
-        ClipObject clipObject = other.transform.GetComponent<ClipObject>();
+        RenderByArea renderByArea = other.transform.GetComponent<RenderByArea>();
         
-        if (clipObject == null) return;
-        clipObject.IsInside = false;
+        if (renderByArea == null) return;
+        renderByArea.IsInside = false;
     }
 
     private void Update()
