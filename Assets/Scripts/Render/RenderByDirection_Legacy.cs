@@ -4,7 +4,7 @@ using System.Linq;
 using DG.Tweening;
 using UnityEngine;
 
-public class RenderByDirection : MonoBehaviour
+public class RenderByDirection_Legacy : MonoBehaviour
 {
     public static Define.RenderDirection[] renderTargets = {Define.RenderDirection.N , Define.RenderDirection.E};
     private Material[] _materials;
@@ -53,19 +53,12 @@ public class RenderByDirection : MonoBehaviour
 
             _meshRenderer.enabled = true;
             _materials[0].DOFade(1, 1f);
-            // foreach (var material in _materials)
-            // {
-            //     material.SetFloat("_IsRenderDirection", 1);    
-            // }
+
         }
         else
         {
             Debug.Log("NotContain");
             _meshRenderer.enabled = false;
-            // foreach (var material in _materials)
-            // {
-            //     material.SetFloat("_IsRenderDirection", 0);    
-            // }
         }
     }
 }
