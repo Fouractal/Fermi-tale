@@ -49,11 +49,17 @@ public class CameraTurnController : MonoBehaviour
     {
         orbitalTransposer.m_Heading.m_Bias += 90;
         orbitalTransposer.m_XAxis.Value -= 90;
+
+        cameraDirection = (Define.CameraDirection)(((int)cameraDirection + 1) % 4);
+        OnChangeDirection?.Invoke(cameraDirection);
     }
 
     private void CameraTurnCounterClockwise()
     {
         orbitalTransposer.m_Heading.m_Bias -= 90;
         orbitalTransposer.m_XAxis.Value += 90;
+        
+        cameraDirection = (Define.CameraDirection)(((int)cameraDirection + 3) % 4);
+        OnChangeDirection?.Invoke(cameraDirection);
     }
 }
