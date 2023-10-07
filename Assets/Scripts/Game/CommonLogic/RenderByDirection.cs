@@ -10,7 +10,7 @@ public class RenderByDirection : MonoBehaviour
     private float _maxXAxis  = 0f;
     private float _minXAxis  = 0f;
     
-    private BoxCollider _collider;
+    private Collider _collider;
     
     public bool isNorthSide = false;
     public bool isSouthSide = false;
@@ -23,6 +23,7 @@ public class RenderByDirection : MonoBehaviour
     private void Awake()
     {
         _collider = GetComponent<BoxCollider>();
+        if(_collider == null) _collider = GetComponent<MeshCollider>();
         _maxZAxis = _collider.bounds.max.z;
         _minZAxis = _collider.bounds.min.z;
         _maxXAxis = _collider.bounds.max.x;
