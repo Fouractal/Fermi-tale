@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.EventSystems;
-
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class CameraTurnController : MonoBehaviour
 {
@@ -11,6 +13,11 @@ public class CameraTurnController : MonoBehaviour
     private bool _isTurning = false;
 
     [SerializeField] private CinemachineOrbitalTransposer orbitalTransposer;
+
+    private Define.CameraDirection _cameraDirection = Define.CameraDirection.NE;
+
+    public delegate void DirectionHandler(Define.CameraDirection nextDirection);
+    public event DirectionHandler OnChangeDirection;
 
     private void Start()
     {
@@ -45,11 +52,13 @@ public class CameraTurnController : MonoBehaviour
     {
         orbitalTransposer.m_Heading.m_Bias += 90;
         orbitalTransposer.m_XAxis.Value -= 90;
+        OnChangeDirection?.Invoke(_cameraDirection);
     }
 
     private void CameraTurnCounterClockwise()
     {
         orbitalTransposer.m_Heading.m_Bias -= 90;
         orbitalTransposer.m_XAxis.Value += 90;
+        OnChangeDirection?.Invoke(_cameraDirection);
     }
 }
