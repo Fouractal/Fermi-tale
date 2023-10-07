@@ -14,7 +14,7 @@ public class MN_Scene : MonoBehaviour
         
         //캐릭터 생성
         GameObject mainCharacterPrefab = Resources.Load<GameObject>("Prefabs/MainCharacter/MainCharacter_Prefab");
-        GameObject playerObject = Instantiate(mainCharacterPrefab);
+        GameObject playerObject = Instantiate(mainCharacterPrefab, GameObject.Find("ObjectRoot").transform);
         PlayerCharacterManager.Instance.player = playerObject.GetComponent<Player>();
         
         // Cinemachine Virtual Cam에 Player 할당, 근데 씬 생성될 때 동적으로 virtualCam 컴포넌트 싱글톤으로 생성됨 근데 다시 할당한다?
