@@ -998,6 +998,8 @@ GameObject:
   - component: {fileID: 8092718449813706242}
   - component: {fileID: 5184247597847014296}
   - component: {fileID: 7373720728589474678}
+  - component: {fileID: 187059601322739219}
+  - component: {fileID: 7668842458363228020}
   m_Layer: 0
   m_Name: arches_corner_building
   m_TagString: Untagged
@@ -1083,6 +1085,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e397ade4c80bf94479fd1271cfe19f1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &187059601322739219
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1760616059230235938}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.833245, y: 2.8850377, z: 2.8321612}
+  m_Center: {x: -0.014187995, y: 1.4425188, z: 0.013646367}
+--- !u!114 &7668842458363228020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1760616059230235938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12acb425e53e7f348ab07ba828383ac6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isNorthSide: 0
+  isSouthSide: 0
+  isEastSide: 0
+  isWestSide: 0
 --- !u!1 &2007239337549140128
 GameObject:
   m_ObjectHideFlags: 0
@@ -1432,6 +1463,7 @@ GameObject:
   - component: {fileID: 3412928837617413859}
   - component: {fileID: 6328132198032874694}
   - component: {fileID: 2050809774969955732}
+  - component: {fileID: 257492428930204107}
   m_Layer: 0
   m_Name: Cube.008
   m_TagString: Untagged
@@ -1530,6 +1562,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e397ade4c80bf94479fd1271cfe19f1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &257492428930204107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2472415095214781974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12acb425e53e7f348ab07ba828383ac6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isNorthSide: 0
+  isSouthSide: 0
+  isEastSide: 0
+  isWestSide: 0
 --- !u!1 &2858300652650383955
 GameObject:
   m_ObjectHideFlags: 0
@@ -2187,6 +2235,7 @@ GameObject:
   - component: {fileID: 2937206601257984620}
   - component: {fileID: 3064887076460971611}
   - component: {fileID: 6593580133369117785}
+  - component: {fileID: 2570114949304515875}
   m_Layer: 0
   m_Name: arches_corner_building.002
   m_TagString: Untagged
@@ -2285,6 +2334,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e397ade4c80bf94479fd1271cfe19f1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2570114949304515875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3656129554797743465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12acb425e53e7f348ab07ba828383ac6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isNorthSide: 0
+  isSouthSide: 0
+  isEastSide: 0
+  isWestSide: 0
 --- !u!1 &3663771642517468688
 GameObject:
   m_ObjectHideFlags: 0
@@ -2408,6 +2473,7 @@ GameObject:
   - component: {fileID: 777336744929907335}
   - component: {fileID: 276947652195950369}
   - component: {fileID: 8897240365502339735}
+  - component: {fileID: 7118997505823331262}
   m_Layer: 0
   m_Name: Cube.004
   m_TagString: Untagged
@@ -2508,6 +2574,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e397ade4c80bf94479fd1271cfe19f1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7118997505823331262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3770034396176163491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12acb425e53e7f348ab07ba828383ac6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isNorthSide: 0
+  isSouthSide: 0
+  isEastSide: 0
+  isWestSide: 0
 --- !u!1 &3806305088236090946
 GameObject:
   m_ObjectHideFlags: 0
@@ -2741,6 +2823,7 @@ GameObject:
   - component: {fileID: 6157430645022464959}
   - component: {fileID: 7100714137375714812}
   - component: {fileID: 8482381506543265032}
+  - component: {fileID: 2277063877620729598}
   m_Layer: 0
   m_Name: Cube.003
   m_TagString: Untagged
@@ -2840,6 +2923,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e397ade4c80bf94479fd1271cfe19f1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2277063877620729598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4428418265871687344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12acb425e53e7f348ab07ba828383ac6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isNorthSide: 0
+  isSouthSide: 0
+  isEastSide: 0
+  isWestSide: 0
 --- !u!1 &4436920274401829128
 GameObject:
   m_ObjectHideFlags: 0
@@ -3185,6 +3284,7 @@ GameObject:
   - component: {fileID: 991349812703917819}
   - component: {fileID: 4751182466072367609}
   - component: {fileID: 7171058562865612235}
+  - component: {fileID: 8785313874563351542}
   m_Layer: 0
   m_Name: building
   m_TagString: Untagged
@@ -3282,6 +3382,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e397ade4c80bf94479fd1271cfe19f1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8785313874563351542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4765412667172435239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12acb425e53e7f348ab07ba828383ac6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isNorthSide: 0
+  isSouthSide: 0
+  isEastSide: 0
+  isWestSide: 0
 --- !u!1 &4772507834834354153
 GameObject:
   m_ObjectHideFlags: 0
@@ -3295,6 +3411,7 @@ GameObject:
   - component: {fileID: 3749241814930979308}
   - component: {fileID: 3114147031619936075}
   - component: {fileID: 7178114113607077637}
+  - component: {fileID: 2824186349364223484}
   m_Layer: 0
   m_Name: Cube.009
   m_TagString: Untagged
@@ -3393,6 +3510,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e397ade4c80bf94479fd1271cfe19f1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2824186349364223484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4772507834834354153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12acb425e53e7f348ab07ba828383ac6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isNorthSide: 0
+  isSouthSide: 0
+  isEastSide: 0
+  isWestSide: 0
 --- !u!1 &4790375022787024964
 GameObject:
   m_ObjectHideFlags: 0
@@ -3836,6 +3969,7 @@ GameObject:
   - component: {fileID: 5137468027077213042}
   - component: {fileID: 3050534296903832636}
   - component: {fileID: 8401952776738411375}
+  - component: {fileID: 2466224201830721943}
   m_Layer: 0
   m_Name: Cube.005
   m_TagString: Untagged
@@ -3936,6 +4070,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e397ade4c80bf94479fd1271cfe19f1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2466224201830721943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5218216737741921854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12acb425e53e7f348ab07ba828383ac6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isNorthSide: 0
+  isSouthSide: 0
+  isEastSide: 0
+  isWestSide: 0
 --- !u!1 &5294534388396049050
 GameObject:
   m_ObjectHideFlags: 0
@@ -4503,6 +4653,7 @@ GameObject:
   - component: {fileID: 2422740387304596364}
   - component: {fileID: 6849565223916269020}
   - component: {fileID: 7932383117339628867}
+  - component: {fileID: 1154174514081716937}
   m_Layer: 0
   m_Name: mall
   m_TagString: Untagged
@@ -4600,6 +4751,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e397ade4c80bf94479fd1271cfe19f1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1154174514081716937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5743195894086428079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12acb425e53e7f348ab07ba828383ac6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isNorthSide: 0
+  isSouthSide: 0
+  isEastSide: 0
+  isWestSide: 0
 --- !u!1 &5831743329671824326
 GameObject:
   m_ObjectHideFlags: 0
@@ -5057,6 +5224,7 @@ GameObject:
   - component: {fileID: 8951663483592766734}
   - component: {fileID: 7647464119719077867}
   - component: {fileID: 8894691111560248623}
+  - component: {fileID: 8283356787445971167}
   m_Layer: 0
   m_Name: Cube.006
   m_TagString: Untagged
@@ -5156,6 +5324,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e397ade4c80bf94479fd1271cfe19f1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8283356787445971167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6350587722790801829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12acb425e53e7f348ab07ba828383ac6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isNorthSide: 0
+  isSouthSide: 0
+  isEastSide: 0
+  isWestSide: 0
 --- !u!1 &6420371379950081495
 GameObject:
   m_ObjectHideFlags: 0
@@ -5281,6 +5465,7 @@ GameObject:
   - component: {fileID: 5340975106242220240}
   - component: {fileID: 3018957554963602188}
   - component: {fileID: 8707273951170626109}
+  - component: {fileID: 7600365499418237518}
   m_Layer: 0
   m_Name: Cube.001
   m_TagString: Untagged
@@ -5380,6 +5565,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e397ade4c80bf94479fd1271cfe19f1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7600365499418237518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6444899353598161617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12acb425e53e7f348ab07ba828383ac6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isNorthSide: 0
+  isSouthSide: 0
+  isEastSide: 0
+  isWestSide: 0
 --- !u!1 &7049841138083722460
 GameObject:
   m_ObjectHideFlags: 0
@@ -5948,6 +6149,7 @@ GameObject:
   - component: {fileID: 766019083113521035}
   - component: {fileID: 1296395993615302556}
   - component: {fileID: 6083469831906022251}
+  - component: {fileID: 5245304820974788600}
   m_Layer: 0
   m_Name: arches_corner_building.001
   m_TagString: Untagged
@@ -6046,6 +6248,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e397ade4c80bf94479fd1271cfe19f1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5245304820974788600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7640884726300798542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12acb425e53e7f348ab07ba828383ac6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isNorthSide: 0
+  isSouthSide: 0
+  isEastSide: 0
+  isWestSide: 0
 --- !u!1 &7705159611986939852
 GameObject:
   m_ObjectHideFlags: 0

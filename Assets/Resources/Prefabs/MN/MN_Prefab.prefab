@@ -669,8 +669,9 @@ GameObject:
   - component: {fileID: 5801813031036264303}
   - component: {fileID: 748372492671002171}
   - component: {fileID: 1910353081981820589}
-  - component: {fileID: 707887412}
+  - component: {fileID: 7464214504526304616}
   - component: {fileID: 8653024932170907453}
+  - component: {fileID: 9149456495401063020}
   m_Layer: 0
   m_Name: MN.MS.room
   m_TagString: Untagged
@@ -743,7 +744,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &707887412
+--- !u!65 &7464214504526304616
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -754,8 +755,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.001000002, y: 0.15070707, z: 0.15070707}
-  m_Center: {x: 0.0755, y: 0.00035355607, z: -0.00035355607}
+  m_Size: {x: 0.0010000023, y: 0.1507071, z: 0.15070707}
+  m_Center: {x: 0.07550001, y: 0.0003535559, z: -0.00035355607}
 --- !u!114 &8653024932170907453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -768,6 +769,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e397ade4c80bf94479fd1271cfe19f1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &9149456495401063020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1669781985578082033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12acb425e53e7f348ab07ba828383ac6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isNorthSide: 0
+  isSouthSide: 0
+  isEastSide: 0
+  isWestSide: 0
 --- !u!1 &1755104441412801312
 GameObject:
   m_ObjectHideFlags: 0
@@ -2404,8 +2421,9 @@ GameObject:
   - component: {fileID: 6391320053494186983}
   - component: {fileID: 8221146553624964998}
   - component: {fileID: 5216674768182072616}
-  - component: {fileID: 1817116532}
+  - component: {fileID: 4221925333217105529}
   - component: {fileID: 2327486670317513512}
+  - component: {fileID: 8369173335293012683}
   m_Layer: 0
   m_Name: MN.MS.room.002
   m_TagString: Untagged
@@ -2478,7 +2496,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &1817116532
+--- !u!64 &4221925333217105529
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2504,6 +2522,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e397ade4c80bf94479fd1271cfe19f1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8369173335293012683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6465947191239077465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12acb425e53e7f348ab07ba828383ac6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isNorthSide: 0
+  isSouthSide: 0
+  isEastSide: 0
+  isWestSide: 0
 --- !u!1 &7388783998179327849
 GameObject:
   m_ObjectHideFlags: 0
