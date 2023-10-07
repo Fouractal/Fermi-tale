@@ -48,6 +48,7 @@ public class PlayerController : MonoBehaviour
                                      + Mathf.Pow(endPos.y - startPos.y, 2))) / 100000f;
         if (_moveBlendValue > 0.5) player.speed = 1.2f;
         else player.speed = 0.7f;
+        player.playerAnimator.applyRootMotion = false;
         player.playerAnimator.SetFloat("MoveBlend", _moveBlendValue);
         //_playerController.playerAnimator.SetBool("IsWalking",true);
         //Debug.Log(_playerController.direction);
@@ -59,6 +60,7 @@ public class PlayerController : MonoBehaviour
         Debug.Log($"AfterInteraction");
         player.direction = Vector2.zero;
         _moveBlendValue = 0f;
+        player.playerAnimator.applyRootMotion = true;
         player.playerAnimator.SetFloat("MoveBlend", _moveBlendValue);
         //_playerController.playerAnimator.SetBool("IsWalking",false);
     }
