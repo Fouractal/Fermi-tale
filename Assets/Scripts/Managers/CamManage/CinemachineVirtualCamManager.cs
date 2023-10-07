@@ -6,7 +6,7 @@ using UnityEngine.Serialization;
 
 public class CinemachineVirtualCamManager : Singleton<CinemachineVirtualCamManager>
 {
-    public GameObject cameraRoot;
+    public Transform cameraRoot;
     public CinemachineVirtualCamera virtualCamera;
     public CinemachineFreeLook cinemachineFreeLook;
     public CameraTurnController cameraTurnController;
