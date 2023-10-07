@@ -20,7 +20,7 @@ public class RenderByDirection_Legacy : MonoBehaviour
         
         SetRenderByCameraDirection(Define.CameraDirection.NE);
         
-        CinemachineVirtualCamManager.Instance.cameraTurnController.OnChangeDirection += SetRenderByCameraDirection;
+        //CinemachineVirtualCamManager.Instance.cameraTurnController.OnChangeDirection += SetRenderByCameraDirection;
     }
 
     private void SetRenderByCameraDirection(Define.CameraDirection renderTargetDirection)
