@@ -11,7 +11,11 @@ public class CameraTurnController : MonoBehaviour
     private bool _isTurning = false;
 
     [SerializeField] private CinemachineOrbitalTransposer orbitalTransposer;
-
+    
+    public Define.CameraDirection cameraDirection = Define.CameraDirection.NE;
+    public delegate void DirectionHandler(Define.CameraDirection nextDirection);
+    public event DirectionHandler OnChangeDirection;
+    
     private void Start()
     {
         _touchPad = TouchPad.Instance;
