@@ -13,12 +13,11 @@ public class CameraTurnController : MonoBehaviour
     private bool _isTurning = false;
 
     [SerializeField] private CinemachineOrbitalTransposer orbitalTransposer;
-
-    private Define.CameraDirection _cameraDirection = Define.CameraDirection.NE;
-
+    
+    public Define.CameraDirection cameraDirection = Define.CameraDirection.NE;
     public delegate void DirectionHandler(Define.CameraDirection nextDirection);
     public event DirectionHandler OnChangeDirection;
-
+    
     private void Start()
     {
         _touchPad = TouchPad.Instance;
@@ -52,13 +51,17 @@ public class CameraTurnController : MonoBehaviour
     {
         orbitalTransposer.m_Heading.m_Bias += 90;
         orbitalTransposer.m_XAxis.Value -= 90;
-        OnChangeDirection?.Invoke(_cameraDirection);
+
+        cameraDirection = (Define.CameraDirection)(((int)cameraDirection + 1) % 4);
+        OnChangeDirection?.Invoke(cameraDirection);
     }
 
     private void CameraTurnCounterClockwise()
     {
         orbitalTransposer.m_Heading.m_Bias -= 90;
         orbitalTransposer.m_XAxis.Value += 90;
-        OnChangeDirection?.Invoke(_cameraDirection);
+        
+        cameraDirection = (Define.CameraDirection)(((int)cameraDirection + 3) % 4);
+        OnChangeDirection?.Invoke(cameraDirection);
     }
 }
