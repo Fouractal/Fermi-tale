@@ -18,6 +18,8 @@ public class RenderByDirection : MonoBehaviour
     private MeshRenderer _meshRenderer;
     private Material[] _materials;
 
+    public bool isInside = false;
+
     private void Awake()
     {
         _collider = GetComponent<BoxCollider>();
@@ -31,6 +33,7 @@ public class RenderByDirection : MonoBehaviour
 
     public void Update()
     {
+        if (!isInside) return;
         if (CinemachineVirtualCamManager.Instance.cameraTurnController == null) return;
         UpdateState(PlayerCharacterManager.Instance.player.transform.position);
         RenderByCameraDirection(CinemachineVirtualCamManager.Instance.cameraTurnController.cameraDirection);
