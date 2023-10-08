@@ -70,11 +70,11 @@ public class TouchPad : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
         else
         {
             _isAlreadyTap = true;
-            _intervalCheckRoutine = StartCoroutine(BoolHandleRoutine());
+            _intervalCheckRoutine = StartCoroutine(IntervalCheckRoutine());
         }
     }
 
-    private IEnumerator BoolHandleRoutine()
+    private IEnumerator IntervalCheckRoutine()
     {
         yield return new WaitForSecondsRealtime(doubleTapInterval);
         _isAlreadyTap = false;
