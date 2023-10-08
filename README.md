@@ -25,7 +25,7 @@
 <img src="https://github.com/Fouractal/Fermi-tale/assets/77562357/0553e788-8d5c-40c3-8f76-7fe20f0e62c4"  width="270px" height="600px"/>  
 <img src="https://github.com/Fouractal/Fermi-tale/assets/77562357/29569bfe-ecb9-416d-8425-5aee8a707ab0"  width="270px" height="600px"/>  
 
-- 플레이 영상 : https://youtube.com/shorts/_MX6hp0B95s
+- 플레이 영상 : https://youtu.be/ciPPWoApytU
 
 ## 개발 환경
 `Unity3D` `C#` `Git`
