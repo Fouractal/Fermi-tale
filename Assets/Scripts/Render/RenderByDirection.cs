@@ -5,10 +5,8 @@ using UnityEngine;
 
 public class RenderByDirection : MonoBehaviour
 {
-    private float _maxZAxis = 0f;
-    private float _minZAxis  = 0f;
-    private float _maxXAxis  = 0f;
-    private float _minXAxis  = 0f;
+    private Vector3 _objectMaxPos;
+    private Vector3 _objectMinPos;
     
     private Collider _collider;
     
@@ -24,13 +22,11 @@ public class RenderByDirection : MonoBehaviour
     {
         _collider = GetComponent<BoxCollider>();
         if(_collider == null) _collider = GetComponent<MeshCollider>();
-        _maxZAxis = _collider.bounds.max.z;
-        _minZAxis = _collider.bounds.min.z;
-        _maxXAxis = _collider.bounds.max.x;
-        _minXAxis = _collider.bounds.min.x;
+        _objectMaxPos = _collider.bounds.max;
+        _objectMinPos = _collider.bounds.min;
 
         _meshRenderer = GetComponent<MeshRenderer>();
-        _materials = _meshRenderer.materials;
+        _materials = _meshRenderer.materials; 
     }
 
     public void Update()
@@ -42,15 +38,10 @@ public class RenderByDirection : MonoBehaviour
 
     private void UpdateState(Vector3 playerPos)
     {
-        isNorthSide = false;
-        isSouthSide = false;
-        isEastSide = false;
-        isWestSide = false;
-
-        if (playerPos.z < _minZAxis) isNorthSide = true;
-        if (playerPos.z > _maxZAxis) isSouthSide = true;
-        if (playerPos.x < _minXAxis) isEastSide = true;
-        if (playerPos.x > _maxXAxis) isWestSide = true;
+        isNorthSide = Vector3.Dot(_objectMinPos-playerPos, Vector3.forward) > 0;
+        isSouthSide = Vector3.Dot(_objectMaxPos-playerPos, Vector3.forward) < 0;
+        isEastSide = Vector3.Cross(_objectMinPos-playerPos, Vector3.forward).y < 0;
+        isWestSide = Vector3.Cross(_objectMaxPos-playerPos, Vector3.forward).y > 0;
     }
 
     private void RenderByCameraDirection(Define.CameraDirection direction)
