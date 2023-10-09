@@ -55,11 +55,11 @@ Shader "Custom/Lit/ClipFromCharacter"
 
         void surf(Input IN, inout SurfaceOutputStandard o)
         {
-            float distance_x = abs(_PivotPoint.x - IN.worldPos.x);
-            float distance_z = abs(_PivotPoint.z - IN.worldPos.z);
-
             if(_IsStartGame > 0.5f)
             {
+                float distance_x = abs(_PivotPoint.x - IN.worldPos.x);
+                float distance_z = abs(_PivotPoint.z - IN.worldPos.z);
+                
                 clip(_CutoffDistance - distance_x);
                 clip(_CutoffDistance - distance_z);    
             }
