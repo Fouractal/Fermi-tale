@@ -13,7 +13,6 @@ Shader "Custom/Lit/ClipFromCharacter"
         _CutoffDistance ("Cutoff Distance", Range(0.0, 10.0)) = 5.0
 
         [MaterialToggle] _IsStartGame ("Is Start Game", Float) = 0
-        [MaterialToggle] _IsRenderDirection ("Is Render Direction", Float) = 0
     }
     SubShader
     {
@@ -65,21 +64,10 @@ Shader "Custom/Lit/ClipFromCharacter"
                 clip(_CutoffDistance - distance_z);    
             }
             
-            // Albedo comes from a texture tinted by color
             fixed4 c = tex2D(_MainTex, IN.uv_MainTex) * _Color;
             o.Albedo = c.rgb * _Intensity;
-            // Metallic and smoothness come from slider variables
             o.Metallic = _Metallic;
             o.Smoothness = _Glossiness;
-
-            if(_IsRenderDirection > 0.5f)
-            {
-                o.Alpha = c.a;
-            }
-            else
-            {
-                o.Alpha = 0;
-            }
         }
         ENDCG
     }
