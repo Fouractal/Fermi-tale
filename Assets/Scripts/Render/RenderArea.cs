@@ -24,16 +24,16 @@ public class RenderArea : Singleton<RenderArea>
     {
         // Quternion -> Euler로 바꿔서 * (-1) -> Quternion
         transform.localRotation = 
-            Quaternion.Euler(0, -PlayerCharacterManager.Instance.playerController.transform.rotation.eulerAngles.y, 0);
+            Quaternion.Euler(0, -PlayerCharacterManager.Instance.player.transform.rotation.eulerAngles.y, 0);
     }
 
 #if UNITY_EDITOR
-    private void OnDrawGizmosSelected()
+    private void OnDrawGizmos()
     {
         BoxCollider boxCollider = GetComponent<BoxCollider>();
         
-        //Gizmos.color = new Color(0,1,0,0.2f);
-        //Gizmos.DrawCube(transform.position, boxCollider.size);
+        Gizmos.color = new Color(0,1,0,0.2f);
+        Gizmos.DrawCube(transform.position, boxCollider.size);
     }
 #endif
     
