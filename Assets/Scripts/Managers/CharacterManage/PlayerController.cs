@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 startPos;       // 시작점 위치
     private Vector2 endPos;         // 끝점 위치
     private Vector2 direction;      // 계산한 방향
+    private Vector2 originalVector;
     private float _moveBlendValue;
     
     private void Start()
@@ -40,10 +41,20 @@ public class PlayerController : MonoBehaviour
         endPos = eventData.position;
         // JoyStick 터치 길이에 따른 Move Blend Tree 값 변경, (Idle <-> Walk <-> Run)
         //Debug.Log(Mathf.Abs(Mathf.Pow(endPos.x - startPos.x,2)
-        //                    + Mathf.Pow(endPos.y - startPos.y,2)));
+        //                  + Mathf.Pow(endPos.y - startPos.y,2)));
         //임의로 20만을 Blend Tree 최댓값으로 설정.
         
-        player.direction = (endPos - startPos).normalized;
+        originalVector = (endPos - startPos).normalized;
+        
+        // 시계 방향 90도 회전 (현재 벡터 기준 변환 방식)
+        player.direction.x = originalVector.y;
+        player.direction.y = -originalVector.x;
+        
+        // 반시계 방향 90도 회전 (현재 벡터 기준 변환 방식)
+        player.direction.x = originalVector.y;
+        player.direction.y = -originalVector.x;
+        
+        //player.direction = (endPos - startPos).normalized;    
         _moveBlendValue = (Mathf.Abs(Mathf.Pow(endPos.x - startPos.x, 2)
                                      + Mathf.Pow(endPos.y - startPos.y, 2))) / 100000f;
         if (_moveBlendValue > 0.5) player.speed = 1.2f;
