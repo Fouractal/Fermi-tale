@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.XR;
 
 public class PlayerController : MonoBehaviour
 {
@@ -24,6 +25,8 @@ public class PlayerController : MonoBehaviour
         touchPad.drag.OnDragStart += PosMark;
         touchPad.drag.OnWhileDrag += CharacterMove;
         touchPad.drag.OnDragDone += AfterInteraction;
+        touchPad.longPress.OnLongPress += TryInteraction;
+        touchPad.longPress.OnLongPress += Haptic;
     }
     
 
@@ -61,5 +64,21 @@ public class PlayerController : MonoBehaviour
         player.playerAnimator.applyRootMotion = true;
         player.playerAnimator.SetFloat("MoveBlend", _moveBlendValue);
         //_playerController.playerAnimator.SetBool("IsWalking",false);
+    }
+
+    private void TryInteraction(PointerEventData eventData)
+    {
+        Ray ray = Camera.main.ScreenPointToRay(eventData.position);
+        RaycastHit raycastHit;
+        
+        if (Physics.Raycast(ray, out raycastHit, 100f, LayerMask.GetMask("Object")))
+        {
+            raycastHit.collider.GetComponent<IInteractable>()?.Interaction();
+        }
+    }
+
+    private void Haptic(PointerEventData eventData)
+    {
+        Handheld.Vibrate();
     }
 }
