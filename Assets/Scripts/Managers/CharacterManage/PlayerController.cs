@@ -30,7 +30,6 @@ public class PlayerController : MonoBehaviour
     private void PosMark(PointerEventData eventData)
     {
         // 시작점 기억
-        Debug.Log($"PosMark");
         startPos = eventData.position;
     }
 
@@ -57,7 +56,6 @@ public class PlayerController : MonoBehaviour
     private void AfterInteraction(PointerEventData eventData)
     {
         // 이동 종료시 direction 제거
-        Debug.Log($"AfterInteraction");
         player.direction = Vector2.zero;
         _moveBlendValue = 0f;
         player.playerAnimator.applyRootMotion = true;
