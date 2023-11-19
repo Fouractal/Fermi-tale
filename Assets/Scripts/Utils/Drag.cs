@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Dragable : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler
+public class Drag : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
     public delegate void DragHandler(PointerEventData eventData);
     public event DragHandler OnDragStart;
@@ -16,29 +16,16 @@ public class Dragable : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        if(OnDragStart != null)
-        {
-            eventData.pointerDrag = this.gameObject;
-            OnDragStart(eventData);
-        }
+        OnDragStart?.Invoke(eventData);
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        if(OnDragDone != null)
-        {
-            eventData.pointerDrag = this.gameObject;
-            OnDragDone(eventData);
-        }
+        OnDragDone?.Invoke(eventData);
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        if(OnWhileDrag != null)
-        {
-            eventData.pointerDrag = this.gameObject;
-            OnWhileDrag(eventData);
-        }
+        OnWhileDrag?.Invoke(eventData);
     }
-
 }

@@ -21,9 +21,9 @@ public class PlayerController : MonoBehaviour
         player = PlayerCharacterManager.Instance.player;
         touchPad = TouchPad.Instance;
         
-        touchPad.OnDragStart += PosMark;
-        touchPad.OnWhileDrag += CharacterMove;
-        touchPad.OnDragDone += AfterInteraction;
+        touchPad.drag.OnDragStart += PosMark;
+        touchPad.drag.OnWhileDrag += CharacterMove;
+        touchPad.drag.OnDragDone += AfterInteraction;
     }
     
 
