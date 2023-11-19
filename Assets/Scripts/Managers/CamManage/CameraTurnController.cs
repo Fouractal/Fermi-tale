@@ -21,7 +21,7 @@ public class CameraTurnController : MonoBehaviour
     private void Start()
     {
         _touchPad = TouchPad.Instance;
-        _touchPad.OnDoubleTap += CameraTurn;
+        _touchPad.doubleTap.OnDoubleTap += CameraTurn;
 
         orbitalTransposer = CinemachineVirtualCamManager.Instance.cinemachineOrbitalTransposer;
         orbitalTransposer.m_RecenterToTargetHeading.m_enabled = true;
