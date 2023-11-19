@@ -135,7 +135,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ae8981c0ffd42acb01e1eeabefc13fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pressThreshold: 1
+  pressTimeThreshold: 0.5
+  pressDistThreshold: 100
 --- !u!1 &1811829607292353273
 GameObject:
   m_ObjectHideFlags: 0

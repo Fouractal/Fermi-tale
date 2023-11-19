@@ -8,8 +8,10 @@ public class LongPress : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     public event PressHandler OnLongPress;
 
-    public float pressThreshold;
+    public float pressTimeThreshold;
+    public float pressDistThreshold;
 
+    private Vector3 _posMark;
     private Coroutine _pressCheckRoutine = null;
 
     public void OnPointerDown(PointerEventData eventData)
@@ -24,7 +26,13 @@ public class LongPress : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     private IEnumerator PressCheckRoutine(PointerEventData eventData)
     {
-        yield return new WaitForSecondsRealtime(pressThreshold);
-        OnLongPress?.Invoke(eventData);
+        _posMark = eventData.position;
+        
+        yield return new WaitForSecondsRealtime(pressTimeThreshold);
+        
+        if (Vector3.Distance(_posMark, eventData.position) < pressDistThreshold)
+        {
+            OnLongPress?.Invoke(eventData);
+        }
     }
 }
