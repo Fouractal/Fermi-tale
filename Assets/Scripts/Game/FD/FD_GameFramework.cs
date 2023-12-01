@@ -27,6 +27,7 @@ public class FD_GameFramework : GameFramework
         yield return new WaitUntil(() => Phase == Define.FD_Phase.Childhood);
         SpawnFriend();
         InitFriendsPos();
+        SpawnPortal();
         
         yield return new WaitUntil(() => Phase == Define.FD_Phase.Adolescence);
         SpawnFriend();
@@ -54,7 +55,8 @@ public class FD_GameFramework : GameFramework
 
     private void SpawnPortal()
     {
-        
+        GameObject portalPrefab = Resources.Load<GameObject>("Prefabs/Portal");
+        Instantiate(portalPrefab, new Vector3(2, 1, -2), Quaternion.identity);
     }
 
     private void CheckPhase(int overlapCount)
