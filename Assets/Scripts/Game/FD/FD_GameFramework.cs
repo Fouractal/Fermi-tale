@@ -27,8 +27,7 @@ public class FD_GameFramework : GameFramework
         yield return new WaitUntil(() => Phase == Define.FD_Phase.Childhood);
         SpawnFriend();
         InitFriendsPos();
-        SpawnPortal();
-        
+
         yield return new WaitUntil(() => Phase == Define.FD_Phase.Adolescence);
         SpawnFriend();
         InitFriendsPos();
