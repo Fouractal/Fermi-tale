@@ -16,6 +16,7 @@ public class ClockHand : MonoBehaviour
     {
         _clockHands.Add(this);
     }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") || other.CompareTag("Friend") || other.CompareTag("ClockHand"))
