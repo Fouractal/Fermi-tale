@@ -1,8 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public abstract class GameFramework
+public abstract class GameFramework : MonoBehaviour
 {
-    protected Coroutine gameFramework = null;
-    protected abstract IEnumerator GameFrameworkCoroutine();
+
 }
