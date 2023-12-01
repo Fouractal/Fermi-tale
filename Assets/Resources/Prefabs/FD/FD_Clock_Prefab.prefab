@@ -43,9 +43,11 @@ GameObject:
   - component: {fileID: 1939769696798481754}
   - component: {fileID: 4114575059123956349}
   - component: {fileID: 5357170787587930273}
+  - component: {fileID: 871895268}
+  - component: {fileID: 871895269}
   m_Layer: 0
   m_Name: FD.MS.hour
-  m_TagString: Untagged
+  m_TagString: ClockHand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -115,6 +117,32 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &871895268
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1075758534190887554}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.4, y: 0.015, z: 0.1}
+  m_Center: {x: 0, y: 0.025, z: 0.4}
+--- !u!114 &871895269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1075758534190887554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97b77d5b114842c590a2486c8ad2de14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  overlapCount: 0
 --- !u!1 &1395721982003284153
 GameObject:
   m_ObjectHideFlags: 0
@@ -625,10 +653,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 669878da27989e04282f559a5e26c4c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hourHand: {fileID: 819173241301954998}
-  minuteHand: {fileID: 2874194232669755638}
-  speed: 50
-  areaSize: 0
+  hourHand: {fileID: 871895269}
+  minuteHand: {fileID: 348030174}
+  hourHandTransform: {fileID: 8140181457144773680}
+  minuteHandTransform: {fileID: 1406777682000750914}
   audioSource: {fileID: 0}
 --- !u!1 &2176915976900711133
 GameObject:
@@ -641,9 +669,11 @@ GameObject:
   - component: {fileID: 7187096841272256331}
   - component: {fileID: 2222133270267578677}
   - component: {fileID: 3151501983081747861}
+  - component: {fileID: 348030173}
+  - component: {fileID: 348030174}
   m_Layer: 0
   m_Name: FD.MS.minute
-  m_TagString: Untagged
+  m_TagString: ClockHand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -713,6 +743,32 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &348030173
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2176915976900711133}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.01, z: 0.1}
+  m_Center: {x: 0, y: 0.01, z: 0}
+--- !u!114 &348030174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2176915976900711133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97b77d5b114842c590a2486c8ad2de14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  overlapCount: 0
 --- !u!1 &2443034743459183314
 GameObject:
   m_ObjectHideFlags: 0
