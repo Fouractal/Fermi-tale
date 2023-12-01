@@ -7,41 +7,55 @@ using UnityEngine.UIElements;
 
 public class HugeClock : MonoBehaviour
 {
-    [Header("Object")]
-    public GameObject hourHand;
-    public GameObject minuteHand;
+    [Header("ClockHand")]
+    public ClockHand hourHand;
+    public ClockHand minuteHand;
+    
+    public Transform hourHandTransform;
+    public Transform minuteHandTransform;
 
     [Header("Data")]
-    public float areaSize;
+    private int _time;
+    public int Time
+    {
+        get => _time;
+        set => _time = value % (12 * 12);
+    }
+    
     public AudioSource audioSource;
+
+    
 
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
+        
         StartCoroutine(Ticktock());
     }
 
-    public void Alert()
+    private void Start()
     {
-        audioSource.clip = Resources.Load<AudioClip>("Sounds/FouractalClock1");
-        audioSource.Play();
+        //ClockHand.OnClockHandsOverlap += Alert;
     }
 
     public IEnumerator Ticktock()
     {
-        int time = 0;
-
         while (true)
         {
             yield return new WaitForSecondsRealtime(1f);
-            time++;
-            time %= 12 * 12;
-            
+            Time++;
+
             Sequence sequence = DOTween.Sequence();
             sequence
-                .Append(minuteHand.transform.DOLocalRotate(Vector3.up * time * 30, 0.5f).SetEase(Ease.OutCubic))
-                .Join(hourHand.transform.DOLocalRotate(Vector3.up * time * 2.5f, 0.5f).SetEase(Ease.OutCubic));
+                .Append(minuteHandTransform.DOLocalRotate(Vector3.up * Time * 30, 0.5f).SetEase(Ease.OutCubic))
+                .Join(hourHandTransform.DOLocalRotate(Vector3.up * Time * 2.5f, 0.5f).SetEase(Ease.OutCubic))
+                .AppendCallback(ClockHand.CheckClockHandOverlap);
         }
     }
     
+    public void Alert(int count)
+    {
+        audioSource.clip = Resources.Load<AudioClip>("Sounds/FouractalClock1");
+        audioSource.Play();
+    }
 }
