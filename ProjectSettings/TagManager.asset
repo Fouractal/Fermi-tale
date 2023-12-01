@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Test
+  - Friend
+  - ClockHand
   layers:
   - Default
   - TransparentFX
@@ -12,8 +14,8 @@ TagManager:
   - Test
   - Water
   - UI
-  - 
-  - 
+  - ClockHand
+  - Player
   - 
   - 
   - 
