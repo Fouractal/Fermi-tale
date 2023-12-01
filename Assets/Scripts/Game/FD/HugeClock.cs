@@ -22,20 +22,19 @@ public class HugeClock : MonoBehaviour
         set => _time = value % (12 * 12);
     }
     
-    public AudioSource audioSource;
+    public AudioSource ticktockAudioSource;
+    public AudioSource eventAudioSource;
 
     
 
     private void Awake()
     {
-        audioSource = GetComponent<AudioSource>();
-        
         StartCoroutine(Ticktock());
     }
 
     private void Start()
     {
-        //ClockHand.OnClockHandsOverlap += Alert;
+        ClockHand.OnClockHandsOverlap += Alert;
     }
 
     public IEnumerator Ticktock()
@@ -53,9 +52,9 @@ public class HugeClock : MonoBehaviour
         }
     }
     
-    public void Alert(int count)
+    public void Alert(int overlapCount)
     {
-        audioSource.clip = Resources.Load<AudioClip>("Sounds/FouractalClock1");
-        audioSource.Play();
+        eventAudioSource.clip = Resources.Load<AudioClip>($"Sounds/FD/FouractalClock{overlapCount}");
+        eventAudioSource.Play();
     }
 }
