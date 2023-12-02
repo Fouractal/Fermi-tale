@@ -42,7 +42,7 @@ public class FD_GameFramework : GameFramework
 
     private void SpawnFriend()
     {
-        GameObject friendPrefab = Resources.Load<GameObject>("Prefabs/FD/Friend");
+        GameObject friendPrefab = Resources.Load<GameObject>("Prefabs/FD/teenager_fox");
         Friend newFriend = Instantiate(friendPrefab, Vector3.back, Quaternion.identity).GetComponent<Friend>();
         friends.Add(newFriend);
     }
