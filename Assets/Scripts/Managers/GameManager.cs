@@ -7,5 +7,5 @@ public class GameManager : Singleton<GameManager>
 {
     public GameManager() {} 
 
-    public GameFramework gameFramework = null;
+    public GameFramework GameFramework { get; set; }
 }
