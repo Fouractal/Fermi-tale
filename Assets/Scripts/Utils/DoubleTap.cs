@@ -2,11 +2,12 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class DoubleTapHandler : MonoBehaviour, IPointerDownHandler
+public class DoubleTap : MonoBehaviour, IPointerDownHandler
 {
-    public float doubleTapInterval;
     public delegate void TapHandler(PointerEventData eventData);
     public event TapHandler OnDoubleTap;
+    
+    public float doubleTapInterval;
 
     private bool _isAlreadyTap = false;
     private Coroutine _intervalCheckRoutine = null;
@@ -22,11 +23,11 @@ public class DoubleTapHandler : MonoBehaviour, IPointerDownHandler
         else
         {
             _isAlreadyTap = true;
-            _intervalCheckRoutine = StartCoroutine(BoolHandleRoutine());
+            _intervalCheckRoutine = StartCoroutine(IntervalCheckRoutine());
         }
     }
 
-    private IEnumerator BoolHandleRoutine()
+    private IEnumerator IntervalCheckRoutine()
     {
         yield return new WaitForSecondsRealtime(doubleTapInterval);
         _isAlreadyTap = false;
