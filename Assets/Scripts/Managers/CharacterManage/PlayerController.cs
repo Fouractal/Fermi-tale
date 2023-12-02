@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.XR;
 
 public class PlayerController : MonoBehaviour
 {
@@ -21,16 +22,17 @@ public class PlayerController : MonoBehaviour
         player = PlayerCharacterManager.Instance.player;
         touchPad = TouchPad.Instance;
         
-        touchPad.OnDragStart += PosMark;
-        touchPad.OnWhileDrag += CharacterMove;
-        touchPad.OnDragDone += AfterInteraction;
+        touchPad.drag.OnDragStart += PosMark;
+        touchPad.drag.OnWhileDrag += CharacterMove;
+        touchPad.drag.OnDragDone += AfterInteraction;
+        touchPad.longPress.OnLongPress += TryInteraction;
+        touchPad.longPress.OnLongPress += Haptic;
     }
     
 
     private void PosMark(PointerEventData eventData)
     {
         // 시작점 기억
-        Debug.Log($"PosMark");
         startPos = eventData.position;
     }
 
@@ -57,11 +59,26 @@ public class PlayerController : MonoBehaviour
     private void AfterInteraction(PointerEventData eventData)
     {
         // 이동 종료시 direction 제거
-        Debug.Log($"AfterInteraction");
         player.direction = Vector2.zero;
         _moveBlendValue = 0f;
         player.playerAnimator.applyRootMotion = true;
         player.playerAnimator.SetFloat("MoveBlend", _moveBlendValue);
         //_playerController.playerAnimator.SetBool("IsWalking",false);
+    }
+
+    private void TryInteraction(PointerEventData eventData)
+    {
+        Ray ray = Camera.main.ScreenPointToRay(eventData.position);
+        RaycastHit raycastHit;
+        
+        if (Physics.Raycast(ray, out raycastHit, 100f, LayerMask.GetMask("Object")))
+        {
+            raycastHit.collider.GetComponent<IInteractable>()?.Interaction();
+        }
+    }
+
+    private void Haptic(PointerEventData eventData)
+    {
+        Handheld.Vibrate();
     }
 }
