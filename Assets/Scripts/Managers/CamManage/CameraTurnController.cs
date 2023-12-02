@@ -54,6 +54,7 @@ public class CameraTurnController : MonoBehaviour
 
         cameraDirection = (Define.CameraDirection)(((int)cameraDirection + 1) % 4);
         OnChangeDirection?.Invoke(cameraDirection);
+        
     }
 
     private void CameraTurnCounterClockwise()
@@ -63,5 +64,6 @@ public class CameraTurnController : MonoBehaviour
         
         cameraDirection = (Define.CameraDirection)(((int)cameraDirection + 3) % 4);
         OnChangeDirection?.Invoke(cameraDirection);
+        
     }
 }
