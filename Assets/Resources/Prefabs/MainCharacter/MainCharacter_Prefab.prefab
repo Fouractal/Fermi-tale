@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1953358811}
   - component: {fileID: 3963972199272674301}
   m_Layer: 0
-  m_Name: ClipChecker
+  m_Name: RenderArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

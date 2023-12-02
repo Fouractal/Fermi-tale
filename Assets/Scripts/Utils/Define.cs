@@ -21,4 +21,13 @@ public class Define
         SW,
         NW
     }
+
+    public enum FD_Phase
+    {
+        Start,
+        Childhood,
+        Adolescence,
+        Earlyadulthood,
+        End
+    }
 }
