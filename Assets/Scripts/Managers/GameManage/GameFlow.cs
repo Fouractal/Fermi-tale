@@ -9,11 +9,11 @@ public class GameFlow : MonoBehaviour
         GameManager.Instance.GameFlow = this;
     }
 
-    public void LoadNextScene()
+    public void LoadNextScene(Define.FadeType fadeType)
     {
         IEnumerator LoadNextSceneRoutine()
         {
-            Overlay.FadeOut();
+            Overlay.FadeOut(fadeType);
         
             yield return new WaitForSecondsRealtime(3f);
             int curSceneIndex = SceneManager.GetActiveScene().buildIndex;
