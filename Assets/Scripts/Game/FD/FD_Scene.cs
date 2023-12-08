@@ -12,11 +12,10 @@ public class FD_Scene : MonoBehaviour
         PlayerCharacterManager.Instance.player = playerObject.GetComponent<Player>();
         
         CinemachineVirtualCamManager.Instance.virtualCamera = GameObject.Find("followCam").GetComponent<CinemachineVirtualCamera>();
+        CinemachineVirtualCamManager.Instance.cinemachineOrbitalTransposer = CinemachineVirtualCamManager.Instance.virtualCamera.GetCinemachineComponent<CinemachineOrbitalTransposer>();
         CinemachineVirtualCamManager.Instance.virtualCamera.LookAt = playerObject.transform;
         CinemachineVirtualCamManager.Instance.virtualCamera.Follow = playerObject.transform;
         
-        GameObject touchPadPrefab = UIManager.Instance.ShowSceneUI("Prefabs/UI/TouchPadCanvas"); 
-        
-        PlayerCharacterManager.Instance.playerController.InitEvent();
+        GameObject touchPadPrefab = UIManager.Instance.ShowSceneUI("Prefabs/UI/TouchPadCanvas");
     }
 }

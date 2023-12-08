@@ -6,4 +6,9 @@ public class PlayerCharacterManager : Singleton<PlayerCharacterManager>
 {
     public Player player;
     public PlayerController playerController;
+
+    private void Awake()
+    {
+        playerController = GetComponent<PlayerController>();
+    }
 }
