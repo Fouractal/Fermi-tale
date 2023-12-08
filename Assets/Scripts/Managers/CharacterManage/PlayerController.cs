@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 originalVector;
     private float _moveBlendValue;
 
-    private void Start()
+    public void InitEvent()
     {
         player = PlayerCharacterManager.Instance.player;
         touchPad = TouchPad.Instance;
