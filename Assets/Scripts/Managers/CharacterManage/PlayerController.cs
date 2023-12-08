@@ -97,6 +97,10 @@ public class PlayerController : MonoBehaviour
 
     private void Haptic(PointerEventData eventData)
     {
+#if UNITY_ANDROID && !UNITY_EDITOR
+        AndroidUtils.Vibrate(20);
+#else
         Handheld.Vibrate();
+#endif
     }
 }
