@@ -17,7 +17,7 @@ public class CameraTurnController : MonoBehaviour
     public Define.CameraDirection cameraDirection = Define.CameraDirection.NE;
     public delegate void DirectionHandler(Define.CameraDirection nextDirection);
     public event DirectionHandler OnChangeDirection;
-    
+
     private void Start()
     {
         _touchPad = TouchPad.Instance;
