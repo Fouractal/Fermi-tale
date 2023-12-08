@@ -16,5 +16,7 @@ public class FD_Scene : MonoBehaviour
         CinemachineVirtualCamManager.Instance.virtualCamera.Follow = playerObject.transform;
         
         GameObject touchPadPrefab = UIManager.Instance.ShowSceneUI("Prefabs/UI/TouchPadCanvas"); 
+        
+        PlayerCharacterManager.Instance.playerController.InitEvent();
     }
 }
