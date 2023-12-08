@@ -6,19 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class Portal : MonoBehaviour
 {
-    private Coroutine sceneChangeRoutine = null;
+    private bool _isInteractable = true;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && sceneChangeRoutine == null)
+        if (other.CompareTag("Player") && _isInteractable)
         {
-            sceneChangeRoutine = StartCoroutine(JoinNextScene());
+            _isInteractable = false;
+            GameManager.Instance.GameFlow.LoadNextScene();
         }
-    }
-
-    private IEnumerator JoinNextScene()
-    {
-        yield return new WaitForSecondsRealtime(3f);
-        int curSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(curSceneIndex + 1);
     }
 }
