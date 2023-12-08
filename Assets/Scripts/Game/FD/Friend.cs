@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class Friend : MonoBehaviour//, Interactable
+public class Friend : MonoBehaviour, IInteractable
 {
     private Rigidbody _rigidbody;
     private Transform _target;
@@ -21,8 +21,6 @@ public class Friend : MonoBehaviour//, Interactable
     
     public void Update()
     {
-        if(Input.GetKeyDown(KeyCode.A)) Interaction();
-
         if (!is_following) return;
         
         float dist = Vector3.Distance(_target.position, transform.position);
