@@ -37,11 +37,11 @@ public class CameraTurnController : MonoBehaviour
         
         if (eventData.position.x <= 540)
         {
-            CameraTurnClockwise();
+            CameraTurnCounterClockwise();
         }
         else
         {
-            CameraTurnCounterClockwise();
+            CameraTurnClockwise();
         }
 
         _isTurning = false;
