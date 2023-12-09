@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class GameManager : Singleton<GameManager>
 {
-    public GameManager() {} 
-
+    public GameManager() {}
+    public GameFlow GameFlow { get; set; }
     public GameFramework GameFramework { get; set; }
 }

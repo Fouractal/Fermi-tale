@@ -17,7 +17,7 @@ public class CameraTurnController : MonoBehaviour
     public Define.CameraDirection cameraDirection = Define.CameraDirection.NE;
     public delegate void DirectionHandler(Define.CameraDirection nextDirection);
     public event DirectionHandler OnChangeDirection;
-    
+
     private void Start()
     {
         _touchPad = TouchPad.Instance;
@@ -37,11 +37,11 @@ public class CameraTurnController : MonoBehaviour
         
         if (eventData.position.x <= 540)
         {
-            CameraTurnClockwise();
+            CameraTurnCounterClockwise();
         }
         else
         {
-            CameraTurnCounterClockwise();
+            CameraTurnClockwise();
         }
 
         _isTurning = false;
