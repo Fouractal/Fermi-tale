@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 originalVector;
     private float _moveBlendValue;
 
-    private void Start()
+    public void Start()
     {
         player = PlayerCharacterManager.Instance.player;
         touchPad = TouchPad.Instance;
@@ -97,6 +97,10 @@ public class PlayerController : MonoBehaviour
 
     private void Haptic(PointerEventData eventData)
     {
+#if UNITY_ANDROID && !UNITY_EDITOR
+        AndroidUtils.Vibrate(20);
+#else
         Handheld.Vibrate();
+#endif
     }
 }

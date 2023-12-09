@@ -6,20 +6,18 @@ public class Define
         Cube
     }
 
-    public enum RenderDirection
-    {
-        N,
-        E,
-        W,
-        S
-    }
-
     public enum CameraDirection
     {
         NE,
         SE,
         SW,
         NW
+    }
+
+    public enum FadeType
+    {
+        Black,
+        White
     }
 
     public enum FD_Phase
