@@ -46,8 +46,8 @@ public class PlayerController : MonoBehaviour
         player.direction = (endPos - startPos).normalized;
         _moveBlendValue = (Mathf.Abs(Mathf.Pow(endPos.x - startPos.x, 2)
                                      + Mathf.Pow(endPos.y - startPos.y, 2))) / 100000f;
-        if (_moveBlendValue > 0.5) player.speed = 1.2f;
-        else player.speed = 0.7f;
+        if (_moveBlendValue > 0.5) player.speed = player.runSpeed;
+        else player.speed = player.walkSpeed; // distance 작든 크든
         player.playerAnimator.applyRootMotion = false;
         player.playerAnimator.SetFloat("MoveBlend", _moveBlendValue);
         //_playerController.playerAnimator.SetBool("IsWalking",true);

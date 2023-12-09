@@ -4,6 +4,9 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public float speed;
+    public float runSpeed;
+    public float walkSpeed;
+    
     private Rigidbody _rigidbody;
 
     public Animator playerAnimator;
@@ -18,10 +21,11 @@ public class Player : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         Move();
     }
+    
     public Vector3 ConvertXYtoXZ()
     {
         float x = direction.x;
