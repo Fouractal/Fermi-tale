@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using DG.Tweening;
 using UnityEngine;
 
 public class Rose : MonoBehaviour
@@ -30,12 +31,19 @@ public class Rose : MonoBehaviour
 
     public void Show()
     {
-        
+        Sequence sequence = DOTween.Sequence();
+
+        sequence
+            .Append(transform.DOScale(Vector3.one, 1f));
     }
 
     public void Hide()
     {
-        Destroy(gameObject);
+        Sequence sequence = DOTween.Sequence();
+
+        sequence
+            .Append(transform.DOScale(Vector3.zero, 1f))
+            .AppendCallback(() => Destroy(gameObject));
     }
 
     public static void ShowNextRose()
