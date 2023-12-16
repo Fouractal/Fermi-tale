@@ -60,6 +60,7 @@ public class ChasingPlayer : MonoBehaviour
 
     private void ChasePlayer(GameObject playerObj)
     {
+        Debug.Log("Chase!");
         _doTweenPath.DOPause();
         transform.DOMove(playerObj.transform.position, 5f);
     }
