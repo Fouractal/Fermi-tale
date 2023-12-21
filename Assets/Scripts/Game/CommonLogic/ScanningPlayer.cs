@@ -6,6 +6,8 @@ public class ScanningPlayer : MonoBehaviour
 {
     // Player를 실시간 스캔, Animation 재생의 origin 게임 오브젝트에 부착될 스크립트.
     // 가장 상위 스크립트에 감지된 player 정보 전달함.
+    
+    [Header("Scan Property : Custom Mesh")]
     public float distance = 10f;
     public float angle = 30f;
     public float height = 1.0f;
@@ -21,7 +23,7 @@ public class ScanningPlayer : MonoBehaviour
     public float _scanInterval = 1f;
     public float _scanTimer = 0.5f;
 
-    private DOTweenPath _doTweenPath;
+    public ChasingPlayer chasingPlayer;
     void Start()
     {
         _scanInterval = 1.0f / scanFrequency;
@@ -42,35 +44,31 @@ public class ScanningPlayer : MonoBehaviour
     {
         _count = Physics.OverlapSphereNonAlloc(transform.position, distance, _colliders, layers,
             QueryTriggerInteraction.Collide);
+        
         Objects.Clear();
         // transform.DOPause();
         for (int i = 0; i < _count; i++)
         {
             GameObject obj = _colliders[i].gameObject;
+            
             if (IsInSight(obj))
             {
                 Debug.Log("Is in sight");
                 Objects.Add(obj);
-                ChasePlayer(obj);
+                chasingPlayer.ChasePlayer(obj); // Chasing Player로 player Transform 전달
                 // isChasing = true;
             }
         }
     }
-
-    private void ChasePlayer(GameObject playerObj)
-    {
-        Debug.Log("Chase!");
-        // _doTweenPath.DOPause();
-        transform.DOLookAt(playerObj.transform.position, 5f);
-        // transform.DOMove(playerObj.transform.position, 5f);
-    }
+    
     public bool IsInSight(GameObject obj)
     {
         Vector3 origin = transform.position;
         Vector3 dest = obj.transform.position;
         Vector3 direction = dest - origin;
-        if (direction.y < -0.3 ||direction.y > height/2)
+        if (direction.y > height/2) // direction.y < -0.3 조건 제외. monster의 y scale 값에 따라 높이 차는 달라짐.
         {
+            Debug.Log($"direction.y : {direction.y}");
             return false;
         }
 
@@ -78,6 +76,7 @@ public class ScanningPlayer : MonoBehaviour
         float deltaAngle = Vector3.Angle(direction, transform.forward);
         if (deltaAngle > angle)
         {
+            Debug.Log("2");
             return false;
         }
 
@@ -85,6 +84,7 @@ public class ScanningPlayer : MonoBehaviour
         dest.y = origin.y;
         if (Physics.Linecast(origin,dest, occulusionLayers))
         {
+            Debug.Log("3");
             return false;
         }
         return true;
