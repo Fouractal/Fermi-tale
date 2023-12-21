@@ -61,8 +61,9 @@ public class ChasingPlayer : MonoBehaviour
     private void ChasePlayer(GameObject playerObj)
     {
         Debug.Log("Chase!");
-        _doTweenPath.DOPause();
+        // _doTweenPath.DOPause();
         transform.DOMove(playerObj.transform.position, 5f);
+        transform.DOLookAt(playerObj.transform.position, 5f);
     }
     public bool IsInSight(GameObject obj)
     {
