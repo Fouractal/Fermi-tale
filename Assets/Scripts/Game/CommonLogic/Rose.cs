@@ -45,10 +45,14 @@ public class Rose : MonoBehaviour
 
     public void Hide()
     {
+        _isFlying = false;
+
+        Vector3 endPos = RoseContainer.GetRose(ownIndex + 1).transform.position;
+        
         Sequence sequence = DOTween.Sequence();
 
         sequence
-            .Append(transform.DOScale(Vector3.zero, 1f))
+            .Append(transform.DOJump(endPos,2f, 1, 2f))
             .AppendCallback(() => Destroy(gameObject));
     }
 
