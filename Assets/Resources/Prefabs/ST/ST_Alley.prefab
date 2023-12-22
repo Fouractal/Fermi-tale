@@ -1110,10 +1110,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12acb425e53e7f348ab07ba828383ac6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _collider: {fileID: 0}
   isNorthSide: 0
   isSouthSide: 0
   isEastSide: 0
   isWestSide: 0
+  isInside: 0
 --- !u!1 &2007239337549140128
 GameObject:
   m_ObjectHideFlags: 0
@@ -1574,10 +1576,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12acb425e53e7f348ab07ba828383ac6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _collider: {fileID: 0}
   isNorthSide: 0
   isSouthSide: 0
   isEastSide: 0
   isWestSide: 0
+  isInside: 0
 --- !u!1 &2858300652650383955
 GameObject:
   m_ObjectHideFlags: 0
@@ -2047,8 +2051,8 @@ Transform:
   m_GameObject: {fileID: 3271860215234334608}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 5.1, y: 0.24200106, z: 2.4}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2484254260736284902}
   - {fileID: 8487668752723551111}
@@ -2346,10 +2350,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12acb425e53e7f348ab07ba828383ac6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _collider: {fileID: 0}
   isNorthSide: 0
   isSouthSide: 0
   isEastSide: 0
   isWestSide: 0
+  isInside: 0
 --- !u!1 &3663771642517468688
 GameObject:
   m_ObjectHideFlags: 0
@@ -2586,10 +2592,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12acb425e53e7f348ab07ba828383ac6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _collider: {fileID: 0}
   isNorthSide: 0
   isSouthSide: 0
   isEastSide: 0
   isWestSide: 0
+  isInside: 0
 --- !u!1 &3806305088236090946
 GameObject:
   m_ObjectHideFlags: 0
@@ -2935,10 +2943,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12acb425e53e7f348ab07ba828383ac6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _collider: {fileID: 0}
   isNorthSide: 0
   isSouthSide: 0
   isEastSide: 0
   isWestSide: 0
+  isInside: 0
 --- !u!1 &4436920274401829128
 GameObject:
   m_ObjectHideFlags: 0
@@ -3394,10 +3404,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12acb425e53e7f348ab07ba828383ac6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _collider: {fileID: 0}
   isNorthSide: 0
   isSouthSide: 0
   isEastSide: 0
   isWestSide: 0
+  isInside: 0
 --- !u!1 &4772507834834354153
 GameObject:
   m_ObjectHideFlags: 0
@@ -3522,10 +3534,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12acb425e53e7f348ab07ba828383ac6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _collider: {fileID: 0}
   isNorthSide: 0
   isSouthSide: 0
   isEastSide: 0
   isWestSide: 0
+  isInside: 0
 --- !u!1 &4790375022787024964
 GameObject:
   m_ObjectHideFlags: 0
@@ -4082,10 +4096,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12acb425e53e7f348ab07ba828383ac6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _collider: {fileID: 0}
   isNorthSide: 0
   isSouthSide: 0
   isEastSide: 0
   isWestSide: 0
+  isInside: 0
 --- !u!1 &5294534388396049050
 GameObject:
   m_ObjectHideFlags: 0
@@ -4763,10 +4779,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12acb425e53e7f348ab07ba828383ac6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _collider: {fileID: 0}
   isNorthSide: 0
   isSouthSide: 0
   isEastSide: 0
   isWestSide: 0
+  isInside: 0
 --- !u!1 &5831743329671824326
 GameObject:
   m_ObjectHideFlags: 0
@@ -5336,10 +5354,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12acb425e53e7f348ab07ba828383ac6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _collider: {fileID: 0}
   isNorthSide: 0
   isSouthSide: 0
   isEastSide: 0
   isWestSide: 0
+  isInside: 0
 --- !u!1 &6420371379950081495
 GameObject:
   m_ObjectHideFlags: 0
@@ -5577,10 +5597,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12acb425e53e7f348ab07ba828383ac6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _collider: {fileID: 0}
   isNorthSide: 0
   isSouthSide: 0
   isEastSide: 0
   isWestSide: 0
+  isInside: 0
 --- !u!1 &7049841138083722460
 GameObject:
   m_ObjectHideFlags: 0
@@ -6260,10 +6282,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12acb425e53e7f348ab07ba828383ac6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _collider: {fileID: 0}
   isNorthSide: 0
   isSouthSide: 0
   isEastSide: 0
   isWestSide: 0
+  isInside: 0
 --- !u!1 &7705159611986939852
 GameObject:
   m_ObjectHideFlags: 0

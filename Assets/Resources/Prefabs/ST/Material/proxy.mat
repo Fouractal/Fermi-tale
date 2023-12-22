@@ -72,6 +72,7 @@ Material:
     - _Glossiness: 0.100000024
     - _GlossyReflections: 1
     - _Intensity: 0.5
+    - _IsStartGame: 0
     - _Metallic: 0
     - _Mode: 3
     - _OcclusionStrength: 1
