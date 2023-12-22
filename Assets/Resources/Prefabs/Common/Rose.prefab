@@ -179,7 +179,7 @@ GameObject:
   - component: {fileID: 539482608}
   m_Layer: 0
   m_Name: Rose
-  m_TagString: Untagged
+  m_TagString: Rose
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -213,6 +213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f88cc350ca5468e4b820b56b78d0d855, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ownIndex: 3
 --- !u!65 &539482608
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -29,4 +29,10 @@ public class RoseContainer : MonoBehaviour
         if (RoseList.Count <= targetIndex) return;
         RoseList[targetIndex].gameObject.SetActive(true);
     }
+
+    public static Rose GetRose(int targetIndex)
+    {
+        if (RoseList.Count <= targetIndex) return null;
+        return RoseList[targetIndex];
+    }
 }

@@ -8,6 +8,8 @@ using UnityEngine;
 public class Rose : MonoBehaviour
 {
     public int ownIndex;
+
+    private bool _isFlying = false;
     
     private void Start()
     {
@@ -22,9 +24,13 @@ public class Rose : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (_isFlying == false && other.CompareTag("Player"))
         {
-            RoseContainer.ShowRose(ownIndex+1);
+            _isFlying = true;
+            RoseContainer.ShowRose(ownIndex+1);    
+        }
+        else if (_isFlying && other.CompareTag("Rose"))
+        {
             Hide();
         }
     }
@@ -44,5 +50,20 @@ public class Rose : MonoBehaviour
         sequence
             .Append(transform.DOScale(Vector3.zero, 1f))
             .AppendCallback(() => Destroy(gameObject));
+    }
+
+    public void LeadToNextRose()
+    {
+        Rose targetRose = RoseContainer.GetRose(ownIndex + 1);
+
+        Vector3 dir = (targetRose.transform.position - PlayerCharacterManager.Instance.player.transform.position).normalized * 3;
+        Vector3 movement = new Vector3(Mathf.Sin(Time.time * 2.5f), Mathf.Cos(Time.time * 3), Mathf.Sin(Time.time * 3.3f)) * 0.5f + Vector3.up;
+
+        transform.position = PlayerCharacterManager.Instance.player.transform.position + dir + movement;
+    }
+
+    public void Update()
+    {
+        if(_isFlying) LeadToNextRose();
     }
 }
