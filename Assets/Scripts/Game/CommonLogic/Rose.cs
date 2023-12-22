@@ -7,11 +7,11 @@ using UnityEngine;
 
 public class Rose : MonoBehaviour
 {
-    private static Queue<Rose> roseQueue = new Queue<Rose>();
-
-    private void Awake()
+    public int ownIndex;
+    
+    private void Start()
     {
-        roseQueue.Enqueue(this);
+        RoseContainer.Register(this);
         gameObject.SetActive(false);
     }
 
@@ -24,7 +24,7 @@ public class Rose : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            ShowNextRose();
+            RoseContainer.ShowRose(ownIndex+1);
             Hide();
         }
     }
@@ -44,11 +44,5 @@ public class Rose : MonoBehaviour
         sequence
             .Append(transform.DOScale(Vector3.zero, 1f))
             .AppendCallback(() => Destroy(gameObject));
-    }
-
-    public static void ShowNextRose()
-    {
-        if (roseQueue.Count == 0) return;
-        roseQueue.Dequeue().gameObject.SetActive(true);
     }
 }
