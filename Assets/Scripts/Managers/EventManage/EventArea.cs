@@ -31,11 +31,8 @@ public class EventArea : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Trigger Step 1");
         if (areaEventData.maxExecuteCount <= areaEventData.curExecuteCount && areaEventData.maxExecuteCount != -1 ) return;
-        Debug.Log("Trigger Step 2");
         if (!other.CompareTag("Player")) return;
-        Debug.Log("Trigger Step 3");
         areaEventData.func();
         areaEventData.curExecuteCount++;
     }
