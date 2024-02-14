@@ -14,6 +14,12 @@
 
 // keep this file in sync with LitGBufferPass.hlsl
 
+CBUFFER_START(UnityPerMatial)
+    float4 _PivotPoint;
+    float _CutoffDistance;
+    float _IsStartGame;
+CBUFFER_END
+
 struct Attributes
 {
     float4 positionOS   : POSITION;
@@ -187,6 +193,7 @@ Varyings LitPassVertex(Attributes input)
     output.shadowCoord = GetShadowCoord(vertexInput);
 #endif
 
+    
     output.positionCS = vertexInput.positionCS;
 
     return output;
@@ -219,30 +226,14 @@ half4 LitPassFragment(Varyings input) : SV_Target
     ApplyDecalToSurfaceData(input.positionCS, surfaceData, inputData);
 #endif
 
-#ifdef _PivotPoint
-    float4 pivotPoint = _PivotPoint;
-    float cutOffDistance = _CutoffDistance;
-    float isStartGame = _IsStartGame;
-
-    if(isStartGame)
+    if(_IsStartGame > 0.5f)
     {
-        float distance_x = abs(5 - input.positionCS.x);
-        float distance_y = abs(5 - input.positionCS.y);
-        float distance_z = abs(5 - input.positionCS.z);
-
-        clip(5 - distance_x);
-        //clip(cutOffDistance - distance_y);
-        clip(5 - distance_z);  
+        float distance_x = abs(_PivotPoint.x - input.positionWS.x);
+        float distance_z = abs(_PivotPoint.z - input.positionWS.z);
+                 
+        clip(_CutoffDistance - distance_x);
+        clip(_CutoffDistance - distance_z);
     }
-#endif
-
-        //float distance_x = abs(5 - input.positionCS.x);
-        //float distance_y = abs(5 - input.positionCS.y);
-        //float distance_z = abs(5 - input.positionCS.z);
-
-        //clip(5 - distance_x);
-        //clip(cutOffDistance - distance_y);
-        //clip(5 - distance_z);    
     
     half4 color = UniversalFragmentPBR(inputData, surfaceData);
 

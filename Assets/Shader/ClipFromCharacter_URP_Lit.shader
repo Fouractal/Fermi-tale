@@ -144,10 +144,6 @@ Shader "Custom/Lit/ClipFromCharacter_URP_Lit"
             #pragma multi_compile_instancing
             #pragma instancing_options renderinglayer
             #pragma multi_compile _ DOTS_INSTANCING_ON
-
-            #pragma shader_feature_local _PivotPoint
-            #pragma shader_feature_local _CutoffDistance
-            #pragma shader_feature_local _IsStartGame
             
             #pragma vertex LitPassVertex
             #pragma fragment LitPassFragment
@@ -380,68 +376,6 @@ Shader "Custom/Lit/ClipFromCharacter_URP_Lit"
 
             #include "Packages/com.unity.render-pipelines.universal/Shaders/LitInput.hlsl"
             #include "Packages/com.unity.render-pipelines.universal/Shaders/Utils/Universal2D.hlsl"
-            ENDHLSL
-        }
-        
-        Pass
-        {
-            HLSLPROGRAM
-            #pragma vertex vert
-            #pragma fragment frag
-
-            #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Lighting.hlsl"
-            //HLSL 라이브러리를 사용
-
-            struct Attributes
-            {
-                float4 vertex : POSITION;
-                float2 uv : TEXCOORD0;
-            };
-
-            struct Varyings
-            {
-                float2 uv : TEXCOORD0;
-                float4 vertex : SV_POSITION;
-            };
-
-            sampler2D _MainTex;
-            //Texture2D _MainTex;
-            //SamplerState sampler_MainTex;
-            
-            //TEXTURE2D (_MainTex);
-            //SAMPLER(sampler_MainTex);
-
-
-			CBUFFER_START(UnityPerMatial)
-				float4 _MainTex_ST;
-            	float4 _PivotPoint;
-                float _CutoffDistance;
-                float _IsStartGame;
-            CBUFFER_END
-            
-            Varyings vert (Attributes v) //여기가 버텍스 쉐이더. 매개변수 v를 갖고, o값을 반환
-            {
-                Varyings o;
-                o.vertex = TransformObjectToHClip(v.vertex.xyz);
-                o.uv = TRANSFORM_TEX(v.uv, _MainTex);
-                
-                return o;
-            }
-
-            half4 frag (Varyings i) : SV_Target
-            {
-                if(_IsStartGame > 0.5f)
-                {
-                    float distance_x = abs(_PivotPoint.x - i.vertex.x);
-                    float distance_z = abs(_PivotPoint.z - i.vertex.z);
-                
-                    clip(_CutoffDistance - distance_x);
-                    clip(_CutoffDistance - distance_z);    
-                }
-
-                half4 col = tex2D(_MainTex, i.uv);
-                return col;
-            }
             ENDHLSL
         }
     }
