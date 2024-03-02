@@ -255,6 +255,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49988e2f53e186544a2c17444e6541f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
 --- !u!1 &937854035
 GameObject:
   m_ObjectHideFlags: 0
@@ -547,7 +548,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4340dfd58ed85f64eb1abd4ec3a449a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blackObjectController: {fileID: 0}
+  blackObjectController: {fileID: 626663301}
 --- !u!1001 &1799835921
 PrefabInstance:
   m_ObjectHideFlags: 0
