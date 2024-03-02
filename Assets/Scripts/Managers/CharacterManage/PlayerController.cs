@@ -65,9 +65,14 @@ public class PlayerController : MonoBehaviour
                 break;
         }
 
+        Debug.Log($"x diff : {Mathf.Abs(endPos.x - startPos.x)}, y diff : {Mathf.Abs(endPos.y - startPos.y)}");
+        float value = 40f;
+        if (Mathf.Abs(endPos.x - startPos.x) < value && Mathf.Abs(endPos.y - startPos.y) < value) player.direction = Vector2.zero;
+            // Debug.Log($"_moveBlendValue : {_moveBlendValue}, x distance : {endPos.x - startPos.x}, y distance : {endPos.y - startPos.y}");
         _moveBlendValue = (Mathf.Abs(Mathf.Pow(endPos.x - startPos.x, 2)
                                      + Mathf.Pow(endPos.y - startPos.y, 2))) / 100000f;
-        if (_moveBlendValue > 0.5) player.speed = 1.2f;
+        if (_moveBlendValue < 0.01) _moveBlendValue = 0;
+        if (_moveBlendValue > 0.5) player.speed = 1.1f;
         else player.speed = 0.7f;
         player.playerAnimator.applyRootMotion = false;
         player.playerAnimator.SetFloat("MoveBlend", _moveBlendValue);
