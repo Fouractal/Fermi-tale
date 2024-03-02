@@ -46,12 +46,38 @@ public class BlackObjectController : MonoBehaviour
         yield return null;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private IEnumerator BGObjectIsHit(GameObject BGObject)
+    {
+        Debug.Log($"{BGObject.name} is Hit");
+        yield return new WaitForSeconds(2f);
+
+        /*BGObject.GetComponent<Collider>().enabled = false;
+        Rigidbody rb = BGObject.GetComponent<Rigidbody>(); 
+        rb.useGravity = false;
+        rb.velocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;*/
+        Destroy(BGObject);
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.layer == 30)
+        {
+            StartCoroutine(BGObjectIsHit(collision.gameObject));
+        }
+        
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            StopCoroutine(ChasingPlayer(_playerTransform));
+            Debug.Log("The Black Got a Player");
+        }
+    }
+    
+    /*private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             StopCoroutine(ChasingPlayer(_playerTransform));
             Debug.Log("The Black Got a Player");
         }
-    }
+    }*/ 
 }
