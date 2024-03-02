@@ -3,7 +3,132 @@ guid: e7bc8b56f9ad24347a8173be495f630d
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LV.Mt.bush.leaves
+    second: {fileID: 2100000, guid: f503b18943ca5e14585e0d55132b187d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal
+    second: {fileID: 2100000, guid: 3d348d3acf5e5e646a5651916eab858c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Standard_2
+    second: {fileID: 2100000, guid: 64c80a42a256e8043beb0e447960f322, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Standard_3
+    second: {fileID: 2100000, guid: d0f5e666544b8b7438e99adc2b6139ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood_gazebo
+    second: {fileID: 2100000, guid: 5c1e2d3612fa4854cb283c695f03004e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _LV.MT.arch
+    second: {fileID: 2100000, guid: a3ee7c29b6e64b74b8b19a3f9faaf37f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _LV.MT.birdge
+    second: {fileID: 2100000, guid: 319af1d371ba7504cad187e3ab478dce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _LV.MT.fountain
+    second: {fileID: 2100000, guid: 083c7dc595b60554db916b544b256325, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _LV.MT.road
+    second: {fileID: 2100000, guid: 917b3b052bde330458d6069530fa6b74, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _LV.MT.streetlight
+    second: {fileID: 2100000, guid: 32a33fb5a2036834aa27ca0db16545ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _LV.MT.streetlight.glass
+    second: {fileID: 2100000, guid: 091d9f7e4a9ac1a43a5ac47fc92abdab, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _MV.MT.GRass
+    second: {fileID: 2100000, guid: e291d70dabe4f9e4094be3aeec366b04, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gnome_mat
+    second: {fileID: 2100000, guid: addae3c7ea10b544d863cf35566c163f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wire_026177148
+    second: {fileID: 2100000, guid: 09a43e6c4dadd0b41a5da3d0de0fe005, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wire_141007058
+    second: {fileID: 2100000, guid: 3365e36f097b0fd409b611d7a0b4d7ab, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wire_154154229
+    second: {fileID: 2100000, guid: 66812ebbfe78b9646997144d64b9eb76, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wire_177026088
+    second: {fileID: 2100000, guid: 89c47094bbeabe4479136f3ed1a1717e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wire_224087143
+    second: {fileID: 2100000, guid: a58e3a2a61626a949bd7ff5fe4302c6a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wire_224198087
+    second: {fileID: 2100000, guid: c3b96b34ba0c9f14aaf9a7183c16348d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wire_229166215
+    second: {fileID: 2100000, guid: a4e881ec581fc5242b1707681060b99f, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: gnome_low_gnome_mat_BaseColor
+    second: {fileID: 2800000, guid: 0bc664d5e3ad07a4fb83c1db61a901af, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: gnome_low_gnome_mat_Metallic
+    second: {fileID: 2800000, guid: a176e3771075fca4d8746805aa22d10b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: gnome_low_gnome_mat_Normal
+    second: {fileID: 2800000, guid: 35846ed6372e13a429ea8f558ae861db, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: gnome_low_gnome_mat_Roughness
+    second: {fileID: 2800000, guid: bb56cb3dd6d73554ea3dd491a0f17b1b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: leaf
+    second: {fileID: 2800000, guid: bcf2d7f80448de14c816e36234af69f0, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
