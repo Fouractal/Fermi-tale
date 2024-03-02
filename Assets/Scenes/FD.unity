@@ -239,7 +239,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fba0b3ceb791e654aa801cab0db633a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraRoot: {fileID: 0}
   virtualCamera: {fileID: 0}
+  cinemachineFreeLook: {fileID: 0}
   cameraTurnController: {fileID: 0}
   cinemachineOrbitalTransposer: {fileID: 0}
 --- !u!1 &326879953
@@ -359,6 +361,7 @@ GameObject:
   m_Component:
   - component: {fileID: 726579737}
   - component: {fileID: 726579736}
+  - component: {fileID: 726579738}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -443,6 +446,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &726579738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 726579735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &827087548
 GameObject:
   m_ObjectHideFlags: 0
@@ -681,6 +704,10 @@ PrefabInstance:
     - target: {fileID: 1539327828749786569, guid: 089f03629d0648e4ba0642466d4c9ca7, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1539327828749786569, guid: 089f03629d0648e4ba0642466d4c9ca7, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1539327828749786569, guid: 089f03629d0648e4ba0642466d4c9ca7, type: 3}
       propertyPath: m_LocalPosition.x
