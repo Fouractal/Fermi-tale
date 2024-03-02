@@ -3,7 +3,117 @@ guid: 13e8fe0ac4cc3184b9a7f5b77883b83a
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LV.Mt.tree
+    second: {fileID: 2100000, guid: 538c6691dec22b043b7729869457c50b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LV.Mt.tree.001
+    second: {fileID: 2100000, guid: cc98f720ad5d02c48b38a88205d2500d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: 3c951e39f47e49a4184774a3fe5c0c55, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: 4bd0a814ff0b2eb48b9f1f257816fef3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.003
+    second: {fileID: 2100000, guid: b16766dc69a993244b712e086fd547f3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood_white.001
+    second: {fileID: 2100000, guid: fbb5649b651595b4dbeaf87f6796a677, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _LV.MT.arch
+    second: {fileID: 2100000, guid: 63642c1780c9d944598d70005db714f1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _LV.MT.birdge
+    second: {fileID: 2100000, guid: 0e1f6e108d119514fb66f44a7cea97b2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _LV.MT.flowers
+    second: {fileID: 2100000, guid: f5a69a1e2ba30594d8301c122dc9318d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _LV.MT.leaves
+    second: {fileID: 2100000, guid: b075314fe2b5b7347911dd27f7dd8b41, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _LV.MT.shovel
+    second: {fileID: 2100000, guid: 1454fbdfe0992c84385c6f5a4b3b51e1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _LV.MT.shovel.001
+    second: {fileID: 2100000, guid: 0900cf5d1b29bb34f9ac213577af8923, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _LV.MT.water
+    second: {fileID: 2100000, guid: 8812ec4cc3ca83445bff1f6a2343ccb5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _MV.MT.GRass
+    second: {fileID: 2100000, guid: 59b0a44d2be0b49478135c31d61c2534, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: grass
+    second: {fileID: 2100000, guid: bb8c711c39777d7498ba0e18731a455e, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Gradient
+    second: {fileID: 2800000, guid: 10733c8b8794cf9429c410d70ddd5fb9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Metal038_2K_Color
+    second: {fileID: 2800000, guid: 222b2ba5e039bb04aaf1031b067fb36b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Metal038_2K_Metalness
+    second: {fileID: 2800000, guid: a107786482d82fa45b8f36743f408daa, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Metal038_2K_Roughness
+    second: {fileID: 2800000, guid: 0e23ff4d00c259c40b2019f3defe619d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: freijo_linha_madeira_do_brasil_guararapes
+    second: {fileID: 2800000, guid: 15362dabb0053254fa80a0da7788b344, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: leaves
+    second: {fileID: 2800000, guid: a061698e520e3734495ee0cdeafdb858, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: tree
+    second: {fileID: 2800000, guid: 71b65a8a21f97cb44aa79c5c3515a1b5, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
