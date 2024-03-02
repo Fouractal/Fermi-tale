@@ -7,26 +7,32 @@ using UnityEngine.EventSystems;
 
 public class BlackObjectController : MonoBehaviour
 {
-    public Animator animator;
+    private Animator _animator;
+    public SkinnedMeshRenderer _meshRenderer;
     private Transform _playerTransform;
 
     private void Start()
     {
-        animator = GetComponent<Animator>();
+        _animator = GetComponent<Animator>();
         AnimSpeedUp();
     }
 
     void AnimSpeedUp()
     {
-        animator.speed = 1;
+        _animator.speed = 1;
     }
 
-
+    private void StartChasingSetting()
+    {
+        _meshRenderer.enabled = true;
+        _animator.applyRootMotion = true;
+    }
     public IEnumerator ChasingPlayer(Transform player)
     {
         Debug.Log("Start Chasing Player");
         _playerTransform = player;
-        //
+        StartChasingSetting();
+        
         float lookAtTime = 0.5f;
         while (true)
         {
