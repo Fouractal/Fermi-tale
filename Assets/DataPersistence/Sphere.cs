@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class Sphere : MonoBehaviour, IDataPersistence
+public class Sphere : MonoBehaviour //, IDataPersistence
 {
     [SerializeField] private string id;
 
