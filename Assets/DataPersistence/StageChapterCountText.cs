@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class StageChapterCountText : MonoBehaviour, IDataPersistence
+public class StageChapterCountText : MonoBehaviour // , IDataPersistence
 {
     private int _stageIndex = 0;
     private int _chapterIndex = 0;

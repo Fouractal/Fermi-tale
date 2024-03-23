@@ -10,7 +10,7 @@ public class DataPersistenceManager : MonoBehaviour
     private string fileName;
     [SerializeField] private bool useEncryption;
     
-    private GameData _gameData;
+    private PlayerData _gameData;
     private List<IDataPersistence> _dataPersistenceObjects;
     private FileDataHandler _dataHandler;
     public static DataPersistenceManager instance { get; private set; }
@@ -33,7 +33,7 @@ public class DataPersistenceManager : MonoBehaviour
 
     public void NewGame()
     {
-        this._gameData = new GameData();
+        this._gameData = new PlayerData();
     }
     
     public void LoadGame()
@@ -62,7 +62,7 @@ public class DataPersistenceManager : MonoBehaviour
         {
             dataPersistenceObject.SaveData(ref _gameData);
         }
-        Debug.Log("Saved Stage, Chapter Index = " +_gameData.stageIndex +", " + _gameData.chapterIndex);
+        Debug.Log("Saved Stage, Chapter Index = " +_gameData.sceneName +", " + _gameData.chapterIndex);
 
         // TODO - save that data to a file using the data handler
         _dataHandler.Save(_gameData);
