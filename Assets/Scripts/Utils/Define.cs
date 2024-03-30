@@ -28,4 +28,14 @@ public class Define
         Earlyadulthood,
         End
     }
+
+    public enum Scene
+    {
+        MN,
+        FM, 
+        ST, 
+        FD, 
+        LV, 
+        MR
+    }
 }
