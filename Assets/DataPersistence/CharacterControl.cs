@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterControl : MonoBehaviour, IDataPersistence
+public class CharacterControl : MonoBehaviour// , IDataPersistence
 {
     void Update()
     {
