@@ -6,24 +6,24 @@ using UnityEngine.Serialization;
 [System.Serializable]
 public class PlayerData
 {
-    public string sceneName;
+    public Define.Scene sceneName;
     public int chapterIndex;
 
-    [FormerlySerializedAs("itemDatas")] public List<ItemData> itemDataList;
-    
+    public List<ItemData> itemDataList;
+
     // 사용자 설정
     public bool isBGMOn;
-    public bool isSoundEffectOn;
+    public bool isEffectSoundOn;
 
     public PlayerData()
     {
-        this.sceneName = "";
+        this.sceneName = Define.Scene.MN;
         this.chapterIndex = 0;
-        
+
         itemDataList = new List<ItemData>();
 
         this.isBGMOn = true;
-        this.isSoundEffectOn = true;
+        this.isEffectSoundOn = true;
     }
 }
 
