@@ -29,3 +29,23 @@ public class Define
         End
     }
 }
+
+namespace Game.LV
+{
+    public enum Phase
+    {
+        OneOrder,
+        AddOrder,
+        TooMuchOrder,
+        Darkness
+    }
+    
+    public enum Quest
+    {
+        None,
+        Watering,
+        Fertilizing,
+        RemoveBugs,
+        Cleaning
+    }
+}
