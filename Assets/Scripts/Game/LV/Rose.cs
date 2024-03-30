@@ -39,7 +39,7 @@ namespace Game.LV
             {
                 _quest = (Quest)Random.Range(1, 5);
                 _timer.OnNextTimeOver += QuestFail;
-                _timer.StartTimer(10f);
+                _timer.StartTimer(30f);
 
                 Vector3 curPos = transform.position;
                 Vector3 targetPos = new Vector3(curPos.x, 8, curPos.z);
@@ -54,6 +54,7 @@ namespace Game.LV
 
         private void QuestSuccess()
         {
+            Debug.Log("Quest Success!");
             _timer.StopTimer();
             _quest = Quest.None;
             _questUI.HideQuestUI();
@@ -63,6 +64,7 @@ namespace Game.LV
 
         private void QuestFail()
         {
+            Debug.Log("Quest Fail...");
             _quest = Quest.None;
             _questUI.HideQuestUI();
             
@@ -71,9 +73,11 @@ namespace Game.LV
 
         public void Interaction()
         {
-            if (_quest != Quest.Cleaning) return;
-            
-            QuestSuccess();
+            Debug.Log("RoseInteraction");
+            if (_quest == Quest.Cleaning && Inventory.Item is Towel) QuestSuccess();
+            if (_quest == Quest.Fertilizing && Inventory.Item is Fertilizer) QuestSuccess();
+            if (_quest == Quest.Watering && Inventory.Item is WateringCan) QuestSuccess();
+            if (_quest == Quest.RemoveBugs && Inventory.Item is GlassCover) QuestSuccess();
         }
     }
 }

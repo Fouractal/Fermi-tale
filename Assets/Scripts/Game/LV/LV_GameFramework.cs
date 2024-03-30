@@ -62,6 +62,8 @@ namespace Game.LV
             yield return new WaitUntil(() => _phase == Phase.TooMuchOrder);
 
             yield return new WaitUntil(() => _phase == Phase.Darkness);
+            
+            Debug.Log("Done!");
         }
 
         private void SetDark()
