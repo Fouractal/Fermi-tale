@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 1410644955597235920}
   - component: {fileID: 1410644955597235921}
   - component: {fileID: -4965398888106388090}
-  m_Layer: 0
+  - component: {fileID: 2127648823}
+  m_Layer: 6
   m_Name: LVRose
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,14 +27,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1410644955597235922}
-  m_LocalRotation: {x: -0.04556898, y: 0.70563704, z: 0.70563686, w: 0.045568988}
+  m_LocalRotation: {x: -0.04556972, y: 0.7056369, z: 0.7056369, w: 0.04556972}
   m_LocalPosition: {x: 0.51447046, y: 2.8440208, z: -0.71313614}
-  m_LocalScale: {x: 10, y: 10, z: 10}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 172.61}
 --- !u!33 &1410644955597235920
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -100,3 +101,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09a026c5ae6a5b14aa3d335bb27b22d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &2127648823
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1410644955597235922}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.10079711, y: 0.11068747, z: 0.1961479}
+  m_Center: {x: 0.0025983783, y: 0.016164158, z: 0.06552476}
