@@ -12,32 +12,10 @@ namespace Game.LV
         private List<Rose> roses = new List<Rose>();
         private Garden _garden;
         
+        [SerializeField]
         private int _successCount = 0;
+        [SerializeField]
         private int _failCount = 0;
-
-        private int SuccessCount
-        {
-            get { return _successCount; }
-            set
-            {
-                _successCount = value;
-                
-                if (_successCount > 0) _phase = Phase.AddOrder;
-                if (_successCount > 10) _phase = Phase.TooMuchOrder;
-            }
-        }
-
-        private int FailCount
-        {
-            get { return _failCount; }
-            set
-            {
-                _failCount = value;
-                
-                SetDark();
-                if (_failCount > 20) _phase = Phase.Darkness;
-            }
-        }
         
         private void Awake()
         {
@@ -47,26 +25,62 @@ namespace Game.LV
         private void Start()
         {
             Rose.OnQuestStart += (GameManager.Instance.GameScene as LV_Scene).GenerateRoseQuestUI;
+            
+            Rose.OnQuestSuccess += IncreaseSuccessCount;
+            Rose.OnQuestSuccess += CheckGamePhase;
+            
+            Rose.OnQuestFail += IncreaseFailCount;
+            Rose.OnQuestFail += CheckGamePhase;
+            Rose.OnQuestFail += SetScreenDarker;
+            
             StartCoroutine(GameFramework());
         }
 
         private IEnumerator GameFramework()
         {
             yield return new WaitUntil(() => _phase == Phase.OneOrder);
+            Debug.Log($"Phase : {_phase.ToString()}");
             var newQuestRose = Utils.SelectRandom<Rose>(roses);
             newQuestRose.StartQuest();
             
             yield return new WaitUntil(() => _phase == Phase.AddOrder);
-            
+            Debug.Log($"Phase : {_phase.ToString()}");
+            foreach (var rose in Utils.SelectRandom(roses, 3))
+            {
+                rose.StartQuest();
+            }
             
             yield return new WaitUntil(() => _phase == Phase.TooMuchOrder);
+            Debug.Log($"Phase : {_phase.ToString()}");
+            foreach (var rose in roses)
+            {
+                rose.StartQuest();
+            }
 
             yield return new WaitUntil(() => _phase == Phase.Darkness);
-            
-            Debug.Log("Done!");
+            Debug.Log($"Phase : {_phase.ToString()}");
         }
 
-        private void SetDark()
+        private void IncreaseSuccessCount()
+        {
+            _successCount++;
+        }
+
+        private void IncreaseFailCount()
+        {
+            _failCount++;
+        }
+        
+        private void CheckGamePhase()
+        {
+            if (_successCount > 0) _phase = Phase.AddOrder;
+            if (_successCount > 5) _phase = Phase.TooMuchOrder;
+            if (_failCount > 5) _phase = Phase.Darkness;
+            
+            Debug.Log($"Phase : {_phase.ToString()}");
+        }
+
+        private void SetScreenDarker()
         {
             
         }
