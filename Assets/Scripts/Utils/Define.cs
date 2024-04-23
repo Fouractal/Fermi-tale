@@ -32,10 +32,11 @@ public class Define
     public enum Scene
     {
         MN,
-        FM, 
-        ST, 
         FD, 
+        FM, 
+        ST,
         LV, 
-        MR
+        MR,
+        NONE
     }
 }

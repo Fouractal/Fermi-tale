@@ -1,13 +1,14 @@
+using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 
 public class PlayerDataManager : Singleton<PlayerDataManager>, IDataPersistence
 {
-    public Define.Scene sceneEnumType;
+    public Define.Scene sceneEnumType = Define.Scene.NONE;
     public int chapterIndex = 0;
-
-    // public List<ItemData> itemDatas; ItemData 사용 x
+    
     public bool isBGMOn;
     public bool isEffectSoundOn;
 
@@ -31,25 +32,23 @@ public class PlayerDataManager : Singleton<PlayerDataManager>, IDataPersistence
         isBgmOnText.text = "BGM : " + isBGMOn;
         isEffectSoundOnText.text = "SoundEffect : " + isEffectSoundOn;
 #endif
-        /*foreach (KeyValuePair<string,bool> pair in data.sphereCollected)
-        {
-            if (pair.Value)
-            {
-                _collectedSphereIndex++;
-            }
-        }
-        _collectedSphereText.text = "Collected Sphere : " + _collectedSphereIndex.ToString();    
-        */
     }
 
     public void SaveData(ref PlayerData data)
     {
-        data.sceneName = this.sceneEnumType;
+        data.sceneName = GetCurrentSceneEnumType();
         data.chapterIndex = this.chapterIndex;
         data.isBGMOn = this.isBGMOn;
         data.isEffectSoundOn = this.isEffectSoundOn;
+    }
 
-        // data.collectedIndex = this.collectedSphereIndex;
+    public void ResetData(ref PlayerData data)
+    {
+        Debug.Log("Reset Data!");
+        this.sceneEnumType = Define.Scene.NONE;
+        this.chapterIndex = 0;
+        this.isBGMOn = true;
+        this.isEffectSoundOn = true;
     }
 
     public void AddSceneIndex()
@@ -62,6 +61,43 @@ public class PlayerDataManager : Singleton<PlayerDataManager>, IDataPersistence
 #endif
     }
 
+    public Define.Scene GetCurrentSceneEnumType()
+    {
+        Define.Scene scene = Define.Scene.NONE;
+        switch (SceneManager.GetActiveScene().name)
+        {
+            case "MN":
+                scene = Define.Scene.MN;
+                break;
+            case "FM":
+                scene = Define.Scene.FM;
+                break;
+            case "ST":
+                scene = Define.Scene.ST;
+                break;
+            case "FD":
+                scene = Define.Scene.FD;
+                break;
+            case "LV":
+                scene = Define.Scene.LV;
+                break;
+            case "MR":
+                scene = Define.Scene.MR;
+                break;
+            default:
+                Debug.LogError("Scene Name mismatch!");
+                scene = Define.Scene.NONE;
+                break;
+        }
+
+        return scene;
+    }
+    public void AddNextSceneIndex()
+    {
+        Define.Scene scene = GetCurrentSceneEnumType();
+
+        ++scene;
+    }
     public void MinSceneIndex()
     {
         sceneEnumType--;
