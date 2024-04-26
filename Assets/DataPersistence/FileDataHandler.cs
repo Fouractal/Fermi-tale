@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using System;
 using System.IO;
@@ -17,11 +15,11 @@ public class FileDataHandler
         this.useEncryption = useEncryption;
     }
 
-    public GameData Load()
+    public PlayerData Load()
     {
         // use Path.Combine to account for different OS's having different path separators
         string fullPath = Path.Combine(dataDirPath, dataFileName); // dataDirPath + "/" + dataFileName; 와 같은 의미
-        GameData loadedData = null;
+        PlayerData loadedData = null;
         if (File.Exists(fullPath))
         {
             try
@@ -43,7 +41,7 @@ public class FileDataHandler
                 }
                 
                 // deserialize the data from Json back into the C# object
-                loadedData = JsonUtility.FromJson<GameData>(dataToLoad);
+                loadedData = JsonUtility.FromJson<PlayerData>(dataToLoad);
             }
             catch (Exception e)
             {
@@ -51,11 +49,11 @@ public class FileDataHandler
                 throw;
             }
         }
-
+        else Debug.Log("File Data Doesn't exist!");
         return loadedData;
     }
 
-    public void Save(GameData data)
+    public void Save(PlayerData data)
     {
         // use Path.Combine to account for different OS's having different path separators
         string fullPath = Path.Combine(dataDirPath, dataFileName); // dataDirPath + "/" + dataFileName; 와 같은 의미
