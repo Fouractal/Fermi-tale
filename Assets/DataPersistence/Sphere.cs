@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class Sphere : MonoBehaviour, IDataPersistence
+public class Sphere : MonoBehaviour //, IDataPersistence
 {
     [SerializeField] private string id;
 
@@ -44,7 +44,8 @@ public class Sphere : MonoBehaviour, IDataPersistence
     {
         if (!_collected)
         {
-            FindObjectsOfType<StageChapterCountText>()[0].AddCollectedIndex();
+            // FindObjectsOfType<PlayerDataManager>()[0].AddCollectedIndex();
+            // PlayerDataManager 스크립트 변경으로 인한 AddCollectedIndex() 삭제
             gameObject.SetActive(false);
             _collected = true;
         }

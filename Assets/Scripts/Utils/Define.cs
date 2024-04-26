@@ -28,6 +28,17 @@ public class Define
         Earlyadulthood,
         End
     }
+
+    public enum Scene
+    {
+        MN,
+        FD, 
+        FM, 
+        ST,
+        LV, 
+        MR,
+        NONE
+    }
 }
 
 namespace Game.LV
