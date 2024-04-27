@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 namespace Game.LV
@@ -9,9 +10,12 @@ namespace Game.LV
         private Quest _quest = LV.Quest.None;
         private QuestUI _questUI;
         private Timer _timer;
+        private Coroutine _questRoutine;
+
+        public delegate void QuestRoseHandler(Rose rose);
+        public static event QuestRoseHandler OnQuestStart; 
         
-        public delegate void QuestHandler(Rose rose);
-        public static event QuestHandler OnQuestStart;
+        public delegate void QuestHandler();
         public static event QuestHandler OnQuestSuccess;
         public static event QuestHandler OnQuestFail;
 
@@ -28,7 +32,8 @@ namespace Game.LV
         
         public void StartQuest()
         {
-            StartCoroutine(QuestRoutine());
+            if (_questRoutine != null) return;
+            _questRoutine = StartCoroutine(QuestRoutine());
         }
         
         private IEnumerator QuestRoutine()
@@ -39,7 +44,7 @@ namespace Game.LV
             {
                 _quest = (Quest)Random.Range(1, 5);
                 _timer.OnNextTimeOver += QuestFail;
-                _timer.StartTimer(10f);
+                _timer.StartTimer(30f);
 
                 Vector3 curPos = transform.position;
                 Vector3 targetPos = new Vector3(curPos.x, 8, curPos.z);
@@ -54,26 +59,37 @@ namespace Game.LV
 
         private void QuestSuccess()
         {
+            Debug.Log("Quest Success!");
             _timer.StopTimer();
             _quest = Quest.None;
             _questUI.HideQuestUI();
             
-            OnQuestSuccess?.Invoke(this);
+            GrowUp();
+            
+            OnQuestSuccess?.Invoke();
         }
 
         private void QuestFail()
         {
+            Debug.Log("Quest Fail...");
             _quest = Quest.None;
             _questUI.HideQuestUI();
             
-            OnQuestFail?.Invoke(this);
+            OnQuestFail?.Invoke();
         }
 
         public void Interaction()
         {
-            if (_quest != Quest.Cleaning) return;
-            
-            QuestSuccess();
+            Debug.Log("RoseInteraction");
+            if (_quest == Quest.Cleaning && Inventory.Item is Towel) QuestSuccess();
+            if (_quest == Quest.Fertilizing && Inventory.Item is Fertilizer) QuestSuccess();
+            if (_quest == Quest.Watering && Inventory.Item is WateringCan) QuestSuccess();
+            if (_quest == Quest.RemoveBugs && Inventory.Item is GlassCover) QuestSuccess();
+        }
+
+        public void GrowUp()
+        {
+            transform.DOScale(transform.localScale + Vector3.one, 1f);
         }
     }
 }
