@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 using Managers.GameManage;
+using UnityEngine.Serialization;
 
 namespace Game.LV
 {
     public class LV_Scene : GameScene
     {
+        [FormerlySerializedAs("_darknessSystem")] [SerializeField]
+        private VignetteSystem vignetteSystem;
+        
         private void Awake()
         {
             GameObject mainCharacterPrefab = Resources.Load<GameObject>("Prefabs/MainCharacter/MainCharacter_Prefab");
@@ -24,9 +28,14 @@ namespace Game.LV
             GameManager.Instance.GameScene = this;
         }
 
-        public void GenerateRoseQuestUI(Rose rose)
+        public void SetScreenDarker()
         {
-        
+            vignetteSystem.SetScreenDarker();
+        }
+
+        public void SetScreenBrighter()
+        {
+            vignetteSystem.SetScreenBrighter();
         }
     }
     
