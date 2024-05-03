@@ -5502,7 +5502,7 @@ RectTransform:
   m_Children:
   - {fileID: 562462211}
   m_Father: {fileID: 388364540}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6577,6 +6577,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1988582607}
     m_Modifications:
+    - target: {fileID: 6260808258033924935, guid: 043a939550160ac46b0802fe06552530, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6260808258137085504, guid: 043a939550160ac46b0802fe06552530, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -6625,9 +6629,37 @@ PrefabInstance:
       propertyPath: m_Name
       value: DataManager
       objectReference: {fileID: 0}
+    - target: {fileID: 6260808258263471238, guid: 043a939550160ac46b0802fe06552530, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6260808258577343616, guid: 043a939550160ac46b0802fe06552530, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6260808258601548995, guid: 043a939550160ac46b0802fe06552530, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6260808258910504274, guid: 043a939550160ac46b0802fe06552530, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6260808258987719655, guid: 043a939550160ac46b0802fe06552530, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6260808259492836324, guid: 043a939550160ac46b0802fe06552530, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6260808259492836325, guid: 043a939550160ac46b0802fe06552530, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6260808259851555612, guid: 043a939550160ac46b0802fe06552530, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 043a939550160ac46b0802fe06552530, type: 3}
@@ -9935,6 +9967,10 @@ PrefabInstance:
     - target: {fileID: 931438160146370960, guid: 73fe1dd7507722847b958c71d64c2c4f, type: 3}
       propertyPath: m_Name
       value: OverlayCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 931438160146370960, guid: 73fe1dd7507722847b958c71d64c2c4f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 931438160146370964, guid: 73fe1dd7507722847b958c71d64c2c4f, type: 3}
       propertyPath: m_Camera
