@@ -10,7 +10,7 @@ public class BlackObjectController : MonoBehaviour
     private Animator _animator;
     public SkinnedMeshRenderer _meshRenderer;
     private Transform _playerTransform;
-
+    public Transform spawnTransform;
     private void Start()
     {
         _animator = GetComponent<Animator>();
@@ -50,14 +50,15 @@ public class BlackObjectController : MonoBehaviour
     {
         Debug.Log($"{BGObject.name} is Hit");
         yield return new WaitForSeconds(2f);
-
-        /*BGObject.GetComponent<Collider>().enabled = false;
-        Rigidbody rb = BGObject.GetComponent<Rigidbody>(); 
-        rb.useGravity = false;
-        rb.velocity = Vector3.zero;
-        rb.angularVelocity = Vector3.zero;*/
+        
         Destroy(BGObject);
     }
+
+    private void ResetTransform()
+    {
+        transform.position = spawnTransform.position;
+    }
+    
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.layer == 30)
@@ -67,17 +68,21 @@ public class BlackObjectController : MonoBehaviour
         
         if (collision.gameObject.CompareTag("Player"))
         {
-            StopCoroutine(ChasingPlayer(_playerTransform));
             Debug.Log("The Black Got a Player");
+            StopCoroutine(ChasingPlayer(_playerTransform));
+
+            IEnumerator RestTransformRoutine()
+            {
+                Overlay.FadeOut(Define.FadeType.Black);
+                
+                yield return new WaitForSecondsRealtime(3f);
+                ResetTransform();
+                collision.gameObject.GetComponent<Player>().ResetTransform();
+                Overlay.FadeIn();
+            }
+            StartCoroutine(RestTransformRoutine());
+
+            // GameManager.Instance.GameFlow.LoadSceneByLoadedData(Define.FadeType.Black, PlayerDataManager.Instance.sceneEnumType);
         }
     }
-    
-    /*private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            StopCoroutine(ChasingPlayer(_playerTransform));
-            Debug.Log("The Black Got a Player");
-        }
-    }*/ 
 }
