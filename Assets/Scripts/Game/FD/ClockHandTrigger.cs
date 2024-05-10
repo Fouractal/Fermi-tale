@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class ClockHand : MonoBehaviour
+[RequireComponent(typeof(BoxCollider))]
+public class ClockHandTrigger : MonoBehaviour
 {
-    private static List<ClockHand> _clockHands = new List<ClockHand>();
+    private static List<ClockHandTrigger> _clockHandTriggers = new List<ClockHandTrigger>();
 
     public delegate void OverlapHandler(int overlapCount);
     public static event OverlapHandler OnClockHandsOverlap;
@@ -14,7 +15,7 @@ public class ClockHand : MonoBehaviour
 
     private void Awake()
     {
-        _clockHands.Add(this);
+        _clockHandTriggers.Add(this);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -37,7 +38,7 @@ public class ClockHand : MonoBehaviour
     {
         int maxOverlapCount = 0;
         
-        foreach (var clockHand in _clockHands)
+        foreach (var clockHand in _clockHandTriggers)
         {
             maxOverlapCount = clockHand.overlapCount > maxOverlapCount ? clockHand.overlapCount : maxOverlapCount;
         }
