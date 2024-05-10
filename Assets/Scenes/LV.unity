@@ -6070,6 +6070,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4908897436186989240, guid: 3cd08ccda1a053646a858de4cfe4b6fa, type: 3}
+      propertyPath: weight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4908897436186989240, guid: 3cd08ccda1a053646a858de4cfe4b6fa, type: 3}
+      propertyPath: priority
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4908897436186989240, guid: 3cd08ccda1a053646a858de4cfe4b6fa, type: 3}
+      propertyPath: m_IsGlobal
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4908897436877122822, guid: 3cd08ccda1a053646a858de4cfe4b6fa, type: 3}
       propertyPath: m_Name
       value: VignettSystem
@@ -6121,7 +6133,7 @@ PrefabInstance:
     - target: {fileID: 4908897437073462566, guid: 3cd08ccda1a053646a858de4cfe4b6fa, type: 3}
       propertyPath: m_Camera
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1185813665}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3cd08ccda1a053646a858de4cfe4b6fa, type: 3}
 --- !u!114 &1482465413 stripped
