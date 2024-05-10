@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2272016500973877212}
   - component: {fileID: 8653089217500113143}
   - component: {fileID: 2108068875650610473}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: sack4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 1908069770557887369}
   - component: {fileID: 6764168320622172059}
   - component: {fileID: 3471406346884899322}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: sack2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -175,7 +175,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3401792215685572017}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: "\uC11C\uD398\uC774\uC2A4_\uBD84\uD560"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -209,7 +209,7 @@ GameObject:
   - component: {fileID: 2339195307485854487}
   - component: {fileID: 1681740973608197786}
   - component: {fileID: 3797849783412281650}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: "\uC6D0\uAE30\uB465_2"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -292,7 +292,7 @@ GameObject:
   - component: {fileID: 3785564292342208314}
   - component: {fileID: 3785564292342208315}
   - component: {fileID: 3785564292342208312}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LVFertilizer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -358,7 +358,7 @@ GameObject:
   - component: {fileID: 8543517753832263095}
   - component: {fileID: 605684393223662163}
   - component: {fileID: 7385967163462837877}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: sack1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -439,7 +439,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 186677041158458257}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: "\uC6D0\uAE30\uB465"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -473,7 +473,7 @@ GameObject:
   - component: {fileID: 8226476355411505327}
   - component: {fileID: 1683462830644509157}
   - component: {fileID: 3938358056813316855}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pallet2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -554,7 +554,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7401794502146279784}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: "\uC11C\uD398\uC774\uC2A4_\uBD84\uD560_1"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -588,7 +588,7 @@ GameObject:
   - component: {fileID: 2977084254781473764}
   - component: {fileID: 2624658861083096074}
   - component: {fileID: 6255466662894571273}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: sack3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -671,7 +671,7 @@ GameObject:
   - component: {fileID: 2346048173773857509}
   - component: {fileID: 661831688446937977}
   - component: {fileID: 2408441476603918632}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Group46140
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -754,7 +754,7 @@ GameObject:
   - component: {fileID: 2100265754545804670}
   - component: {fileID: 2444774875834324454}
   - component: {fileID: 7649587177942106582}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pallet1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
