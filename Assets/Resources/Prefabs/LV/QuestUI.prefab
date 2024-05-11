@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2179839785954843709}
   - component: {fileID: 5670511771020117897}
   - component: {fileID: 7118631112566142679}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 8109869900869060968}
   - component: {fileID: 273350212505364108}
   - component: {fileID: 8928810565288960634}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,7 +134,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: 2122877041
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!114 &273350212505364108
@@ -187,7 +187,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5781814761857983900}
   - component: {fileID: 1549919238031622861}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: QuestUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
