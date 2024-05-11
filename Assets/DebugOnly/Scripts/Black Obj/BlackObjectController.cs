@@ -71,7 +71,7 @@ public class BlackObjectController : MonoBehaviour
             Debug.Log("The Black Got a Player");
             StopCoroutine(ChasingPlayer(_playerTransform));
 
-            IEnumerator RestTransformRoutine()
+            IEnumerator ResetTransformRoutine()
             {
                 Overlay.FadeOut(Define.FadeType.Black);
                 
