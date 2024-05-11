@@ -6,6 +6,7 @@ using UnityEngine;
 public class RenderByArea : MonoBehaviour
 {
     private MeshRenderer _meshRenderer;
+    private SkinnedMeshRenderer _skinnedMeshRenderer;
     private Material[] _materials;
     private bool _isInside = false;
     public bool IsInside
@@ -33,7 +34,9 @@ public class RenderByArea : MonoBehaviour
     private void Awake()
     {
         _meshRenderer = GetComponent<MeshRenderer>();
-        _materials = _meshRenderer.materials;
+        _skinnedMeshRenderer = GetComponent<SkinnedMeshRenderer>();
+        if(_meshRenderer) _materials = _meshRenderer.materials;
+        if (_skinnedMeshRenderer) _materials = _skinnedMeshRenderer.materials;
         
         foreach (var material in _materials)
         {
@@ -65,6 +68,7 @@ public class RenderByArea : MonoBehaviour
 
     private void SetRender(bool active)
     {
-        _meshRenderer.enabled = active;
+        if(_meshRenderer) _meshRenderer.enabled = active;
+        if (_skinnedMeshRenderer) _skinnedMeshRenderer.enabled = active;
     }
 }
