@@ -5,19 +5,22 @@ TagManager:
   serializedVersion: 2
   tags:
   - Test
+  - Friend
+  - ClockHand
+  - Rose
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Test
+  - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Object
+  - BackgroundUI
+  - SceneUI
+  - PopupUI
+  - Debug
+  - post
   - 
   - 
   - 
@@ -39,6 +42,21 @@ TagManager:
   - testLayer
   - 
   m_SortingLayers:
+  - name: BackgroundUI
+    uniqueID: 3241743073
+    locked: 0
+  - name: Object
+    uniqueID: 2122877041
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: SceneUI
+    uniqueID: 3664603267
+    locked: 0
+  - name: PopupUI
+    uniqueID: 317265253
+    locked: 0
+  - name: Debug
+    uniqueID: 3260440127
     locked: 0

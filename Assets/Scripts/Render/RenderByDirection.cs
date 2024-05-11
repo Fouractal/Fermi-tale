@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -8,6 +9,7 @@ public class RenderByDirection : MonoBehaviour
     private Vector3 _objectMaxPos;
     private Vector3 _objectMinPos;
     
+    [SerializeField]
     private Collider _collider;
     
     public bool isNorthSide = false;
@@ -22,8 +24,7 @@ public class RenderByDirection : MonoBehaviour
 
     private void Awake()
     {
-        _collider = GetComponent<BoxCollider>();
-        if(_collider == null) _collider = GetComponent<MeshCollider>();
+        _collider = GetComponent<Collider>();
         _objectMaxPos = _collider.bounds.max;
         _objectMinPos = _collider.bounds.min;
 
@@ -33,13 +34,13 @@ public class RenderByDirection : MonoBehaviour
 
     public void Update()
     {
-        if (!isInside) return;
+        //if (!isInside) return;
         if (CinemachineVirtualCamManager.Instance.cameraTurnController == null) return;
-        UpdateState(PlayerCharacterManager.Instance.player.transform.position);
+        UpdateDirectionFromPlayer(PlayerCharacterManager.Instance.player.transform.position);
         RenderByCameraDirection(CinemachineVirtualCamManager.Instance.cameraTurnController.cameraDirection);
     }
 
-    private void UpdateState(Vector3 playerPos)
+    private void UpdateDirectionFromPlayer(Vector3 playerPos)
     {
         isNorthSide = Vector3.Dot(_objectMinPos-playerPos, Vector3.forward) > 0;
         isSouthSide = Vector3.Dot(_objectMaxPos-playerPos, Vector3.forward) < 0;

@@ -10,6 +10,8 @@ public class Player : MonoBehaviour
     public Vector2 direction;
     private float _angle = -45f; //회전할 각도 (단위: 도)
     private float _radians = 0f; // 각도를 라디안으로 변환
+
+    private Transform _prevTransform;
     void Start()
     {
         _radians = _angle * Mathf.Deg2Rad;
@@ -18,7 +20,7 @@ public class Player : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         Move();
     }
@@ -42,5 +44,10 @@ public class Player : MonoBehaviour
         // (-1,0) -> (Vector3.forward + Vector3.left) * speed
         // (0,1)  -> (Vector3.forward + Vector3.right) * speed
         // (0,-1) -> (Vector3.back + Vector3.left) * speed
+    }
+
+    public void ResetTransform()
+    {
+        _prevTransform = transform;
     }
 }
