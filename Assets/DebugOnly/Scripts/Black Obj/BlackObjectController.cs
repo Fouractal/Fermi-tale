@@ -80,7 +80,7 @@ public class BlackObjectController : MonoBehaviour
                 collision.gameObject.GetComponent<Player>().ResetTransform();
                 Overlay.FadeIn();
             }
-            StartCoroutine(RestTransformRoutine());
+            StartCoroutine(ResetTransformRoutine());
 
             // GameManager.Instance.GameFlow.LoadSceneByLoadedData(Define.FadeType.Black, PlayerDataManager.Instance.sceneEnumType);
         }
