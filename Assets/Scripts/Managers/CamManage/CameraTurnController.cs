@@ -17,11 +17,11 @@ public class CameraTurnController : MonoBehaviour
     public Define.CameraDirection cameraDirection = Define.CameraDirection.NE;
     public delegate void DirectionHandler(Define.CameraDirection nextDirection);
     public event DirectionHandler OnChangeDirection;
-    
+
     private void Start()
     {
         _touchPad = TouchPad.Instance;
-        _touchPad.OnDoubleTap += CameraTurn;
+        _touchPad.doubleTap.OnDoubleTap += CameraTurn;
 
         orbitalTransposer = CinemachineVirtualCamManager.Instance.cinemachineOrbitalTransposer;
         orbitalTransposer.m_RecenterToTargetHeading.m_enabled = true;
@@ -37,11 +37,11 @@ public class CameraTurnController : MonoBehaviour
         
         if (eventData.position.x <= 540)
         {
-            CameraTurnClockwise();
+            CameraTurnCounterClockwise();
         }
         else
         {
-            CameraTurnCounterClockwise();
+            CameraTurnClockwise();
         }
 
         _isTurning = false;
@@ -54,6 +54,7 @@ public class CameraTurnController : MonoBehaviour
 
         cameraDirection = (Define.CameraDirection)(((int)cameraDirection + 1) % 4);
         OnChangeDirection?.Invoke(cameraDirection);
+        
     }
 
     private void CameraTurnCounterClockwise()
@@ -63,5 +64,6 @@ public class CameraTurnController : MonoBehaviour
         
         cameraDirection = (Define.CameraDirection)(((int)cameraDirection + 3) % 4);
         OnChangeDirection?.Invoke(cameraDirection);
+        
     }
 }

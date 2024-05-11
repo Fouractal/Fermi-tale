@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class RenderByArea : MonoBehaviour
 {
+    private MeshRenderer _meshRenderer;
+    private SkinnedMeshRenderer _skinnedMeshRenderer;
     private Material[] _materials;
     private bool _isInside = false;
     public bool IsInside
@@ -14,15 +16,13 @@ public class RenderByArea : MonoBehaviour
         {
             if (_isInside && value == false)
             {
-                IEnumerator ChangeStatusAfterOneSecond()
-                {
-                    yield return new WaitForSecondsRealtime(0.1f);
-                    _isInside = false;
-
-                    SetPivotPoint();
-                }
-
-                StartCoroutine(ChangeStatusAfterOneSecond());
+                _isInside = false;
+                SetRender(false);
+            }
+            else if (!_isInside && value == true)
+            {
+                _isInside = true;
+                SetRender(true);
             }
             else
             {
@@ -33,7 +33,10 @@ public class RenderByArea : MonoBehaviour
 
     private void Awake()
     {
-        _materials = GetComponent<MeshRenderer>().materials;
+        _meshRenderer = GetComponent<MeshRenderer>();
+        _skinnedMeshRenderer = GetComponent<SkinnedMeshRenderer>();
+        if(_meshRenderer) _materials = _meshRenderer.materials;
+        if (_skinnedMeshRenderer) _materials = _skinnedMeshRenderer.materials;
         
         foreach (var material in _materials)
         {
@@ -61,5 +64,11 @@ public class RenderByArea : MonoBehaviour
         {
             material.SetVector("_PivotPoint", pivot);    
         }
+    }
+
+    private void SetRender(bool active)
+    {
+        if(_meshRenderer) _meshRenderer.enabled = active;
+        if (_skinnedMeshRenderer) _skinnedMeshRenderer.enabled = active;
     }
 }

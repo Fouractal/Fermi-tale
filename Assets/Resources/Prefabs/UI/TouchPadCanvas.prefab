@@ -11,9 +11,12 @@ GameObject:
   - component: {fileID: 1811829607123174571}
   - component: {fileID: 1811829607123174566}
   - component: {fileID: 1811829607123174569}
-  - component: {fileID: 1811829607123174573}
+  - component: {fileID: 2403392396485284444}
+  - component: {fileID: 2449405029911686133}
+  - component: {fileID: 4706355419649101023}
+  - component: {fileID: 2931636834218243237}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: TouchPad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,7 +80,22 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &1811829607123174573
+--- !u!114 &2403392396485284444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1811829607123174570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 066d2e3175f33414a8f1e54a7f0af269, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startPos: {x: 0, y: 0, z: 0}
+  endPos: {x: 0, y: 0, z: 0}
+  curPos: {x: 0, y: 0, z: 0}
+--- !u!114 &2449405029911686133
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -89,10 +107,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38a6bfdefd3792141a5cd6dc695d0d0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startPos: {x: 0, y: 0, z: 0}
-  endPos: {x: 0, y: 0, z: 0}
-  curPos: {x: 0, y: 0, z: 0}
+  drag: {fileID: 0}
+  doubleTap: {fileID: 0}
+  longPress: {fileID: 0}
+--- !u!114 &4706355419649101023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1811829607123174570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd5daa86f3444be790b40ad1b1600ab0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   doubleTapInterval: 0.3
+--- !u!114 &2931636834218243237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1811829607123174570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ae8981c0ffd42acb01e1eeabefc13fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pressTimeThreshold: 0.5
+  pressDistThreshold: 100
 --- !u!1 &1811829607292353273
 GameObject:
   m_ObjectHideFlags: 0
@@ -152,7 +196,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: -630364029
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!114 &1811829607292353268

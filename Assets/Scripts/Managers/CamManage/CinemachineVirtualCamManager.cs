@@ -14,6 +14,6 @@ public class CinemachineVirtualCamManager : Singleton<CinemachineVirtualCamManag
 
     private void Awake()
     {
-        cinemachineOrbitalTransposer = virtualCamera.GetCinemachineComponent<CinemachineOrbitalTransposer>();
+        cameraTurnController = GetComponent<CameraTurnController>();
     }
 }
