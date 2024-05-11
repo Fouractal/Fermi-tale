@@ -3,14 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UIElements;
 
 public class HugeClock : MonoBehaviour
 {
-    [Header("ClockHand")]
-    public ClockHand hourHand;
-    public ClockHand minuteHand;
-    
     public Transform hourHandTransform;
     public Transform minuteHandTransform;
 
@@ -34,7 +31,7 @@ public class HugeClock : MonoBehaviour
 
     private void Start()
     {
-        ClockHand.OnClockHandsOverlap += Alert;
+        ClockHandTrigger.OnClockHandsOverlap += Alert;
     }
 
     public IEnumerator Ticktock()
@@ -48,7 +45,7 @@ public class HugeClock : MonoBehaviour
             sequence
                 .Append(minuteHandTransform.DOLocalRotate(Vector3.up * Time * 30, 0.5f).SetEase(Ease.OutCubic))
                 .Join(hourHandTransform.DOLocalRotate(Vector3.up * Time * 2.5f, 0.5f).SetEase(Ease.OutCubic))
-                .AppendCallback(ClockHand.CheckClockHandOverlap);
+                .AppendCallback(ClockHandTrigger.CheckClockHandOverlap);
         }
     }
     

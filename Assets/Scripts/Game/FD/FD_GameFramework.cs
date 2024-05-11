@@ -17,7 +17,7 @@ public class FD_GameFramework : GameFramework
     private void Start()
     {
         Phase = Define.FD_Phase.Start;
-        ClockHand.OnClockHandsOverlap += CheckPhase;
+        ClockHandTrigger.OnClockHandsOverlap += CheckPhase;
         
         StartCoroutine(GameFramework());
     }
@@ -42,7 +42,7 @@ public class FD_GameFramework : GameFramework
 
     private void SpawnFriend()
     {
-        GameObject friendPrefab = Resources.Load<GameObject>("Prefabs/FD/teenager_fox");
+        GameObject friendPrefab = Resources.Load<GameObject>("Prefabs/FD/Friend");
         Friend newFriend = Instantiate(friendPrefab, Vector3.back, Quaternion.identity).GetComponent<Friend>();
         friends.Add(newFriend);
     }

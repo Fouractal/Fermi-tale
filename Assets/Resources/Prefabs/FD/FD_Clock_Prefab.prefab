@@ -1,5 +1,123 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1095740529
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1095740530}
+  - component: {fileID: 1095740532}
+  - component: {fileID: 1095740531}
+  m_Layer: 0
+  m_Name: ClockHandTirgger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1095740530
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1095740529}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7187096841272256331}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1095740532
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1095740529}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3913285, y: 0.011603652, z: 0.40867206}
+  m_Center: {x: -0.0027551183, y: 0.010250567, z: 0.052644283}
+--- !u!114 &1095740531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1095740529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97b77d5b114842c590a2486c8ad2de14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  overlapCount: 0
+--- !u!1 &1152964719
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1152964720}
+  - component: {fileID: 1152964721}
+  - component: {fileID: 1152964722}
+  m_Layer: 0
+  m_Name: ClockHandTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1152964720
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1152964719}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1939769696798481754}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1152964721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1152964719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97b77d5b114842c590a2486c8ad2de14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  overlapCount: 0
+--- !u!65 &1152964722
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1152964719}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.48138976, y: 0.014984977, z: 0.6314506}
+  m_Center: {x: -0.00091398245, y: 0.025072994, z: 0.31260434}
 --- !u!1 &819173241301954998
 GameObject:
   m_ObjectHideFlags: 0
@@ -44,8 +162,8 @@ GameObject:
   - component: {fileID: 4114575059123956349}
   - component: {fileID: 5357170787587930273}
   - component: {fileID: 871895268}
-  - component: {fileID: 871895269}
   - component: {fileID: 871895274}
+  - component: {fileID: 553956541}
   m_Layer: 0
   m_Name: FD.MS.hour
   m_TagString: ClockHand
@@ -64,7 +182,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0.38856426, z: 0}
   m_LocalScale: {x: 7.5218525, y: 288.3958, z: 2.8148313}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1152964720}
   m_Father: {fileID: 8140181457144773680}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
@@ -129,21 +248,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.4, y: 0.015, z: 0.1}
-  m_Center: {x: 0, y: 0.025, z: 0.4}
---- !u!114 &871895269
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1075758534190887554}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97b77d5b114842c590a2486c8ad2de14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  overlapCount: 0
+  m_Size: {x: 0.13211395, y: 0.021774411, z: 0.09999999}
+  m_Center: {x: 0.0046744556, y: 0.010347358, z: 0.40000015}
 --- !u!54 &871895274
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -160,6 +266,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &553956541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1075758534190887554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e397ade4c80bf94479fd1271cfe19f1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1395721982003284153
 GameObject:
   m_ObjectHideFlags: 0
@@ -672,8 +790,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 669878da27989e04282f559a5e26c4c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hourHand: {fileID: 871895269}
-  minuteHand: {fileID: 348030174}
   hourHandTransform: {fileID: 8140181457144773680}
   minuteHandTransform: {fileID: 1406777682000750914}
   ticktockAudioSource: {fileID: 1258238152}
@@ -882,8 +998,8 @@ GameObject:
   - component: {fileID: 2222133270267578677}
   - component: {fileID: 3151501983081747861}
   - component: {fileID: 348030173}
-  - component: {fileID: 348030174}
   - component: {fileID: 1118451421}
+  - component: {fileID: 1724323335}
   m_Layer: 0
   m_Name: FD.MS.minute
   m_TagString: ClockHand
@@ -902,7 +1018,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 1.5427411, z: -3.4538198}
   m_LocalScale: {x: 9.933478, y: 380.86005, z: 3.4948635}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1095740530}
   m_Father: {fileID: 1406777682000750914}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -967,21 +1084,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.3, y: 0.01, z: 0.1}
-  m_Center: {x: 0, y: 0.01, z: 0}
---- !u!114 &348030174
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2176915976900711133}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97b77d5b114842c590a2486c8ad2de14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  overlapCount: 0
+  m_Size: {x: 0.1815493, y: 0.022630366, z: 0.1}
+  m_Center: {x: 0.00024142924, y: 0.0015370786, z: 0.00000010792321}
 --- !u!54 &1118451421
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -998,6 +1102,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1724323335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2176915976900711133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e397ade4c80bf94479fd1271cfe19f1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2443034743459183314
 GameObject:
   m_ObjectHideFlags: 0
