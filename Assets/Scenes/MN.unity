@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18263954, g: 0.22835207, b: 0.3071491, a: 1}
+  m_IndirectSpecularColor: {r: 0.18263887, g: 0.22835083, b: 0.3071475, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -901,7 +901,7 @@ MonoBehaviour:
   m_IsGlobal: 1
   priority: 0
   blendDistance: 0
-  weight: 1
+  weight: 0.59
   sharedProfile: {fileID: 11400000, guid: fbbd222a77eb24eb1838fa2a4ea82809, type: 2}
 --- !u!4 &215547990
 Transform:
@@ -6177,7 +6177,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 0.9150943, g: 0.88558084, b: 0.5568263, a: 1}
-  m_Intensity: 0.3
+  m_Intensity: 0.5
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -7107,7 +7107,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 0.21622463, g: 0.261463, b: 0.4056604, a: 1}
-  m_Intensity: 1.2
+  m_Intensity: 1.5
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -7239,7 +7239,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 0.41901034, g: 0.74795294, b: 0.8301887, a: 1}
-  m_Intensity: 1.2
+  m_Intensity: 1.5
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -7248,10 +7248,10 @@ Light:
     m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0
     m_Bias: 0.05
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 0.1
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
