@@ -26,17 +26,26 @@ Clipping을 통한 제한적인 렌더링 방식을 적용했습니다.
       <th> 플랫폼 </th>
       <th> 장르 </th>
       <th> 개발 환경 </th>
-      <th> 개발 인원 </th>
-      <th> 개발 기간 </th>
       <th> 시연 영상 </th>
     </tr>  
     <tr>
       <td align="center"> <code> Android </code> </td>
       <td align="center"> <code> 퍼즐/어드벤처 </code> </td>
       <td align="center"> <code> Unity3D </code> <code> C# </code> </td>
+      <td align="center"> <a href="https://youtu.be/v8wEf6U9QHQ"> <code> YouTube </code> </a> </td>
+    </tr>
+  </table>
+</div>
+
+<div align="center">
+  <table>
+    <tr>
+      <th> 개발 인원 </th>
+      <th> 개발 기간 </th>
+    </tr>  
+    <tr>
       <td align="center"> <code> 프로그래머 2 </code> <code> 디자이너 2 </code> </td>
       <td align="center"> <code> 2023.03 ~ 개발중 </code> </td>
-      <td align="center"> <a href="https://youtu.be/v8wEf6U9QHQ"> <code> YouTube </code> </a> </td>
     </tr>
   </table>
 </div>
