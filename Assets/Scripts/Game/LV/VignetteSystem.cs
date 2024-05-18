@@ -29,7 +29,6 @@ namespace Game.LV
         {
             _volume = GetComponentInChildren<Volume>();
             _volume.profile.TryGet(out _vignette);
-            _vignette.intensity.value = 0f;
             
             _ui = GetComponentInChildren<Image>();
         }
@@ -39,10 +38,10 @@ namespace Game.LV
         {
             _level++;
 
-            float startValue = _vignette.intensity.value;
+            float startValue = _volume.weight;
             float endValue = (float)_level / _maxLevel;
             
-            DOTween.To(() => startValue, value => _vignette.intensity.value = value, endValue, 2f);
+            DOTween.To(() => startValue, value => _volume.weight = value, endValue, 2f);
             if (_level == _maxLevel) _ui.DOFade(1f, 2f);
         }
 
@@ -51,10 +50,10 @@ namespace Game.LV
         {
             _level = 0;
 
-            float startValue = _vignette.intensity.value;
+            float startValue = _volume.weight;
             float endValue = (float)_level / _maxLevel;
             
-            DOTween.To(() => startValue, value => _vignette.intensity.value = value, endValue, 2f);
+            DOTween.To(() => startValue, value => _volume.weight = value, endValue, 2f);
             _ui.DOFade(0f, 2f);
         }
 
@@ -62,7 +61,7 @@ namespace Game.LV
         {
             _level = 0;
             
-            _vignette.intensity.value = (float)_level / _maxLevel;
+            _volume.weight = (float)_level / _maxLevel;
             _ui.material. color = Color.clear;
         }
     }

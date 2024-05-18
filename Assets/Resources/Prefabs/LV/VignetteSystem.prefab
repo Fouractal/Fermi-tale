@@ -45,9 +45,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsGlobal: 1
-  priority: 0
+  priority: 1
   blendDistance: 0
-  weight: 0.6
+  weight: 0
   sharedProfile: {fileID: 11400000, guid: fbbd222a77eb24eb1838fa2a4ea82809, type: 2}
 --- !u!1 &4908897436761732483
 GameObject:
