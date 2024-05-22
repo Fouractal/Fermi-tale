@@ -178,6 +178,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7091485174144383316, guid: 6c0486931d47e26419aa4e53c6e48d0c, type: 3}
+      propertyPath: m_Name
+      value: ======Family Prize======
+      objectReference: {fileID: 0}
+    - target: {fileID: -7091485174144383316, guid: 6c0486931d47e26419aa4e53c6e48d0c, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: -7091485174144383316, guid: 6c0486931d47e26419aa4e53c6e48d0c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -2845779275431937956, guid: 6c0486931d47e26419aa4e53c6e48d0c, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -185,6 +197,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 6c0486931d47e26419aa4e53c6e48d0c, type: 3}
       propertyPath: m_Name
       value: "\uAC00\uC871\uBC29"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4143574042972465921, guid: 6c0486931d47e26419aa4e53c6e48d0c, type: 3}
+      propertyPath: m_Name
+      value: =========Family Picture========
+      objectReference: {fileID: 0}
+    - target: {fileID: 4143574042972465921, guid: 6c0486931d47e26419aa4e53c6e48d0c, type: 3}
+      propertyPath: m_Layer
+      value: 16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c0486931d47e26419aa4e53c6e48d0c, type: 3}
