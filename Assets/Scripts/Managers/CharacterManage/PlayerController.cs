@@ -72,8 +72,8 @@ public class PlayerController : MonoBehaviour
         _moveBlendValue = (Mathf.Abs(Mathf.Pow(endPos.x - startPos.x, 2)
                                      + Mathf.Pow(endPos.y - startPos.y, 2))) / 100000f;
         if (_moveBlendValue < 0.01) _moveBlendValue = 0;
-        if (_moveBlendValue > 0.5) player.speed = 3f;
-        else player.speed = 2f;
+        if (_moveBlendValue > 0.5) player.speed = 10f;
+        else player.speed = 5f;
         player.playerAnimator.applyRootMotion = false;
         player.playerAnimator.SetFloat("MoveBlend", _moveBlendValue);
         //_playerController.playerAnimator.SetBool("IsWalking",true);

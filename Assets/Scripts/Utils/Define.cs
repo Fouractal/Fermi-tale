@@ -66,8 +66,6 @@ namespace Game.FM
     public enum Phase
     {
         ConversationOne,
-        ConversationTwo,
-        ConversationThree,
         ConversationLast 
     }
 }
