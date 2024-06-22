@@ -7,16 +7,23 @@ namespace Game.FM
     public class FM_GameFramework : GameFramework
     {
         public Phase phase = Phase.ConversationOne;
-
         public int successNumber;
-        
-        // Start is called before the first frame update
+        public bool[] isCollectedArray = new bool[4];
+        public FM_Item[] items;
         void Start()
         {
+           Init(); 
+        }
+
+        private void Init()
+        {
+            for (int i = 0; i < isCollectedArray.Length; i++)
+                isCollectedArray[i] = false;
+            
+            successNumber = 0;
             phase = Phase.ConversationOne;
             StartCoroutine(GameFramework());
         }
-
         private IEnumerator GameFramework()
         {
             // TODO : Game 로직 추가하기
@@ -25,21 +32,22 @@ namespace Game.FM
             // 해당 아이템 찾으면 해당 주제 클리어
             // 총 세 가지 대화 클리어 후 마지막 대화 주제가 남음
 
-            yield return new WaitUntil(() => phase == Phase.ConversationOne);
+            for (int i = 0; i < 3; i++)
+            {
+                StartCoroutine(items[i].TextRoutine());
+            }
+            yield return new WaitUntil(() => successNumber == 3);
             
-            yield return new WaitUntil(() => phase == Phase.ConversationTwo);
-
-            yield return new WaitUntil(() => phase == Phase.ConversationThree);
-
-            yield return new WaitUntil(() => phase == Phase.ConversationLast);
+            StartCoroutine(items[3].TextRoutine());
+            yield return new WaitUntil(() => successNumber == 4);
 
             yield break;
         }
 
-        public void Success()
+        public void Success(int itemIndex)
         {
-            Debug.Log("Success " +phase);
-            phase++;
+            successNumber++;
+            Debug.Log("Success Item Number " + successNumber);
         }
     }
 }
