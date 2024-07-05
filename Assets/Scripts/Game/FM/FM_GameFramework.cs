@@ -34,11 +34,11 @@ namespace Game.FM
 
             for (int i = 0; i < 3; i++)
             {
-                StartCoroutine(items[i].TextRoutine());
+                StartCoroutine(items[i].fmItemText.TextRoutine());
             }
             yield return new WaitUntil(() => successNumber == 3);
             
-            StartCoroutine(items[3].TextRoutine());
+            StartCoroutine(items[3].fmItemText.TextRoutine());
             yield return new WaitUntil(() => successNumber == 4);
 
             yield break;
