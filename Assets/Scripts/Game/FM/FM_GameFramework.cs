@@ -41,6 +41,7 @@ namespace Game.FM
             StartCoroutine(items[3].fmItemText.TextRoutine());
             yield return new WaitUntil(() => successNumber == 4);
 
+            SpawnPortal();
             yield break;
         }
 
@@ -49,6 +50,11 @@ namespace Game.FM
             successNumber++;
             Debug.Log("Success Item Number " + successNumber);
         }
+        
+        private void SpawnPortal()
+        {
+            GameObject portalPrefab = Resources.Load<GameObject>("Prefabs/Portal");
+            Instantiate(portalPrefab, new Vector3(-10, 0.5f, -3), Quaternion.identity);
+        }
     }
 }
-
