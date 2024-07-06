@@ -63,6 +63,7 @@ namespace Game.LV
             yield return new WaitForSecondsRealtime(2f);
             HideSubRoses();
             ShowMainRose();
+            SpawnPortal();
             yield return new WaitForSecondsRealtime(1f);
             (GameManager.Instance.GameScene as LV_Scene).SetScreenBrighter();
         }
@@ -103,6 +104,12 @@ namespace Game.LV
             {
                 rose.gameObject.SetActive(true);
             }
+        }
+        
+        private void SpawnPortal()
+        {
+            GameObject portalPrefab = Resources.Load<GameObject>("Prefabs/Portal");
+            Instantiate(portalPrefab, new Vector3(24f, 5.5f, 0f), Quaternion.identity);
         }
     }
 }

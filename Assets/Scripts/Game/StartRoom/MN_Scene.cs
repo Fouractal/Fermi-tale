@@ -1,29 +1,32 @@
-using System.Collections;
-using System.Collections.Generic;
 using Cinemachine;
-using Unity.VisualScripting;
+using Managers.GameManage;
 using UnityEngine;
 
-public class MN_Scene : MonoBehaviour
+namespace Game.StartRoom
 {
-    private void Awake()
+    public class MN_Scene : GameScene
     {
-        // //MN Room 생성
-        // GameObject MNPrefab = Resources.Load<GameObject>("Prefabs/MN/MN_Prefab");
-        // Instantiate(MNPrefab);
+        protected override void Awake()
+        {
+            base.Awake();
+            
+            // //MN Room 생성
+            // GameObject MNPrefab = Resources.Load<GameObject>("Prefabs/MN/MN_Prefab");
+            // Instantiate(MNPrefab);
         
-        //캐릭터 생성
-        GameObject mainCharacterPrefab = Resources.Load<GameObject>("Prefabs/MainCharacter/MainCharacter_Prefab");
-        GameObject playerObject = Instantiate(mainCharacterPrefab, GameObject.Find("ObjectRoot").transform);
-        PlayerCharacterManager.Instance.player = playerObject.GetComponent<Player>();
+            //캐릭터 생성
+            GameObject mainCharacterPrefab = Resources.Load<GameObject>("Prefabs/MainCharacter/MainCharacter_Prefab");
+            GameObject playerObject = Instantiate(mainCharacterPrefab, GameObject.Find("ObjectRoot").transform);
+            PlayerCharacterManager.Instance.player = playerObject.GetComponent<Player>();
         
-        // Cinemachine Virtual Cam에 Player 할당, 근데 씬 생성될 때 동적으로 virtualCam 컴포넌트 싱글톤으로 생성됨 근데 다시 할당한다?
-        //cameraRoot.transform.SetParent();
-        CinemachineVirtualCamManager.Instance.virtualCamera = GameObject.Find("followCam").GetComponent<CinemachineVirtualCamera>();
-        CinemachineVirtualCamManager.Instance.cinemachineOrbitalTransposer = CinemachineVirtualCamManager.Instance.virtualCamera.GetCinemachineComponent<CinemachineOrbitalTransposer>();
-        CinemachineVirtualCamManager.Instance.virtualCamera.LookAt = playerObject.transform;
-        CinemachineVirtualCamManager.Instance.virtualCamera.Follow = playerObject.transform;
+            // Cinemachine Virtual Cam에 Player 할당, 근데 씬 생성될 때 동적으로 virtualCam 컴포넌트 싱글톤으로 생성됨 근데 다시 할당한다?
+            //cameraRoot.transform.SetParent();
+            CinemachineVirtualCamManager.Instance.virtualCamera = GameObject.Find("followCam").GetComponent<CinemachineVirtualCamera>();
+            CinemachineVirtualCamManager.Instance.cinemachineOrbitalTransposer = CinemachineVirtualCamManager.Instance.virtualCamera.GetCinemachineComponent<CinemachineOrbitalTransposer>();
+            CinemachineVirtualCamManager.Instance.virtualCamera.LookAt = playerObject.transform;
+            CinemachineVirtualCamManager.Instance.virtualCamera.Follow = playerObject.transform;
         
-        GameObject touchPadPrefab = UIManager.Instance.ShowSceneUI("Prefabs/UI/TouchPadCanvas");
+            GameObject touchPadPrefab = UIManager.Instance.ShowSceneUI("Prefabs/UI/TouchPadCanvas");
+        }
     }
 }

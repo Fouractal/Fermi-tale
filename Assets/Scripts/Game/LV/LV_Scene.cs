@@ -9,11 +9,13 @@ namespace Game.LV
 {
     public class LV_Scene : GameScene
     {
-        [FormerlySerializedAs("_darknessSystem")] [SerializeField]
+        [SerializeField]
         private VignetteSystem vignetteSystem;
         
-        private void Awake()
+        protected override void Awake()
         {
+            base.Awake();
+            
             GameObject mainCharacterPrefab = Resources.Load<GameObject>("Prefabs/MainCharacter/MainCharacter_Prefab");
             GameObject playerObject = Instantiate(mainCharacterPrefab, Vector3.up * 5, Quaternion.identity);
             playerObject.transform.SetParent(GameObject.Find("ObjectRoot").transform);
