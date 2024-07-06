@@ -32,10 +32,10 @@ public class Define
     public enum Scene
     {
         MN,
-        FD, 
+        FD,
+        LV,
         FM, 
         ST,
-        LV, 
         MR,
         NONE
     }
@@ -58,5 +58,14 @@ namespace Game.LV
         Fertilizing,
         RemoveBugs,
         Cleaning
+    }
+}
+
+namespace Game.FM
+{
+    public enum Phase
+    {
+        ConversationOne,
+        ConversationLast 
     }
 }
