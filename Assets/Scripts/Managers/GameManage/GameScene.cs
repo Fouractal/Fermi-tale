@@ -11,7 +11,7 @@ namespace Managers.GameManage
 
         protected virtual void Start()
         {
-            GameManager.Instance.GameFlow.PrepareNextScene();
+            // GameManager.Instance.GameFlow.PrepareNextScene(); // TODO
         }
     }
 }
