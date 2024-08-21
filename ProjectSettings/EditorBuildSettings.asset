@@ -17,13 +17,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FM.unity
     guid: b539453e4c628f94d9f9bc8280397a6d
-  - enabled: 1
+  - enabled: 0
     path: Assets/DebugOnly/SampleScene.unity
     guid: f81a07eaad27cf2429c8884a5b039db5
-  - enabled: 1
+  - enabled: 0
     path: Assets/DebugOnly/Scenes/Lobby.unity
     guid: fc747e5f88e77314780e39cd40f5ab57
-  - enabled: 1
+  - enabled: 0
     path: Assets/DebugOnly/Scenes/MN_test.unity
     guid: f94eb40e822a9b940b892c24862e36c7
   m_configObjects: {}
