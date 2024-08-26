@@ -53,12 +53,10 @@ public class InputManager : MonoBehaviour
                 worldVector = worldVector;
                 break;
             case Define.CameraDirection.NW:
-                worldVector.x = -worldVector.z;
-                worldVector.z = worldVector.x;
+                worldVector = new Vector3(-worldVector.z, 0f, worldVector.x);
                 break;
             case Define.CameraDirection.SE:
-                worldVector.x = worldVector.z;
-                worldVector.z = -worldVector.x;
+                worldVector = new Vector3(worldVector.z, 0f, -worldVector.x);
                 break;
             case Define.CameraDirection.SW:
                 worldVector = -worldVector;
