@@ -16,7 +16,7 @@ public class Friend : MonoBehaviour, IInteractable
     }
     private void Start()
     {
-        _target = PlayerCharacterManager.Instance.player.transform;
+        _target = PlayerManager.Instance.player.transform;
     }
     
     public void Update()

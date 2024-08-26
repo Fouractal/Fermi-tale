@@ -26,7 +26,7 @@ namespace Game.LV
 
         private void Start()
         {
-            var gf = GameManager.Instance.GameFramework as LV_GameFramework;
+            var gf = GameManager.Instance.SceneFlow as LV_GameFramework;
             if (gf != null) gf.RegisterRose(this);
         }
         

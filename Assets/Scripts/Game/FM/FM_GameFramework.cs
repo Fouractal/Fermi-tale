@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Game.FM
 {
-    public class FM_GameFramework : GameFramework
+    public class FM_GameFramework : SceneFlow
     {
         public Phase phase = Phase.ConversationOne;
         public int successNumber;

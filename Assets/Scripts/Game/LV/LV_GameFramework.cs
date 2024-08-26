@@ -6,7 +6,7 @@ using UnityEngine.Serialization;
 
 namespace Game.LV
 {
-    public class LV_GameFramework : GameFramework
+    public class LV_GameFramework : SceneFlow
     {
         public Phase _phase = Phase.OneOrder;
 
@@ -23,7 +23,7 @@ namespace Game.LV
         
         private void Awake()
         {
-            GameManager.Instance.GameFramework = this;
+            GameManager.Instance.SceneFlow = this;
         }
 
         private void Start()
@@ -93,7 +93,7 @@ namespace Game.LV
             var prefab = Resources.Load<GameObject>("Prefabs/LV/MainRose");
             MainRose mainRose = Instantiate(prefab).GetComponent<MainRose>();
 
-            PlayerCharacterManager.Instance.player.transform.position = new Vector3(2, 5, -2);
+            PlayerManager.Instance.player.transform.position = new Vector3(2, 5, -2);
             
             mainRose.OnInteraction += RoseRoadSequence;
         }

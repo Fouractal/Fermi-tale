@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public abstract class GameFramework : MonoBehaviour
+public abstract class SceneFlow : MonoBehaviour
 {
 
 }

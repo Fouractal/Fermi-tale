@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using UnityEngine.XR;
 
-public class PlayerController : MonoBehaviour
+public class InputManager : MonoBehaviour
 {
     [SerializeField]
     private Player player;
@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
 
     public void Start()
     {
-        player = PlayerCharacterManager.Instance.player;
+        player = PlayerManager.Instance.player;
         touchPad = TouchPad.Instance;
         
         touchPad.drag.OnDragStart += PosMark;
@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour
         
         originalVector = (endPos - startPos).normalized;
 
-        switch (CinemachineVirtualCamManager.Instance.cameraTurnController.cameraDirection)
+        switch (CameraManager.Instance.cameraTurnController.cameraDirection)
         { 
             case(Define.CameraDirection.NE):
                 player.direction = originalVector;

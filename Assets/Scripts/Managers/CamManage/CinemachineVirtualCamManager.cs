@@ -4,7 +4,7 @@ using Cinemachine;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class CinemachineVirtualCamManager : Singleton<CinemachineVirtualCamManager>
+public class CameraManager : Singleton<CameraManager>
 {
     public Transform cameraRoot;
     public CinemachineVirtualCamera virtualCamera;

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class FD_GameFramework : GameFramework
+public class FD_GameFramework : SceneFlow
 {
     public Define.FD_Phase Phase { get; set; }
 
@@ -11,7 +11,7 @@ public class FD_GameFramework : GameFramework
 
     private void Awake()
     {
-        GameManager.Instance.GameFramework = this;
+        GameManager.Instance.SceneFlow = this;
     }
     
     private void Start()

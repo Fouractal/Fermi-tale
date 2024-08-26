@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerCharacterManager : Singleton<PlayerCharacterManager>
+public class PlayerManager : Singleton<PlayerManager>
 {
     public Player player;
-    public PlayerController playerController;
+    public InputManager playerController;
 
     private void Awake()
     {
-        playerController = GetComponent<PlayerController>();
+        playerController = GetComponent<InputManager>();
     }
 }
