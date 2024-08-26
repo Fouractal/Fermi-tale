@@ -12,8 +12,9 @@ public class CameraManager : Singleton<CameraManager>
     public CameraTurnController cameraTurnController;
     public CinemachineOrbitalTransposer cinemachineOrbitalTransposer;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         cameraTurnController = GetComponent<CameraTurnController>();
     }
 }

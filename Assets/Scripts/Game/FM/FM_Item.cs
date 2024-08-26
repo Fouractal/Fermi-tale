@@ -8,7 +8,7 @@ using UnityEngine;
 
 public class FM_Item : MonoBehaviour
 {
-    public FM_GameFramework fmGameFramework;
+    public FamilySceneFlow fmGameFramework;
     public FM_Item_Text fmItemText;
     public int itemIndex;
     private void Awake()
