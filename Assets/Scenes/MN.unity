@@ -458,7 +458,7 @@ GameObject:
   - component: {fileID: 62250801}
   - component: {fileID: 62250802}
   m_Layer: 0
-  m_Name: PlayerCharacterManager
+  m_Name: PlayerManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -505,8 +505,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2db164c6a2cac904cb2feb54ddefeceb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   touchPad: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &104096035
 GameObject:
   m_ObjectHideFlags: 0
@@ -3014,7 +3014,7 @@ GameObject:
   - component: {fileID: 655732498}
   - component: {fileID: 655732497}
   m_Layer: 0
-  m_Name: CinemachineVirtualCamManager
+  m_Name: CameraManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3117,7 +3117,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   playerAnimator: {fileID: 0}
-  direction: {x: 0, y: 0}
+  velocity: {x: 0, y: 0, z: 0}
 --- !u!65 &658218592
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6848,7 +6848,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   playerAnimator: {fileID: 0}
-  direction: {x: 0, y: 0}
+  velocity: {x: 0, y: 0, z: 0}
 --- !u!54 &1532474066
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -13401,7 +13401,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   playerAnimator: {fileID: 0}
-  direction: {x: 0, y: 0}
+  velocity: {x: 0, y: 0, z: 0}
 --- !u!54 &7642324178375895033
 Rigidbody:
   m_ObjectHideFlags: 0

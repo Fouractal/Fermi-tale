@@ -77,7 +77,6 @@ public class BlackObjectController : MonoBehaviour
                 
                 yield return new WaitForSecondsRealtime(3f);
                 ResetTransform();
-                collision.gameObject.GetComponent<Player>().ResetTransform();
                 Overlay.FadeIn();
             }
             StartCoroutine(ResetTransformRoutine());
