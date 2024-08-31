@@ -35,4 +35,9 @@ public class Player : MonoBehaviour
         _rigidbody.position += velocity * Time.fixedDeltaTime;
         transform.LookAt(transform.position + velocity.normalized);
     }
+
+    public void Interaction(IInteractable target)
+    {
+        target?.Interaction();
+    }
 }
