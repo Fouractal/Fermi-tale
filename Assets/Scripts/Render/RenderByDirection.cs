@@ -35,9 +35,9 @@ public class RenderByDirection : MonoBehaviour
     public void Update()
     {
         //if (!isInside) return;
-        if (CinemachineVirtualCamManager.Instance.cameraTurnController == null) return;
-        UpdateDirectionFromPlayer(PlayerCharacterManager.Instance.player.transform.position);
-        RenderByCameraDirection(CinemachineVirtualCamManager.Instance.cameraTurnController.cameraDirection);
+        if (CameraManager.Instance.cameraTurnController == null) return;
+        UpdateDirectionFromPlayer(PlayerManager.Instance.player.transform.position);
+        RenderByCameraDirection(CameraManager.Instance.cameraTurnController.cameraDirection);
     }
 
     private void UpdateDirectionFromPlayer(Vector3 playerPos)
