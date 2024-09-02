@@ -506,9 +506,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   touchPad: {fileID: 0}
-  player: {fileID: 0}
-  maxDragLen: 400
-  minDragLen: 10
 --- !u!1 &104096035
 GameObject:
   m_ObjectHideFlags: 0
@@ -3013,10 +3010,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 655732496}
-  - component: {fileID: 655732498}
-  - component: {fileID: 655732497}
   m_Layer: 0
-  m_Name: CameraManager
+  m_Name: CameraManagerdddddddddd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3037,37 +3032,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &655732497
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 655732495}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d081d04411b5aad45992c30b9ac43359, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  orbitalTransposer: {fileID: 0}
-  cameraDirection: 0
---- !u!114 &655732498
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 655732495}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fba0b3ceb791e654aa801cab0db633a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cameraRoot: {fileID: 0}
-  virtualCamera: {fileID: 0}
-  cinemachineFreeLook: {fileID: 0}
-  cameraTurnController: {fileID: 0}
-  cinemachineOrbitalTransposer: {fileID: 0}
 --- !u!1 &658218588
 GameObject:
   m_ObjectHideFlags: 0
@@ -3858,6 +3822,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 1373794270987585946, guid: 92bc00a8826ae354fb8ae5228cfe77a2, type: 3}
   m_PrefabInstance: {fileID: 906223095}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &911163638 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3153219886098647051, guid: 79a23a71dd0ea204993d7e611b9b0f54, type: 3}
+  m_PrefabInstance: {fileID: 1694013464}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &915059887
 GameObject:
@@ -7299,6 +7268,22 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3153219886098647049, guid: 79a23a71dd0ea204993d7e611b9b0f54, type: 3}
   m_PrefabInstance: {fileID: 1694013464}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1694013467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 911163638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 556e190f665220a4386510cb8171e999, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  touchPad: {fileID: 0}
+  isTurning: 0
+  orbitalTransposer: {fileID: 0}
+  cameraDirection: 0
 --- !u!1 &1698036587
 GameObject:
   m_ObjectHideFlags: 0
