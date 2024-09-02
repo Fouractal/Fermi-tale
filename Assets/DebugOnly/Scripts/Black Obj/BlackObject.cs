@@ -5,7 +5,7 @@ using DG.Tweening;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class BlackObjectController : MonoBehaviour
+public class BlackObject : MonoBehaviour
 {
     private Animator _animator;
     public SkinnedMeshRenderer _meshRenderer;
