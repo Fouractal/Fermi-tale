@@ -31,7 +31,6 @@ public class FermiCamera : MonoBehaviour
     
     public void CameraTurnClockwise()
     {
-        Debug.Log("Turn Camera Clockwise");
         orbitalTransposer.m_Heading.m_Bias += 90;
         orbitalTransposer.m_XAxis.Value -= 90;
 
@@ -42,7 +41,6 @@ public class FermiCamera : MonoBehaviour
 
     public void CameraTurnCounterClockwise()
     {
-        Debug.Log("Turn Camera Counter Clockwise");
         orbitalTransposer.m_Heading.m_Bias -= 90;
         orbitalTransposer.m_XAxis.Value += 90;
         
