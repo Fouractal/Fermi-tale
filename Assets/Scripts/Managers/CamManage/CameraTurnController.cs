@@ -23,7 +23,7 @@ public class CameraTurnController : MonoBehaviour
         _touchPad = TouchPad.Instance;
         _touchPad.doubleTap.OnDoubleTap += CameraTurn;
 
-        orbitalTransposer = CinemachineVirtualCamManager.Instance.cinemachineOrbitalTransposer;
+        orbitalTransposer = CameraManager.Instance.cinemachineOrbitalTransposer;
         orbitalTransposer.m_RecenterToTargetHeading.m_enabled = true;
         orbitalTransposer.m_Heading.m_Definition = CinemachineOrbitalTransposer.Heading.HeadingDefinition.WorldForward;
         orbitalTransposer.m_Heading.m_Bias = 45;

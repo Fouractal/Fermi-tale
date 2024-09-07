@@ -24,7 +24,7 @@ public class RenderArea : Singleton<RenderArea>
     {
         // Quternion -> Euler로 바꿔서 * (-1) -> Quternion
         transform.localRotation = 
-            Quaternion.Euler(0, -PlayerCharacterManager.Instance.player.transform.rotation.eulerAngles.y, 0);
+            Quaternion.Euler(0, -PlayerManager.Instance.player.transform.rotation.eulerAngles.y, 0);
     }
 
 #if UNITY_EDITOR
