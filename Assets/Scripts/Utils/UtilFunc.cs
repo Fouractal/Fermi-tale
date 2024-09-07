@@ -112,4 +112,18 @@ public class Utils
         int result = (a > b) ? a : b;
         return result;
     }
+
+    public static Vector3 ConvertCoordinateS2W(Vector2 screenVector)
+    {
+        float x = screenVector.x;
+        float y = screenVector.y;
+
+        float angle = -45f;
+        float radians = angle * Mathf.Deg2Rad;
+
+        float newX = x * Mathf.Cos(radians) - y * Mathf.Sin(radians);
+        float newZ = x * Mathf.Sin(radians) + y * Mathf.Cos(radians);
+        
+        return new Vector3(newX, 0f, newZ);
+    }
 }

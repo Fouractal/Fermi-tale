@@ -60,10 +60,10 @@ public class Rose : MonoBehaviour
     {
         Rose targetRose = RoseContainer.GetRose(ownIndex + 1);
 
-        Vector3 dir = (targetRose.transform.position - PlayerCharacterManager.Instance.player.transform.position).normalized * 3;
+        Vector3 dir = (targetRose.transform.position - PlayerManager.Instance.player.transform.position).normalized * 3;
         Vector3 movement = new Vector3(Mathf.Sin(Time.time * 2.5f), Mathf.Cos(Time.time * 3), Mathf.Sin(Time.time * 3.3f)) * 0.5f + Vector3.up;
 
-        transform.position = PlayerCharacterManager.Instance.player.transform.position + dir + movement;
+        transform.position = PlayerManager.Instance.player.transform.position + dir + movement;
     }
 
     public void Update()
