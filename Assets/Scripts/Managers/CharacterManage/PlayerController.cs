@@ -36,7 +36,7 @@ public class PlayerController
 
         Vector3 worldVector = Utils.ConvertCoordinateS2W(screenVector);
 
-        switch (CameraManager.Instance.cameraTurnController.cameraDirection)
+        switch (CameraManager.Instance.fermiCamera.cameraDirection)
         { 
             case Define.CameraDirection.NE:
                 worldVector = worldVector;

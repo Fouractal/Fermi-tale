@@ -11,6 +11,7 @@ public class InputManager : MonoBehaviour
 
     private PlayerController playerController;
     private CameraController cameraController;
+    private FermiCamera _fermiCamera;
     
     public void Start()
     {
@@ -22,7 +23,7 @@ public class InputManager : MonoBehaviour
         touchPad.drag.OnDragDone += playerController.ResetPlayerVelocity;
         touchPad.longPress.OnLongPress += playerController.TryInteraction;
         
-        cameraController = new CameraController(null);
+        cameraController = new CameraController(CameraManager.Instance.fermiCamera);
         touchPad.doubleTap.OnDoubleTap += cameraController.CameraTurn;
 
         touchPad.longPress.OnLongPress += DeviceUtils.Haptic;
