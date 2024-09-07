@@ -1774,9 +1774,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   touchPad: {fileID: 0}
-  player: {fileID: 0}
-  maxDragLen: 400
-  minDragLen: 40
 --- !u!114 &515486913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4655,6 +4652,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fba0b3ceb791e654aa801cab0db633a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fermiCamera: {fileID: 0}
   cameraRoot: {fileID: 0}
   virtualCamera: {fileID: 0}
   cinemachineFreeLook: {fileID: 0}
