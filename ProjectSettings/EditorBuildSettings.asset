@@ -9,6 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/StreetScene.unity
     guid: c76d4ac4fbfb5814a84e0e86197b5010
   - enabled: 1
+    path: Assets/DebugOnly/Scenes/New Folder/MainRoom.unity
+    guid: bfdcd715c7667d142935d32bf9dff426
+  - enabled: 1
+    path: Assets/DebugOnly/Scenes/New Folder/StreetScene__.unity
+    guid: 1d0d6c93c693cc448a9deb40fc7d412c
+  - enabled: 1
     path: Assets/Scenes/FriendScene.unity
     guid: 89b39684595c0d44893d5008af91cded
   - enabled: 1
