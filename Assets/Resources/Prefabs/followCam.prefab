@@ -137,6 +137,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3153219886098647049}
   - component: {fileID: 3153219886098647050}
+  - component: {fileID: 1694013467}
   m_Layer: 0
   m_Name: followCam
   m_TagString: Untagged
@@ -151,7 +152,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3153219886098647051}
-  m_LocalRotation: {x: 0.00000001684627, y: 0.95947343, z: -0.28179914, w: 0.000000057358406}
+  m_LocalRotation: {x: 0, y: 0.959474, z: -0.28179723, w: 0}
   m_LocalPosition: {x: 2.9045563, y: 12.629964, z: 1.4997587}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -159,7 +160,7 @@ Transform:
   - {fileID: 3153219885508844596}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 32.735, y: 180, z: 0}
 --- !u!114 &3153219886098647050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,3 +199,19 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 3153219885508844596}
+--- !u!114 &1694013467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3153219886098647051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 556e190f665220a4386510cb8171e999, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  touchPad: {fileID: 0}
+  isTurning: 0
+  orbitalTransposer: {fileID: 0}
+  cameraDirection: 0
