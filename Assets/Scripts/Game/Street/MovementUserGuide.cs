@@ -2,31 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovementUserGuide : MonoBehaviour, IUserGuide
+public class MovementUserGuide : BaseInteractive
 {
- 
-    
-    
-    public void ShowInstructions()
+    public override void ShowInstructions()
     {
-        // 사용법 안내를 화면에 보여주는 메서드 
-    }  
-
-    public void PlayEffect()
-    {
-        // 연출 효과를 실행하는 메서드  
+        throw new System.NotImplementedException();
     }
 
-    public void StopEffect()
+    public override void PlayEffect()
     {
-        // 연출을 멈추는 메서드  
+        throw new System.NotImplementedException();
     }
 
-    public bool IsGuideCompleted()
+    public override void StopEffect()
     {
-        // 사용자가 안내를 모두 완료했는지 확인하는 메서드
+        throw new System.NotImplementedException();
+    }
 
-
-        return false;
+    public override bool CheckIsGuideCompleted()
+    {
+        throw new System.NotImplementedException();
     }  
 }
