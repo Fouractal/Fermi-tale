@@ -40,12 +40,14 @@ public class MainRoomSceneFlow : SceneFlow
 
         yield return new WaitUntil(() => (movementUserGuide.CheckIsGuideCompleted()));
         movementUserGuide.StopEffect(); // 이전 연출 중단
+        rotationUserGuide.InitializeGuide();
         rotationUserGuide.ShowInstructions(); // Rotation User Guide 시작 (Instruction)
         rotationUserGuide.PlayEffect(); // 연출 효과 실행(반복 실행 루틴)
 
 
         yield return new WaitUntil(() => (rotationUserGuide.CheckIsGuideCompleted()));
         rotationUserGuide.StopEffect(); // 이전 연출 중단
+        interactionUserGuide.InitializeGuide();
         interactionUserGuide.ShowInstructions(); // interaction User Guide 시작 (Instruction)
         interactionUserGuide.PlayEffect(); // 연출 효과 실행(반복 실행 루틴)
 

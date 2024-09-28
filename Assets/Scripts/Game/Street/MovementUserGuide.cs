@@ -23,11 +23,7 @@ public class MovementUserGuide : BaseInteractive
     public override void InitializeGuide()
     {
         circleImage.parent.gameObject.SetActive(true);
-        
-        // Instruction 텍스트 초기화
-        instructionText.alpha = 0;
-        instructionText.text = "드래그해서 플레이어를 움직여 보세요!";
-        
+
         // touchPad 이벤트 추가 
         _touchPad = TouchPad.Instance;
         _touchPad.drag.OnDragDone += SetDragComplete;
@@ -36,6 +32,10 @@ public class MovementUserGuide : BaseInteractive
     // 텍스트로 이동 방법을 알려준다.
     public override void ShowInstructions()
     {
+        // Instruction 텍스트 초기화
+        instructionText.alpha = 0;
+        instructionText.text = "드래그해서 플레이어를 움직여 보세요!";
+        
         // 글자 Fade In
         instructionText.DOFade(1, 2).OnComplete(
             () => { instructionText.DOFade(0, 2); });
