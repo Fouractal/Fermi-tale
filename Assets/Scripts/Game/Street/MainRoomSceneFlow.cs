@@ -52,6 +52,7 @@ public class MainRoomSceneFlow : SceneFlow
         interactionUserGuide.PlayEffect(); // 연출 효과 실행(반복 실행 루틴)
 
         yield return new WaitUntil(() => (interactionUserGuide.CheckIsGuideCompleted()));
+        interactionUserGuide.StopEffect(); // 이전 연출 중단
         // TODO : 자연스럽게 문 밖으로 나가게 유도하기? 어떻게?
     }
 }
