@@ -12,16 +12,17 @@ public class CameraController
 
     public void CameraTurn(PointerEventData eventData)
     {
+        Debug.Log("CameraTurn");
         if (camera.isTurning) return;
         camera.isTurning = true;
 
         if (eventData.position.x <= 540)
         {
-            camera.CameraTurnCounterClockwise();
+            camera.CameraTurnClockwise();
         }
         else
         {
-            camera.CameraTurnClockwise();
+            camera.CameraTurnCounterClockwise();
         }
 
         camera.isTurning = false;
