@@ -2,6 +2,7 @@ using UnityEngine;
 
 public abstract class BaseInteractive : MonoBehaviour
 {
+    public abstract void InitializeGuide(); // 각 Phase가 시작할 시점에 변수 초기화하는 메서드
     public abstract void ShowInstructions();  // 사용법 안내를 화면에 보여주는 메서드
 
     public abstract void PlayEffect(); // 연출 효과를 실행하는 메서드

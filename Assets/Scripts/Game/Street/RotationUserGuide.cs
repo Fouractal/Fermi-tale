@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class RotationUserGuide : BaseInteractive
 {
+    public override void InitializeGuide()
+    {
+        
+    }
     public override void ShowInstructions()
     {
         throw new System.NotImplementedException();

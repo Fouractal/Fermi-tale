@@ -1,5 +1,10 @@
 public class InteractionUserGuide : BaseInteractive
 {
+    public override void InitializeGuide()
+    {
+        
+    }
+    
     public override void ShowInstructions()
     {
         throw new System.NotImplementedException();

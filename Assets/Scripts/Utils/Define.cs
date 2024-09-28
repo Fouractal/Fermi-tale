@@ -29,6 +29,14 @@ public class Define
         End
     }
 
+    public enum MainRoom_Phase
+    {
+        Start,
+        MovementGuide,
+        RotationGuide,
+        InteractionGuide,
+        End
+    }
     public enum Scene
     {
         MN,
