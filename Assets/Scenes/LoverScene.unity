@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028446, g: 0.22571494, b: 0.30692214, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028508, g: 0.22571632, b: 0.30692405, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4617,8 +4617,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1210562303}
-  - component: {fileID: 1210562302}
-  - component: {fileID: 1210562301}
   m_Layer: 0
   m_Name: CinemachineVirtualCamManager
   m_TagString: Untagged
@@ -4626,38 +4624,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1210562301
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1210562300}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d081d04411b5aad45992c30b9ac43359, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  orbitalTransposer: {fileID: 0}
-  cameraDirection: 0
---- !u!114 &1210562302
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1210562300}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fba0b3ceb791e654aa801cab0db633a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fermiCamera: {fileID: 0}
-  cameraRoot: {fileID: 0}
-  virtualCamera: {fileID: 0}
-  cinemachineFreeLook: {fileID: 0}
-  cameraTurnController: {fileID: 0}
-  cinemachineOrbitalTransposer: {fileID: 0}
 --- !u!4 &1210562303
 Transform:
   m_ObjectHideFlags: 0
@@ -7044,7 +7010,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!64 &1700702544
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -10835,8 +10801,8 @@ GameObject:
   - component: {fileID: 5085897820882917286}
   - component: {fileID: 8360681437196642926}
   - component: {fileID: 1023841294273301963}
-  - component: {fileID: 8562658101901923802}
   - component: {fileID: 8562658101901923803}
+  - component: {fileID: 8562658101901923804}
   m_Layer: 0
   m_Name: LV.MS.IvyLeaf.004
   m_TagString: Untagged
@@ -10844,19 +10810,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!65 &8562658101901923802
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8562658101901923801}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.009235478, y: 0.009516881, z: 0.14975318}
-  m_Center: {x: 0.007976011, y: 0.010210941, z: 0.08872211}
 --- !u!114 &8562658101901923803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10869,6 +10822,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e397ade4c80bf94479fd1271cfe19f1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!64 &8562658101901923804
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8562658101901923801}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4749108976944992532, guid: 13e8fe0ac4cc3184b9a7f5b77883b83a, type: 3}
 --- !u!33 &8565938460233899793
 MeshFilter:
   m_ObjectHideFlags: 0
