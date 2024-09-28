@@ -1,26 +1,20 @@
 using Cinemachine;
 using Managers.GameManage;
 using UnityEngine;
+using Utility.Hierarchy;
 
-namespace Game.StartRoom
+namespace Game.Street
 {
     public class StreetScene : GameScene
     {
         protected override void Awake()
         {
             base.Awake();
-            
-            // //MN Room 생성
-            // GameObject MNPrefab = Resources.Load<GameObject>("Prefabs/MN/MN_Prefab");
-            // Instantiate(MNPrefab);
         
-            //캐릭터 생성
             GameObject mainCharacterPrefab = Resources.Load<GameObject>("Prefabs/MainCharacter/MainCharacter_Prefab");
-            GameObject playerObject = Instantiate(mainCharacterPrefab, GameObject.Find("ObjectRoot").transform);
+            GameObject playerObject = Instantiate(mainCharacterPrefab, GameObjectRoot.Transform);
             PlayerManager.Instance.player = playerObject.GetComponent<Player>();
         
-            // Cinemachine Virtual Cam에 Player 할당, 근데 씬 생성될 때 동적으로 virtualCam 컴포넌트 싱글톤으로 생성됨 근데 다시 할당한다?
-            //cameraRoot.transform.SetParent();
             GameObject virtualCam = GameObject.Find("followCam");
             CameraManager.Instance.fermiCamera = virtualCam.GetComponent<FermiCamera>();
             CameraManager.Instance.virtualCamera = virtualCam.GetComponent<CinemachineVirtualCamera>();

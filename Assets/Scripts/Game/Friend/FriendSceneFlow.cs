@@ -55,7 +55,7 @@ public class FriendSceneFlow : SceneFlow
     private void SpawnPortal()
     {
         GameObject portalPrefab = Resources.Load<GameObject>("Prefabs/Portal");
-        Instantiate(portalPrefab, new Vector3(2, 1, -2), Quaternion.identity);
+        Instantiate(portalPrefab, new Vector3(2, 1, -2), Quaternion.Euler(new Vector3(0f, 90f, 90f)));
     }
 
     private void CheckPhase(int overlapCount)
