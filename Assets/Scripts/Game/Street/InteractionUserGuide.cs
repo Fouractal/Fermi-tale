@@ -30,8 +30,7 @@ public class InteractionUserGuide : BaseInteractive
         instructionText.text = "화면에 보이는 물체를 꾹 눌러 상호작용하세요!";
         
         // 글자 Fade In
-        instructionText.DOFade(1, 2).OnComplete(
-            () => { instructionText.DOFade(0, 2); });
+        instructionText.DOFade(1, 2);
     }
 
     public override void PlayEffect()
@@ -54,7 +53,10 @@ public class InteractionUserGuide : BaseInteractive
         {
             _moveTweener.Kill();
         }
-            
+        
+        // 글자 Fade Out
+        instructionText.DOFade(0, 2);
+        
         // movement image 비활성화
         circleImage.gameObject.SetActive(false);
     }

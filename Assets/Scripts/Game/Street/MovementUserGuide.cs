@@ -37,8 +37,7 @@ public class MovementUserGuide : BaseInteractive
         instructionText.text = "드래그해서 플레이어를 움직여 보세요!";
         
         // 글자 Fade In
-        instructionText.DOFade(1, 2).OnComplete(
-            () => { instructionText.DOFade(0, 2); });
+        instructionText.DOFade(1, 2);
     }
 
     public override void PlayEffect()
@@ -75,7 +74,10 @@ public class MovementUserGuide : BaseInteractive
         {
             _moveTweener.Kill();
         }
-            
+        
+        // 글자 Fade Out
+        instructionText.DOFade(0, 2);
+        
         // movement image 비활성화
         circleImage.parent.gameObject.SetActive(false);
     }
