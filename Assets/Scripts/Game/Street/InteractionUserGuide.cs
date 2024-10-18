@@ -68,5 +68,6 @@ public class InteractionUserGuide : BaseInteractive
     public void SetLongPressComplete(PointerEventData eventData)
     {
         _isCompleted = true;
+        _touchPad.longPress.OnLongPress -= SetLongPressComplete;
     }
 }

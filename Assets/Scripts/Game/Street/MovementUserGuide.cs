@@ -90,6 +90,6 @@ public class MovementUserGuide : BaseInteractive
     public void SetDragComplete(PointerEventData eventData)
     {
         _isCompleted = true;
-        
+        _touchPad.drag.OnDragDone -= SetDragComplete;
     }
 }

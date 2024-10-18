@@ -73,6 +73,6 @@ public class RotationUserGuide : BaseInteractive
     public void SetDragComplete(PointerEventData eventData)
     {
         _isCompleted = true;
+        _touchPad.doubleTap.OnDoubleTap -= SetDragComplete;
     }
-    
 }
