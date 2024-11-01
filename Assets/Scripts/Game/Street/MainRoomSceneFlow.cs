@@ -52,6 +52,13 @@ public class MainRoomSceneFlow : SceneFlow
         
         yield return new WaitUntil(() => (interactionUserGuide.IsCompleted));
         interactionUserGuide.StopEffect(); // 이전 연출 중단
-        // TODO : 자연스럽게 문 밖으로 나가게 유도하기? 어떻게?
+        SpawnPortal();   
+    }
+    private void SpawnPortal()
+    {
+        GameObject portalPrefab = Resources.Load<GameObject>("Prefabs/Portal");
+        Transform portalTransform = Instantiate(portalPrefab, new Vector3(2.465f, 1.077f, -0.056f), Quaternion.Euler(0,0,90)).transform;
+        portalTransform.localScale = new Vector3(0.3f, 0.15f, 0.15f);
+
     }
 }
