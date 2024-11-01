@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class InteractionUserGuide : BaseInteractive
 {
     private TouchPad _touchPad;
-    private bool _isCompleted = false;
     [SerializeField] private TextMeshProUGUI instructionText;
     
     [Header("Variable (Effect)")]
@@ -18,7 +17,7 @@ public class InteractionUserGuide : BaseInteractive
     {
         circleImage.gameObject.SetActive(true);
 
-        // touchPad 이벤트 추가 
+        // touchPad 이벤트 추가
         _touchPad = TouchPad.Instance;
         _touchPad.longPress.OnLongPress += SetLongPressComplete;
     }
@@ -27,7 +26,7 @@ public class InteractionUserGuide : BaseInteractive
     {
         // Instruction 텍스트 초기화
         instructionText.alpha = 0;
-        instructionText.text = "화면에 보이는 물체를 꾹 눌러 상호작용하세요!";
+        instructionText.text = "화면에 보이는 물체를 \n꾹 눌러 상호작용하세요!";
         
         // 글자 Fade In
         instructionText.DOFade(1, 2);
@@ -60,14 +59,10 @@ public class InteractionUserGuide : BaseInteractive
         // movement image 비활성화
         circleImage.gameObject.SetActive(false);
     }
-
-    public override bool CheckIsGuideCompleted()
-    {
-        return _isCompleted;
-    }
+    
     public void SetLongPressComplete(PointerEventData eventData)
     {
-        _isCompleted = true;
+        IsCompleted = true;
         _touchPad.longPress.OnLongPress -= SetLongPressComplete;
     }
 }

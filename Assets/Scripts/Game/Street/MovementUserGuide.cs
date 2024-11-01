@@ -10,7 +10,6 @@ using UnityEngine.UI;
 public class MovementUserGuide : BaseInteractive
 {
     private TouchPad _touchPad;
-    private bool _isCompleted = false;
     [SerializeField] private TextMeshProUGUI instructionText;
     
     [Header("Variable (Effect)")]
@@ -34,7 +33,7 @@ public class MovementUserGuide : BaseInteractive
     {
         // Instruction 텍스트 초기화
         instructionText.alpha = 0;
-        instructionText.text = "드래그해서 플레이어를 움직여 보세요!";
+        instructionText.text = "드래그해서 플레이어를 \n움직여 보세요!";
         
         // 글자 Fade In
         instructionText.DOFade(1, 2);
@@ -82,14 +81,9 @@ public class MovementUserGuide : BaseInteractive
         circleImage.parent.gameObject.SetActive(false);
     }
     
-    // 유저가 드래그를 했는가를 검사한다. (실제로 드래그를 감지해? 야매로 플레이어 위치 변화를 감지해?)
-    public override bool CheckIsGuideCompleted()
-    {
-        return _isCompleted;
-    }
     public void SetDragComplete(PointerEventData eventData)
     {
-        _isCompleted = true;
+        IsCompleted = true;
         _touchPad.drag.OnDragDone -= SetDragComplete;
     }
 }

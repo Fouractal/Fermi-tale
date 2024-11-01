@@ -9,7 +9,6 @@ using UnityEngine.UI;
 public class RotationUserGuide : BaseInteractive
 {
     private TouchPad _touchPad;
-    private bool _isCompleted = false;
     [SerializeField] private TextMeshProUGUI instructionText;
     [SerializeField] private Image circleImage;
     private Tweener _moveTweener;          // DOPath 애니메이션을 저장할 변수
@@ -27,7 +26,7 @@ public class RotationUserGuide : BaseInteractive
     {
         // Instruction 텍스트 초기화
         instructionText.alpha = 0;
-        instructionText.text = "화면을 두 번 클릭해 카메라를 회전하세요!";
+        instructionText.text = "화면을 두 번 클릭해 \n카메라를 회전하세요!";
         
         // 글자 Fade In
         instructionText.DOFade(1, 2);
@@ -64,15 +63,10 @@ public class RotationUserGuide : BaseInteractive
         // movement image 비활성화
         circleImage.gameObject.SetActive(false);
     }
-
     
-    public override bool CheckIsGuideCompleted()
-    {
-        return _isCompleted;
-    }
     public void SetDragComplete(PointerEventData eventData)
     {
-        _isCompleted = true;
+        IsCompleted = true;
         _touchPad.doubleTap.OnDoubleTap -= SetDragComplete;
     }
 }

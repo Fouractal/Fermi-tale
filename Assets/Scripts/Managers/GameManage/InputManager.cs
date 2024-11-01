@@ -27,5 +27,12 @@ public class InputManager : MonoBehaviour
         touchPad.doubleTap.OnDoubleTap += cameraController.CameraTurn;
 
         touchPad.longPress.OnLongPress += DeviceUtils.Haptic;
+        
+        // 씬 이름 체크?
+        // ========
     }
+    
+    
+    
 }
+// 
