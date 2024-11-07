@@ -67,23 +67,20 @@ public class PlayerDataManager : Singleton<PlayerDataManager>, IDataPersistence
         switch (SceneManager.GetActiveScene().name)
         {
             case "MainRoomScene":
-                scene = Define.Scene.MN;
-                break;
-            case "FamilyScene":
-                scene = Define.Scene.FM;
+                scene = Define.Scene.MainRoomScene;
                 break;
             case "StreetScene":
-                scene = Define.Scene.ST;
+                scene = Define.Scene.StreetScene;
                 break;
             case "FriendScene":
-                scene = Define.Scene.FD;
+                scene = Define.Scene.FriendScene;
                 break;
             case "LoverScene":
-                scene = Define.Scene.LV;
+                scene = Define.Scene.LoverScene;
                 break;
-            /*case "MR":
-                scene = Define.Scene.MR;
-                break;*/
+            case "FamilyScene":
+                scene = Define.Scene.FamilyScene;
+                break;
             default:
                 Debug.LogError("Scene Name mismatch!");
                 scene = Define.Scene.NONE;
