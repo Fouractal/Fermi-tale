@@ -17,7 +17,7 @@ public class PlayerData
 
     public PlayerData()
     {
-        this.sceneName = Define.Scene.MN;
+        this.sceneName = Define.Scene.MainRoomScene;
         this.chapterIndex = 0;
 
         itemDataList = new List<ItemData>();

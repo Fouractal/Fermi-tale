@@ -55,7 +55,7 @@ public class DataPersistenceManager : MonoBehaviour
             dataPersistenceObj.LoadData(_gameData);
         }
         
-        if (PlayerDataManager.Instance.sceneEnumType != Define.Scene.NONE && PlayerDataManager.Instance.sceneEnumType != Define.Scene.MN)
+        if (PlayerDataManager.Instance.sceneEnumType != Define.Scene.NONE && PlayerDataManager.Instance.sceneEnumType != Define.Scene.MainRoomScene)
         {
             GameManager.Instance.GameFlow.LoadSceneByLoadedData(Define.FadeType.Black, PlayerDataManager.Instance.sceneEnumType); 
         }

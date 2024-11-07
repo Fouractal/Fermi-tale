@@ -39,12 +39,11 @@ public class Define
     }
     public enum Scene
     {
-        MN,
-        FD,
-        LV,
-        FM, 
-        ST,
-        MR,
+        MainRoomScene,
+        StreetScene,
+        FriendScene,
+        LoverScene,
+        FamilyScene,
         NONE
     }
 }
