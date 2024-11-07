@@ -17,8 +17,9 @@ public class GameFlow : MonoBehaviour
         
             yield return new WaitForSecondsRealtime(3f);
             int curSceneIndex = SceneManager.GetActiveScene().buildIndex;
+            Debug.Log(curSceneIndex);
             SceneManager.LoadScene(curSceneIndex + 1);
-            PlayerDataManager.Instance.AddNextSceneIndex();
+            // PlayerDataManager.Instance.AddNextSceneIndex();
             
             yield return new WaitForSecondsRealtime(1f);
             Overlay.FadeIn();
