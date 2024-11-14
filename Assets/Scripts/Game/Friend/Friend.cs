@@ -9,6 +9,8 @@ public class Friend : MonoBehaviour, IInteractable
 
     public float speed;
     public float followThreshold;
+
+    public Animator animator;
     
     private void Awake()
     {
@@ -17,14 +19,24 @@ public class Friend : MonoBehaviour, IInteractable
     private void Start()
     {
         _target = PlayerManager.Instance.player.transform;
+        animator.SetBool("isWalking", false);
     }
     
     public void Update()
     {
-        if (!is_following) return;
+        if (!is_following)
+            return;
         
         float dist = Vector3.Distance(_target.position, transform.position);
-        if (dist < followThreshold) return;
+        if (dist < followThreshold)
+        {
+            animator.SetBool("isWalking", false);
+            return;
+        }
+        else
+        {
+            animator.SetBool("isWalking", true);
+        }
         
         _rigidbody.position += (_target.position - transform.position).normalized * speed * Time.deltaTime;
         transform.LookAt(_target.position);

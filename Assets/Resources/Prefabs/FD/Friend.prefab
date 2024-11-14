@@ -7177,7 +7177,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  followThreshold: 2
+  followThreshold: 3
+  animator: {fileID: 3436369596506394727}
 --- !u!65 &5642755149780532130
 BoxCollider:
   m_ObjectHideFlags: 0
