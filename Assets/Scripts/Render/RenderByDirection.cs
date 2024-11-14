@@ -17,10 +17,13 @@ public class RenderByDirection : MonoBehaviour
     public bool isEastSide = false;
     public bool isWestSide = false;
     
+    public bool isInside = false;
+
     private MeshRenderer _meshRenderer;
     private Material[] _materials;
 
-    public bool isInside = false;
+    private Transform _playerTransform;
+    private FermiCamera _fermiCamera;
 
     private void Awake()
     {
@@ -29,15 +32,20 @@ public class RenderByDirection : MonoBehaviour
         _objectMinPos = _collider.bounds.min;
 
         _meshRenderer = GetComponent<MeshRenderer>();
-        _materials = _meshRenderer.materials; 
+        _materials = _meshRenderer.materials;
+    }
+
+    private void Start()
+    {
+        _playerTransform = PlayerManager.Instance.player.transform;
+        _fermiCamera = CameraManager.Instance.fermiCamera;
     }
 
     public void Update()
     {
-        //if (!isInside) return;
-        if (CameraManager.Instance.cameraTurnController == null) return;
-        UpdateDirectionFromPlayer(PlayerManager.Instance.player.transform.position);
-        RenderByCameraDirection(CameraManager.Instance.cameraTurnController.cameraDirection);
+        if (_playerTransform == null || _fermiCamera == null) return;
+        UpdateDirectionFromPlayer(_playerTransform.position);
+        RenderByCameraDirection(_fermiCamera.cameraDirection);
     }
 
     private void UpdateDirectionFromPlayer(Vector3 playerPos)
@@ -53,16 +61,16 @@ public class RenderByDirection : MonoBehaviour
         switch (direction)
         {
             case Define.CameraDirection.NE:
-                _meshRenderer.enabled = isNorthSide || isEastSide;
+                _meshRenderer.enabled = !isSouthSide && !isWestSide;
                 break;
             case Define.CameraDirection.SE:
-                _meshRenderer.enabled = isSouthSide || isEastSide;
+                _meshRenderer.enabled = !isNorthSide && !isWestSide;
                 break;
             case Define.CameraDirection.SW:
-                _meshRenderer.enabled = isSouthSide || isWestSide;
+                _meshRenderer.enabled = !isNorthSide && !isEastSide;
                 break;
             case Define.CameraDirection.NW:
-                _meshRenderer.enabled = isNorthSide || isWestSide;
+                _meshRenderer.enabled = !isSouthSide && !isEastSide;
                 break;
         }
     }
