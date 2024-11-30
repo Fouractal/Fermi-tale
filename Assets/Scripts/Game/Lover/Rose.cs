@@ -91,5 +91,17 @@ namespace Game.LV
         {
             transform.DOScale(transform.localScale + Vector3.one, 1f);
         }
+
+        [ContextMenu("DebugSuccess")]
+        public void DebugSuccess()
+        {
+            OnQuestSuccess?.Invoke();
+        }
+
+        [ContextMenu("DebugFail")]
+        public void DebugFail()
+        {
+            OnQuestFail?.Invoke();
+        }
     }
 }

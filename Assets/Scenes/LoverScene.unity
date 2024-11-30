@@ -5982,6 +5982,10 @@ PrefabInstance:
       propertyPath: m_IsGlobal
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4908897436877122820, guid: 3cd08ccda1a053646a858de4cfe4b6fa, type: 3}
+      propertyPath: _level
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4908897436877122822, guid: 3cd08ccda1a053646a858de4cfe4b6fa, type: 3}
       propertyPath: m_Name
       value: VignettSystem

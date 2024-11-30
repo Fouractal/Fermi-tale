@@ -70,9 +70,18 @@ namespace Game.LV
         
         private void CheckGamePhase()
         {
-            if (_successCount >= 1) _phase = Phase.AddOrder;
-            if (_successCount >= 5) _phase = Phase.TooMuchOrder;
-            if (_failCount >= 10) _phase = Phase.Darkness;
+            if (_phase == Phase.OneOrder && _successCount >= 1)
+            {
+                _phase = Phase.AddOrder;
+            }
+            else if (_phase == Phase.AddOrder && _successCount >= 5)
+            {
+                _phase = Phase.TooMuchOrder;
+            }
+            else if (_phase == Phase.TooMuchOrder && _failCount >= 10)
+            {
+                _phase = Phase.Darkness;
+            }
         }
 
         public void RegisterRose(Rose rose)
