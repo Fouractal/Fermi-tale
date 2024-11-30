@@ -26,7 +26,6 @@ public class Player : MonoBehaviour
 
     public void MoveBlend(float value)
     {
-        playerAnimator.applyRootMotion = value == 0 ? true : false;
         playerAnimator.SetFloat("MoveBlend", value);
     }
 
