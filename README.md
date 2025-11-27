@@ -45,7 +45,7 @@ Clipping을 통한 제한적인 렌더링 방식을 적용했습니다.
     </tr>  
     <tr>
       <td align="center"> <code> 프로그래머 2 </code> <code> 디자이너 2 </code> </td>
-      <td align="center"> <code> 2023.03 ~ 개발중 </code> </td>
+      <td align="center"> <code> 2023.03 ~ 2024.11 </code> </td>
     </tr>
   </table>
 </div>
